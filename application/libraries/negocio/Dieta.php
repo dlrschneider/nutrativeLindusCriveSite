@@ -1,12 +1,12 @@
 <?php
 /**
- * Die - Cadastro de Dieta
+ * Diet - Cadastro de Dieta
  */
 class Dieta extends BusinessObject {
 
-	public $iddieta;
+	public $idDieta;
 	public $idNutricionista; // TODO TRANSFORMAR EM OBJ NUTRICIONISTA
-	public $caloria
+	public $caloria;
 	public $dataNascimento;
 	public $ativo;
 	public $dataCadastro;

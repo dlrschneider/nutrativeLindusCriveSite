@@ -53,7 +53,12 @@
          url('../fonts/RobotoCondensedRegular.svg#RobotoCondensedRegular') format('svg');
 }
 
-.container{
+#conteudoSite {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.conteudo{
     float: left;
     width: 100%;
 	padding-right:0;

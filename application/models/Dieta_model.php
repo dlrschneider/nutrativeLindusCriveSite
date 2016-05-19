@@ -19,32 +19,32 @@ class Dieta_model extends MY_Model {
    /**
     * Instancia um novo objeto a partir do registro no banco de dados.
     * @param array $reg Array contendo a estrutura de campos do registro.
-    * @return dieta
+    * @return Dieta
     */
    public function mapArray2Obj(array $reg) {
-   	/* @var Dieta $die */
-      $die = new Dieta();
+   	/* @var Dieta $diet */
+      $diet = new Dieta();
       
-      $die->iddieta         = $reg['iddieta'];
-      $die->idNutricionista = $reg['idnutricionista'];
-      $die->caloria         = $reg['caloria'];
-      $die->dataNascimento  = $reg['data_nascimento'];
-      $die->ativo           = $reg['ativo'];
-      $die->dataCadastro    = $reg['data_cadastro'];
+      $diet->idDieta         = $reg['iddieta'];
+      $diet->idNutricionista = $reg['idnutricionista'];
+      $diet->caloria         = $reg['caloria'];
+      $diet->dataNascimento  = $reg['data_nascimento'];
+      $diet->ativo           = $reg['ativo'];
+      $diet->dataCadastro    = $reg['data_cadastro'];
       
-      return $die;
+      return $diet;
    }
    
    /**
     * Mapeamento de um objeto para array (registro) conforme estrutura da tabela.
-    * @param dieta $die Objeto a ser mapeado para array.
+    * @param Dieta $diet Objeto a ser mapeado para array.
     * @return array
     */
    public function mapObj2Array(Dieta $die) {
       return array(
-			'iddieta'         => $die->idDieta,
+	  'iddieta'         => $die->idDieta,
       'idnutricionista' => $die->idNutricionista,
-      'caloria'   		  => $die->caloria,
+      'caloria'   		=> $die->caloria,
       'data_nascimento' => $die->dataNascimento,
       'ativo'           => $die->ativo,
       'data_cadastro'   => $die->dataCadastro);

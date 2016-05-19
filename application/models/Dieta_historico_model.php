@@ -9,7 +9,7 @@ class Dieta_historico_model extends MY_Model {
    /**
     * @var string Nome da classe de negócio.
     */
-   public $className = 'Dieta_historico';
+   public $className = 'DietaHistorico';
     
    /**
     * @var string Nome da tabela no banco de dados.
@@ -19,28 +19,28 @@ class Dieta_historico_model extends MY_Model {
    /**
     * Instancia um novo objeto a partir do registro no banco de dados.
     * @param array $reg Array contendo a estrutura de campos do registro.
-    * @return dieta_historico
+    * @return DietaHistorico
     */
    public function mapArray2Obj(array $reg) {
-   	/* @var dieta_historico $die_hist */
-      $die_hist = new Dieta_historico();
+   	/* @var DietaHistorico $dihi */
+      $dihi = new DietaHistorico();
       
-      $die_hist->iddieta_historico = $reg['iddieta_historico'];
-      $die_hist->iddieta           = $reg['iddieta'];
-      $die_hist->idcliente         = $reg['idcliente'];
+      $dihi->idDietaHistorico = $reg['iddieta_historico'];
+      $dihi->idDieta          = $reg['iddieta'];
+      $dihi->idCliente        = $reg['idcliente'];
       
-      return $die_hist;
+      return $dihi;
    }
    
    /**
     * Mapeamento de um objeto para array (registro) conforme estrutura da tabela.
-    * @param Dieta_historico $die_hist Objeto a ser mapeado para array.
+    * @param DietaHistorico $dihi Objeto a ser mapeado para array.
     * @return array
     */
-   public function mapObj2Array(Dieta_historico $die_hist) {
+   public function mapObj2Array(DietaHistorico $dihi) {
       return array(
-      'iddieta_historico' => $die_hist->iddieta_historico,
-      'iddieta'     		  => $die_hist->idDieta,
-      'idcliente'         => $die_hist->idCliente);
+      'iddieta_historico' => $dihi->idDietaHistorico,
+      'iddieta'     	  => $dihi->idDieta,
+      'idcliente'         => $dihi->idCliente);
    }
 }

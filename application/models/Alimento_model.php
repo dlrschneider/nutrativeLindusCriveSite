@@ -25,8 +25,8 @@ class Alimento_model extends MY_Model {
    	/* @var Alimento $alim */
       $alim = new Alimento();
       
-      $alim->idalimento      = $reg['idalimento'];
-      $alim->idcategoria     = $reg['idcategoria'];
+      $alim->idAlimento      = $reg['idalimento'];
+      $alim->idCategoria     = $reg['idcategoria'];
       $alim->nome            = $reg['nome'];
       $alim->carboidrato     = $reg['carboidrato'];
 	  $alim->proteina        = $reg['proteina'];
@@ -46,10 +46,10 @@ class Alimento_model extends MY_Model {
       return array(
       'idalimento'      => $alim->idAlimento,
       'idcategoria'     => $alim->idCategoria,
-      'nome'     		    => $alim->nome,
-			'carboidrato'     => $alim->carboidrato,
-			'proteina'     		=> $alim->proteina,
-			'lipidio'  		    => $alim->lipidio,
+      'nome'     		=> $alim->nome,
+	  'carboidrato'     => $alim->carboidrato,
+	  'proteina'     	=> $alim->proteina,
+	  'lipidio'  		=> $alim->lipidio,
       'data_nascimento' => $alim->dataNascimento,
       'ativo'           => $alim->ativo,
       'data_cadastro'   => $alim->dataCadastro);

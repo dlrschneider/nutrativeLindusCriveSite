@@ -49,10 +49,10 @@ class Nutricionista_model extends MY_Model {
    public function mapObj2Array(Nutricionista $nutr) {
       return array(
       'nome'          => $nutr->nome,
-      'cnpj'     		 => $nutr->cnpj,
+      'cnpj'     	  => $nutr->cnpj,
       'email'         => $nutr->email,
       'estado'        => $nutr->estado,
-      'cidadde'       => $nutr->cidadde,
+      'cidade'        => $nutr->cidade,
       'bairro'        => $nutr->bairro,
       'complemento'   => $nutr->complemento,
       'ativo'         => $nutr->ativo,

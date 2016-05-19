@@ -1,4 +1,4 @@
-<footer id="bgRodape" class="container">
+<footer id="bgRodape" class="conteudo">
     
 	<div class="top">
         <div class="content">

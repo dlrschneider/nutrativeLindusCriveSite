@@ -4,8 +4,8 @@
  */
 class Alimento extends BusinessObject {
 
-	public $idalimento;
-	public $idcategoria; // TODO TRANSFORMAR EM OBJ NUTRICIONISTA
+	public $idAlimento;
+	public $idCategoria; // TODO TRANSFORMAR EM OBJ NUTRICIONISTA
 	public $nome;
 	public $carboidrato;
 	public $proteina;

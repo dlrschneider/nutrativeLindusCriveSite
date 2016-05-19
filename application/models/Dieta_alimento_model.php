@@ -7,9 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Dieta_alimento_model extends MY_Model {
 
    /**
-    * @var string Nome da classe de negÃ³cio.
+    * @var string Nome da classe de negócio.
     */
-   public $className = 'Dieta_alimento';
+   public $className = 'DietaAlimento';
     
    /**
     * @var string Nome da tabela no banco de dados.
@@ -19,28 +19,28 @@ class Dieta_alimento_model extends MY_Model {
    /**
     * Instancia um novo objeto a partir do registro no banco de dados.
     * @param array $reg Array contendo a estrutura de campos do registro.
-    * @return dieta_alimento
+    * @return dietaAlimento
     */
    public function mapArray2Obj(array $reg) {
-   	/* @var dieta_alimento $die_alim */
-      $die_alim = new Dieta_alimento();
+   	/* @var DietaAlimento $dial */
+      $dial = new DietaAlimento();
       
-      $die_alim->iddieta_alimento = $reg['iddieta_alimento'];
-      $die_alim->iddieta = 		  = $reg['idnutricionista'];
-      $die_alim->idalimento       = $reg['nome'];
+      $dial->idDietaAlimento  = $reg['iddieta_alimento'];
+      $dial->idDieta  		  = $reg['idnutricionista'];
+      $dial->idAlimento       = $reg['nome'];
       
-      return $die_alim;
+      return $dial;
    }
    
    /**
     * Mapeamento de um objeto para array (registro) conforme estrutura da tabela.
-    * @param Dieta_alimento $die_alim Objeto a ser mapeado para array.
+    * @param DietaAlimento $die_alim Objeto a ser mapeado para array.
     * @return array
     */
-   public function mapObj2Array(Dieta_alimento $die_alim) {
+   public function mapObj2Array(DietaAlimento $dial) {
       return array(
-      'iddieta_alimento' => $die_alim->idDieta_alimento,
-      'iddieta'     		 => $die_alim->idDieta,
-      'idalimento'       => $die_alim->idAlimento);
+      'iddieta_alimento' => $dial->idDietaAlimento,
+      'iddieta'     	 => $dial->idDieta,
+      'idalimento'       => $dial->idAlimento);
    }
 }

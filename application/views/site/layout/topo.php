@@ -37,7 +37,7 @@
 </head>
 
 <body>
-<header id="bgTopo" class="container">
+<header id="bgTopo" class="conteudo">
 	<div class="content">
 		<div class="left">
 			<div class="logo">
@@ -47,10 +47,10 @@
 		<div class="center">
 			<div class="nav">
 				<ul>
-					<li><a href="../view/index.php">INICIO</a></li>
-					<li><a href="../view/conheco.php">CONHEÇA</a></li>
-					<li><a href="../view/planos.php">PLANOS</a></li>
-					<li><a href="../view/contato.php">CONTATO</a></li>
+					<li><a href="<?=base_url();?>index.php/site/inicio">INICIO</a></li>
+					<li><a href="<?=base_url();?>index.php/site/conheca">CONHEÇA</a></li>
+					<li><a href="<?=base_url();?>index.php/site/planos">PLANOS</a></li>
+					<li><a href="<?=base_url();?>index.php/site/contato">CONTATO</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 							<div class="input-login">
 								<input type="text" name="senha" id="senha" placeholder="Senha">
 							</div>
-							<a href="" class="btPadrao2 verde">Cadastrar</a>
+							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 verde">Cadastrar</a>
 						</form>
 					</div>
 				</div>

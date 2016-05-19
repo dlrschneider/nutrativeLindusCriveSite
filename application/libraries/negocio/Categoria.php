@@ -4,7 +4,7 @@
  */
 class Categoria extends BusinessObject {
 
-	public $idcategoria;
+	public $idCategoria;
 	public $nome;
 	public $ativo;
 	public $dataCadastro;

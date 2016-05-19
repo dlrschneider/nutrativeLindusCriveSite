@@ -22,27 +22,27 @@ class Categoria_model extends MY_Model {
     * @return categoria
     */
    public function mapArray2Obj(array $reg) {
-   	/* @var categoria $categ */
-      $categ = new Categoria();
+   	  /* @var Categoria $cate */
+      $cate = new Categoria();
       
-      $categ->idcategoria       = $reg['idcategoria'];
-      $categ->nome              = $reg['nome'];
-      $categ->ativo             = $reg['ativo'];
-      $categ->dataCadastro      = $reg['data_cadastro'];
+      $cate->idcategoria  = $reg['idcategoria'];
+      $cate->nome         = $reg['nome'];
+      $cate->ativo        = $reg['ativo'];
+      $cate->dataCadastro = $reg['data_cadastro'];
       
-      return $categ;
+      return $cate;
    }
    
    /**
     * Mapeamento de um objeto para array (registro) conforme estrutura da tabela.
-    * @param categoria $categ Objeto a ser mapeado para array.
+    * @param Categoria $cate Objeto a ser mapeado para array.
     * @return array
     */
-   public function mapObj2Array(Categoria $categ) {
+   public function mapObj2Array(Categoria $cate) {
       return array(
-      'idcategoria'     => $categ->idCategoria,
-      'nome'     		    => $categ->nome,
-      'ativo'           => $categ->ativo,
-      'data_cadastro'   => $categ->dataCadastro);
+      'idcategoria'   => $cate->idCategoria,
+      'nome'     	  => $cate->nome,
+      'ativo'         => $cate->ativo,
+      'data_cadastro' => $cate->dataCadastro);
    }
 }
