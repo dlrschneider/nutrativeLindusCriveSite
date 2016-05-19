@@ -1,0 +1,365 @@
+body {
+	font-family: Arial, Helvetica, Verdana;
+	font-size: 10pt;
+	color: #363636;
+}
+
+#containerConteudo {
+   min-height: 400px;
+}
+
+/* TÍTULO PRINCIPAL DE CADASTRO */
+.tituloCadastro {
+   color: #4f4f4f;
+   font-size: 16pt;
+   font-weight: normal;
+   font-family: Arial, Helvetica;
+   display: inline;
+}
+
+/* TÍTULO PRINCIPAL DE CADASTRO */
+.subtituloCadastro {
+   color: #4f4f4f;
+   font-size: 13pt;
+   font-weight: normal;
+   font-family: Arial, Helvetica;
+   display: inline;
+}
+
+/* Opções mostradas ao lado do título do cadastro. */
+.linkCadastro {
+   margin-left: 5px;
+   display: inline;
+}
+
+fieldset {
+   margin: 0px;
+   margin-bottom: 3px;
+   background-color: #eeeeee;
+   display: inline-block;
+}
+
+legend {
+   font-weight: bold;
+}
+
+/*******************************************************************************
+ * Tabela de listagem de registros.
+ */
+
+/* Tabela. */
+.tabRegistros {
+   border-spacing: 0px;
+   font-family: Arial;
+   margin-top: 8px;
+}
+
+/* Rótulos da tabela. */
+.tabRegistros th {
+   font-weight: bold;
+   margin: 0px;
+   padding: 3px 7px 3px 7px;
+   text-align: left;
+   color: white;
+   background-color: #27408B;
+}
+
+/* Dados/registros da tabela. */
+.tabRegistros td {
+   margin: 0px;
+   padding: 3px 7px 3px 7px;
+   border-bottom: 1px solid #beb4cb;
+}
+
+/* Linha tipo 1 de tabela de listagem de registros, para efeito zebrar. */
+.l1 {
+   background-color: #f5f5f5;
+}
+
+/* Linha tipo 2 de tabela de listagem de registros, para efeito zebrar. */
+.l2 {
+   background-color: #ffffff;
+}
+
+/* Efeito de destaque da linha atual ao passar o mouse por cima. */
+.tabRegistros tr:hover {
+   background-color: #d2dceb;
+}
+
+/* Célula/link de exclusão de registro ("[ X ]"). */
+.tdExc {
+   text-align: center;
+}
+
+.tdExc a {
+   color: blue;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.tdExc a:hover {
+   color: white;
+   background-color: red;
+}
+
+/* Mensagem padrão de aviso de nenhum registro encontrado. */
+.msgSemRegistro {
+   color: red;
+}
+
+/*******************************************************************************
+ * Tabela contendo formulário de inclusão/alteração de registro.
+ */
+ 
+/* Rótulos de campos de formulário. */
+.tabForm th {
+   text-align: right;
+}
+
+.tabForm textarea {
+   font-family: Arial, Helvetica;
+}
+
+.spnCO {
+	color: red;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12pt;
+}
+
+/*******************************************************************************
+ * Mensagens de aviso sobre o retorno de operações realizadas no banco de dados,
+ * sobre inclusão, alteração e exclusão de registro com sucesso ou com erro.
+ */
+.msgBdSucesso, .msgBdErro {
+   font-family: Arial;
+   font-size: 11pt;
+   font-style: italic;
+   font-weight: bold;
+   padding-top: 4px;
+   padding-bottom: 2px;
+   margin: 0px;
+}
+
+.msgBdSucesso {
+   color: green;
+}
+
+.msgBdErro {
+   color: red;
+}
+
+.msgErroFormulario {
+   color: red;
+   margin: 0px;
+   padding: 0px;
+}
+
+/* Título de cadastro-filho (dentro de abas, por exemplo). */
+.tituloCadastroFilho {
+   margin-top: 8px;
+   margin-bottom: 4px;
+   color: #4f4f4f;
+   font-size: 12pt;
+   font-weight: normal;
+   font-family: Arial, Helvetica;
+   display: inline;
+}
+
+/* Dica sobre campos de formulário. */
+.spnCampoDica {
+   color: gray;
+   font-size: 9pt;
+}
+
+/* Ajuste do alinhamento vertical de rótulos de campos que possuem o texto da dica. */
+.thLabelDica {
+   vertical-align: top;
+   padding-top: 4px;
+}
+
+.btnExcluirBloqueado {
+   color: #999999;
+   cursor: no-drop;
+}
+
+.boxMsgAviso {
+   background-color: #FFFACD;
+   border: 1px solid #FFD700;
+   padding: 10px;
+   margin-bottom: 5px;
+}
+
+.boxMsgAviso p {
+   margin: 0px;
+   padding: 0px;
+   color: #DAA520;
+   font-size: 14px;
+   font-family: Arial, Helvetica;
+}
+
+.spnIndefinido {
+   color: gray;
+   font-style: italic;
+}
+
+.spnColComp {
+   color: gray;
+}
+
+.spnColCompPeq {
+   color: gray;
+   font-size: 8pt;
+}
+
+/* QUADRO DE AVISO VERMELHO PARA O ADMIN */
+.boxMsgAvisoVm {
+   background-color: #ffebe7;
+   border: 1px solid #debab5;
+   padding: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.boxMsgAvisoVm p {
+   margin: 0px;
+   padding: 0px;
+   color: #dd0022;
+   font-size: 14px;
+   font-family: Arial, Helvetica;
+}
+
+/* QUADRO DE AVISO VERDE PARA O ADMIN */
+.boxMsgAvisoVd {
+   background-color: #e7FFEB;
+   border: 1px solid #54de9a;
+   margin: 20px 0px 10px 0px;
+}
+
+.boxMsgAvisoVd p {
+   color: #00BC66;
+   font-size: 14px;
+   font-family: Arial, Helvetica;
+   margin: 4px;
+   padding: 3px;
+}
+
+.lnkBoleto img {
+   border: none;
+}
+
+.boxAmbienteHomologacao {
+   background-color: orange;
+   font-weight: bold;
+   font-size: 12pt;
+   letter-spacing: 200%;
+   padding: 5px;
+   margin-bottom: 5px;
+}
+
+.boxAmbienteDev {
+   background-color: #00FF00;
+   font-weight: bold;
+   font-size: 12pt;
+   letter-spacing: 200%;
+   padding: 5px;
+   margin-bottom: 5px;
+}
+
+.lnkAba {
+   cursor: pointer;
+}
+
+.bar {
+    height: 18px;
+    background: green;
+}
+
+.imgProduto {
+   max-width: 125px;
+   max-height: 75px;
+   width: auto;
+   height: auto;
+}
+
+.spnVinculado {
+	color: blue;
+	cursor: pointer;
+}
+
+.spnVinculado:hover {
+	color: #AA2244
+}
+
+#boxApresentacaoImagens img {
+   width: 100%;
+   height: 100%;
+   max-width: 100px;
+   max-height: 70px;
+   cursor: pointer;
+}
+
+.imgProfessor {
+	width: 150px;
+   height: 150px;
+   border-radius: 150px;
+   -webkit-border-radius: 150px;
+   -moz-border-radius: 150px;
+}
+
+.clientes{
+	width:100%;
+	margin: 40px;
+	display:inline-block;
+}
+	.clientes .title{
+		float:left;
+		width:100%;
+	}
+	.clientes .box{
+		float:left;
+		margin:25px 0 15px;
+		width:100%;
+	}
+		.clientes .box .table{
+			width:100%;
+			display:inline-block;
+		}
+			.clientes .box .table .thead{
+				width:100%;
+				display:inline-block;	
+			}
+				.clientes .box .table .thead .tr{
+					width:100%;
+				}
+			.clientes .box .table.tbody{
+				width:100%;
+				display:inline-block;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

@@ -1,0 +1,9 @@
+body {
+   font-family: arial, verdana, serif;
+   font-size: 10pt;
+}
+
+#boxLogin {
+   width: 400px;
+   margin-top: 60px;
+}

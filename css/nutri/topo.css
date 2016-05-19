@@ -1,0 +1,122 @@
+#bgTopo{
+	width:100%;
+	display:inline-block;
+	background-color:#FF6347;
+	padding: 3px 0;
+}
+	#bgTopo .logo{
+		float:left;
+		width:20%;
+	}
+		#bgTopo .logo a img{
+			width:100px;
+			height:60px;
+			margin-top: 3px;
+    		margin-left: 25px;
+		}
+			#bgTopo .logo a img{}
+	#bgTopo .search{
+		float:left;
+		width:50%;
+		padding:15px 10px
+	}
+		#bgTopo .search input{
+			width: 50%;
+			padding: 10px 10px;
+			border:#FFF;
+			Border-radius:8px;
+		}
+	#bgTopo .hello{
+		float:left;
+		width:20%;
+		margin-top:8px;
+		padding:16px 36px 10px;
+	}
+		#bgTopo .hello p{
+			font-family:OpenSansBold;
+			font-size: 16px;
+			color: #FFF;
+			text-align:right;
+		}
+	#bgTopo .setting{
+		float:left;
+		padding-left: 70px;
+		width:10%;
+		padding:20px 10px 10px;
+	}
+		#bgTopo .setting a{
+			color:#FFF;
+		}
+		#bgTopo .setting #modSetting{
+			position: absolute;
+		    width: 100%;
+		    max-width: 230px;
+		    height: auto;
+		    top: 15px;
+		    right: 20px;
+		    display: none;
+		    z-index: 120;
+		}
+			#bgTopo .setting #modSetting .modal-setting{
+			    position: relative;
+			    width: 100%;
+			    height: auto;
+			    clear: right;
+			}
+				#bgTopo .setting #modSetting .modal-setting .top{
+					float:left;
+					width:100%;
+					padding:10px 12px 0;
+					background-color:#454545;
+				}
+					#bgTopo .setting a{
+						color:#FFF;
+					}
+						#bgTopo .setting a.btFechar{
+						    float: left;
+						    padding: 1px 6px;
+						    border: 1px solid transparent;
+						    border-radius: 5px;
+						    -moz-border-radius: 5px;
+						    -webkit-border-radius: 5px;
+						    font-family: 'OpenSansLight';
+						    font-size: 16px;
+						    color: #FFF;
+						    display: block;
+						}
+						#bgTopo .setting a img{
+							width: 30px;
+							height:30px;
+						}
+					#bgTopo .setting p{		
+						width:75%;
+						display:inline-block;
+										
+						text-align:center;					
+						color:#FFF;
+					}
+				#bgTopo .setting #modSetting .modal-setting .bottom{
+					float:left;
+					width:100%;
+					background-color:#787878;
+				}
+					#bgTopo .setting #modSetting .modal-setting .bottom .box{
+						display: inline-block;
+					    width: 100%;
+					    padding: 8px 26px 0px;
+					}
+						#bgTopo .setting #modSetting .modal-setting .bottom .box ul{
+							margin-bottom:0;
+							-webkit-padding-start: 0px;
+						}
+							#bgTopo .setting #modSetting .modal-setting .bottom .box ul li{
+								width:100%;
+								padding:15px 0;
+								display:inline-block;
+							}
+								#bgTopo .setting #modSetting .modal-setting .bottom .box ul li a{
+									color#FFF;
+								    text-align: center;
+								    display: inline-block;
+								    width: 100%;
+								}

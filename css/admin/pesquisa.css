@@ -1,0 +1,25 @@
+.fieldsetPesquisa {
+   padding: 0px;
+   padding-bottom: 3px;
+   margin: 0px;
+   background-color: #eeeeee;
+   display: inline-block;
+}
+
+.fieldsetPesquisa legend {
+   font-weight: bold;
+}
+
+/* Label com margem esquerda para espaçamento */
+.lblME {
+   margin-left: 20px;
+}
+
+/* Texto informativo sobre os filtros de pesquisa das listagens de de registros. */
+.parInfoPesquisa {
+   color: green;
+}
+
+.btnPqPesquisa  {
+   font-weight: bold;
+}
