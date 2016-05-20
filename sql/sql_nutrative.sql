@@ -77,6 +77,8 @@ CREATE TABLE IF NOT EXISTS cliente (
   ativo enum('S', 'N') NOT NULL,
   altura decimal(3,2) NULL,
   peso decimal(3, 2) NULL,
+  login varchar(80) NOT NULL,
+  senha varchar(30) NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idcliente)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
