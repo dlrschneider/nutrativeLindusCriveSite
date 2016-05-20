@@ -38,7 +38,7 @@
 
 <body>
 <header id="bgTopo" class="conteudo">
-	<div class="content">
+	<div class="container">
 		<div class="left">
 			<div class="logo">
 				<img src="img/site/layout/logop.png" alt="">
@@ -70,7 +70,7 @@
 							<div class="input-login">
 								<input type="text" name="senha" id="senha" placeholder="Senha">
 							</div>
-							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 verde">Cadastrar</a>
+							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao laranja">Cadastrar</a>
 						</form>
 					</div>
 				</div>

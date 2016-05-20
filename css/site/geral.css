@@ -118,10 +118,10 @@
 
 .btPadrao{
 	padding: 12px 25px;
-	border-radius:20px;
-		-webkit-border-radius:20px;
-		-moz-border-radius:20px;
-		-o-border-radius:20px;
+	border-radius:10px;
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		-o-border-radius:10px;
 	display:inline-block;
 		
 	font-family:OpenSans;
@@ -137,8 +137,8 @@
 		color:#FFF;
 	}
 		.btPadrao.transparente:hover{background-color:#ecc1d6;}
-	.btPadrao.laranja{background-color:#ca4a7e;color: #FFF;}
-		.btPadrao.laranja:hover{background-color:#b73e6f;color: #FFF;}
+	.btPadrao.laranja{background-color:#F77E2D;color: #FFF;}
+		.btPadrao.laranja:hover{background-color:#FF7112;color: #FFF;}
 
 /* FORMs */
 .inputPadrao{
@@ -160,6 +160,9 @@ h1{font-size:18px;}
 h2{font-size:16px;}
 h3{font-size:14px;}
 
+a{
+	color:#454545;
+}
 .title{
 	display:inline-block;
 	width:100%;
@@ -278,8 +281,8 @@ h3{font-size:14px;}
                     display:block;
                 }
                     #bgTopo .right .login #modLogin .btFechar:hover{
-                        background-color:#5ec64e;
-                        border:1px solid #5ec64e;
+                        background-color:#f77e2d;
+                        border:1px solid #f77e2d;
                         color:#fff;
                     }
                 #bgTopo .right .login #modLogin .modal-login{
@@ -308,7 +311,6 @@ h3{font-size:14px;}
 
 #bgMain{}
 #bgMain .nutrition{
-	background:url('img/site/layout/banner2.png') center;
 	display: inline-block;
     height: 186px;
     width: 100%;

@@ -36,9 +36,6 @@
 			<div class="logo">
 				<a href=""><img alt="" src="img/nutri/layout/logo-branco.png"></a>
 			</div>
-			<div class="search">
-				<input type="text" placeholder="Pesquisar...">
-			</div>
 			<div class="hello">
 				<p>Olá Alessandra!</p>
 			</div>

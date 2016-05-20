@@ -6,7 +6,7 @@
 }
 	#bgTopo .logo{
 		float:left;
-		width:20%;
+		width:70%;
 	}
 		#bgTopo .logo a img{
 			width:100px;
@@ -15,17 +15,6 @@
     		margin-left: 25px;
 		}
 			#bgTopo .logo a img{}
-	#bgTopo .search{
-		float:left;
-		width:50%;
-		padding:15px 10px
-	}
-		#bgTopo .search input{
-			width: 50%;
-			padding: 10px 10px;
-			border:#FFF;
-			Border-radius:8px;
-		}
 	#bgTopo .hello{
 		float:left;
 		width:20%;
@@ -68,6 +57,12 @@
 					width:100%;
 					padding:10px 12px 0;
 					background-color:#454545;
+					border-top-left-radius: 10px;
+					border-top-right-radius: 10px;
+						-webkit-border-top-left-radius: 10px;
+						-webkit-border-top-right-radius: 10px;
+						-moz-border-radius-topleft: 10px;
+						-moz-border-radius-topright: 10px;
 				}
 					#bgTopo .setting a{
 						color:#FFF;
@@ -99,6 +94,12 @@
 					float:left;
 					width:100%;
 					background-color:#787878;
+					border-bottom-right-radius: 10px;
+					border-bottom-left-radius: 10px;
+						-webkit-border-bottom-right-radius: 10px;
+						-webkit-border-bottom-left-radius: 10px;
+						-moz-border-radius-bottomright: 10px;
+						-moz-border-radius-bottomleft: 10px;
 				}
 					#bgTopo .setting #modSetting .modal-setting .bottom .box{
 						display: inline-block;

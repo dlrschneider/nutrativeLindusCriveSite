@@ -82,7 +82,7 @@
 				    </div>
 				</div>
 				
-				<button class="btn btn-success col-sm-offset-2">Cadastrar</button>
+				<a class="btPadrao laranja">Cadastrar</a>
 			</form>
 		</section>
 	</main>
