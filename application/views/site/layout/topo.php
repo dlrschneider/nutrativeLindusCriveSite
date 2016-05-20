@@ -9,10 +9,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="Nutrative" />
 
-	<!-- Style -->
-	<link rel="stylesheet" href="../css/estilo.css" type="text/css" />
-	<link rel="stylesheet" href="../css/reset.css" type="text/css" />
-	
+	<!-- Style -->	
 	<meta property="fb:app_id" content="123456" />
 	<meta property="og:title" content="nutrative" />
 	<meta property="og:type" content="website" />
@@ -54,7 +51,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="right">
+		<div class="right"> 
 			<div class="login">
 				<a href="javascript: modalLogin();"><img src="img/site/layout/login.png" alt="" class="icon"></a>
 				<div id="modLogin">
@@ -65,12 +62,13 @@
 						</div>
 						<form action="" method="POST" target="_blank">
 							<div class="input-login">
-								<input type="text" name="email" id="email" placeholder="E-mail">
+								<input type="text" name="login" id="login" placeholder="Login">
 							</div>
 							<div class="input-login">
 								<input type="text" name="senha" id="senha" placeholder="Senha">
 							</div>
-							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao laranja">Cadastrar</a>
+							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 laranja">Entrar</a>
+							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 cinza">Inscreva-se</a>
 						</form>
 					</div>
 				</div>
