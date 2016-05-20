@@ -129,6 +129,20 @@
 	font-size:1em;
 	text-align: center;
 }
+.btPadrao2{
+	padding: 10px 25px;
+	width:100%;
+	border-radius:10px;
+		-webkit-border-radius:10px;
+		-moz-border-radius:10px;
+		-o-border-radius:10px;
+	display:inline-block;
+		
+	font-family:OpenSans;
+	color:#ca4a7e;
+	font-size:1em;
+	text-align: center;
+}
 	.btPadrao.branco{background-color:#FFF;}
 		.btPadrao.branco:hover{background-color:#ecc1d6; color: #FFF;}
 	.btPadrao.transparente{
@@ -137,10 +151,12 @@
 		color:#FFF;
 	}
 		.btPadrao.transparente:hover{background-color:#ecc1d6;}
-	.btPadrao.laranja{background-color:#F77E2D;color: #FFF;}
-		.btPadrao.laranja:hover{background-color:#FF7112;color: #FFF;}
-
-/* FORMs */
+	.btPadrao2.laranja{background-color:#FF7112;color: #FFF;}
+		.btPadrao2.laranja:hover{background-color:#FF9A47;color: #FFF;}
+	.btPadrao2.cinza{background-color:#454545;color: #C8C9C9;}
+		.btPadrao2.cinza:hover{background-color:#A2A2A2;color: #454545;}
+   
+/* FORMs */ 
 .inputPadrao{
     padding: 8px 5px;
     border: 3px solid #c4d1d5;
@@ -295,7 +311,7 @@ a{
                         float: left;
                         width: 100%;
                         margin-top: 4px;
-                        padding: 6px 10px;
+                        padding: 8px 10px;
                         background-color: #fff;
                         border: 1px solid #CECECE;
                         border-radius: 5px;
@@ -304,10 +320,8 @@ a{
                         -moz-border-radius: 5px;
                         display: inline-block;
                     }
-                #bgTopo .right .login #modLogin .btPadrao{
-                    float:right;
-                    margin-top:8px;
-                }
+               #bgTopo .right .login #modLogin .modal-login form a:first-child{margin-top:0;}
+                #bgTopo .right .login #modLogin .modal-login form a{margin-top:10px;}
 
 #bgMain{}
 #bgMain .nutrition{
