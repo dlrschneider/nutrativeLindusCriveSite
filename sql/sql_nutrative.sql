@@ -13,9 +13,9 @@ CREATE TABLE IF NOT EXISTS alimento (
   idalimento int(9) NOT NULL AUTO_INCREMENT,
   idcategoria int(9) NULL,
   nome varchar(150) NOT NULL,
-  carboidrato decimal(2,2) NOT NULL,
-  proteina decimal(2,2) NOT NULL,
-  lipidio decimal(2,2) NOT NULL,
+  carboidrato decimal(6,2) NOT NULL,
+  proteina decimal(6,2) NOT NULL,
+  lipidio decimal(6,2) NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idalimento)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
@@ -25,7 +25,7 @@ ALTER TABLE alimento ADD CONSTRAINT alimento_fk_categoria FOREIGN KEY (idcategor
 CREATE TABLE IF NOT EXISTS dieta (
   iddieta int(9) NOT NULL AUTO_INCREMENT,
   idnutricionista int(9) NOT NULL,
-  caloria decimal(4,2),
+  caloria decimal(6,2),
   ativo enum('S', 'N'), 
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (iddieta)
@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS cliente (
   data_nascimento DATE NOT NULL,
   ativo enum('S', 'N') NOT NULL,
   altura decimal(3,2) NULL,
-  peso decimal(3, 2) NULL,
-  login varchar(80) NOT NULL,
-  senha varchar(30) NOT NULL,
+  peso decimal(5, 2) NULL,
+  fatorDeAtividade decimal(2, 1) NULL,
+  sexo enum('H', 'M') NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idcliente)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
@@ -93,5 +93,15 @@ data       blob DEFAULT '' NOT NULL,
 primary key (id),
 key ci_sessions_timestamp (timestamp)
 ) engine=innodb default charset=latin1 collate=latin1_general_ci;
+
+create table noticia (
+idNoticia int(9) NOT NULL,
+idNutricionista int(9) NOT NULL,
+nomeNutricionista varchar(255) NOT NULL,
+tituloNoticia varchar(150) NOT NULL,
+descricaoNoticia varchar(1000) NOT NULL,
+data_cadastro datetime NOT NULL,
+primary key (idnoticia)
+)
 
 alter table sessao add constraint ci_sessions_id_ip unique (id, ip_address);
