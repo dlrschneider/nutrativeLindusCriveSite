@@ -323,11 +323,16 @@ a{
                #bgTopo .right .login #modLogin .modal-login form a:first-child{margin-top:0;}
                 #bgTopo .right .login #modLogin .modal-login form a{margin-top:10px;}
 
-#bgMain{}
-#bgMain .nutrition{
-	display: inline-block;
-    height: 186px;
+#bgMain{
     width: 100%;
+    margin-top: -5px;
+    display: inline-block;
+}
+#bgMain .nutrition{
+    width: 100%;
+    background: url('../../img/site/layout/banner1.png');
+    height:186px;
+	display: inline-block;
 }
 
 #bgRodape{

@@ -1,8 +1,8 @@
 	<main role="main">
 		<section id="bgMain">
-			<div class="container">
-				<div class="nutrition">
-					<img src="img/site/layout/banner1.png" alt="">
+			<div class="nutrition">
+				<div class="container">
+					
 				</div>
 			</div>
 		</section>
