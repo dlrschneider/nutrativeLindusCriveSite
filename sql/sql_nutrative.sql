@@ -1,6 +1,38 @@
 -- ***
 -- TABELA CATEGORIA
 
+CREATE TABLE IF NOT EXISTS nutricionista (
+  idnutricionista int(9) NOT NULL AUTO_INCREMENT,
+  nome varchar(255) NOT NULL,
+  cnpj varchar(14) NOT NULL,
+  email varchar(80) NOT NULL,
+  estado varchar(60) NOT NULL,
+  cidade varchar(80) NOT NULL,
+  bairro varchar(80) NOT NULL,
+  complemento varchar(100) NULL,
+  ativo enum('S', 'N') NOT NULL,
+  login varchar(80) NOT NULL,
+  senha varchar(30) NOT NULL,
+  data_cadastro datetime NOT NULL,
+  PRIMARY KEY (idnutricionista)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+CREATE TABLE IF NOT EXISTS cliente (
+  idcliente int(9) NOT NULL AUTO_INCREMENT,
+  idnutricionista int(9) NOT NULL,
+  nome varchar(120) NOT NULL,
+  data_nascimento DATE NOT NULL,
+  ativo enum('S', 'N') NOT NULL,
+  altura decimal(3,2) NULL,
+  peso decimal(5, 2) NULL,
+  fatorDeAtividade decimal(2, 1) NULL,
+  sexo enum('H', 'M') NOT NULL,
+  data_cadastro datetime NOT NULL,
+  PRIMARY KEY (idcliente)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+ALTER TABLE cliente ADD CONSTRAINT cliente_fk_nutricionista FOREIGN KEY (idnutricionista) REFERENCES nutricionista (idnutricionista) ON DELETE CASCADE;
+
 CREATE TABLE IF NOT EXISTS categoria (
   idcategoria int(9) NOT NULL AUTO_INCREMENT,
   nome varchar(150) NOT NULL,
@@ -13,9 +45,9 @@ CREATE TABLE IF NOT EXISTS alimento (
   idalimento int(9) NOT NULL AUTO_INCREMENT,
   idcategoria int(9) NULL,
   nome varchar(150) NOT NULL,
-  carboidrato decimal(2,2) NOT NULL,
-  proteina decimal(2,2) NOT NULL,
-  lipidio decimal(2,2) NOT NULL,
+  carboidrato decimal(6,2) NOT NULL,
+  proteina decimal(6,2) NOT NULL,
+  lipidio decimal(6,2) NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idalimento)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
@@ -25,7 +57,7 @@ ALTER TABLE alimento ADD CONSTRAINT alimento_fk_categoria FOREIGN KEY (idcategor
 CREATE TABLE IF NOT EXISTS dieta (
   iddieta int(9) NOT NULL AUTO_INCREMENT,
   idnutricionista int(9) NOT NULL,
-  caloria decimal(4,2),
+  caloria decimal(6,2),
   ativo enum('S', 'N'), 
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (iddieta)
@@ -53,36 +85,6 @@ CREATE TABLE IF NOT EXISTS dieta_historico (
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_dieta FOREIGN KEY (iddieta) REFERENCES dieta (iddieta) ON DELETE CASCADE;
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
-CREATE TABLE IF NOT EXISTS nutricionista (
-  idnutricionista int(9) NOT NULL AUTO_INCREMENT,
-  nome varchar(255) NOT NULL,
-  cnpj varchar(14) NOT NULL,
-  email varchar(80) NOT NULL,
-  estado varchar(60) NOT NULL,
-  cidade varchar(80) NOT NULL,
-  bairro varchar(80) NOT NULL,
-  complemento varchar(100) NULL,
-  ativo enum('S', 'N') NOT NULL,
-  login varchar(80) NOT NULL,
-  senha varchar(30) NOT NULL,
-  data_cadastro datetime NOT NULL,
-  PRIMARY KEY (idnutricionista)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
-CREATE TABLE IF NOT EXISTS cliente (
-  idcliente int(9) NOT NULL AUTO_INCREMENT,
-  idnutricionista int(9) NOT NULL,
-  nome varchar(120) NOT NULL,
-  data_nascimento DATE NOT NULL,
-  ativo enum('S', 'N') NOT NULL,
-  altura decimal(3,2) NULL,
-  peso decimal(3, 2) NULL,
-  data_cadastro datetime NOT NULL,
-  PRIMARY KEY (idcliente)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
-ALTER TABLE cliente ADD CONSTRAINT cliente_fk_nutricionista FOREIGN KEY (idnutricionista) REFERENCES nutricionista (idnutricionista) ON DELETE CASCADE;
-
 create table sessao (
 id         varchar(40) NOT NULL,
 ip_address varchar(45) NOT NULL,
@@ -91,5 +93,15 @@ data       blob DEFAULT '' NOT NULL,
 primary key (id),
 key ci_sessions_timestamp (timestamp)
 ) engine=innodb default charset=latin1 collate=latin1_general_ci;
+
+create table noticia (
+idNoticia int(9) NOT NULL,
+idNutricionista int(9) NOT NULL,
+nomeNutricionista varchar(255) NOT NULL,
+tituloNoticia varchar(150) NOT NULL,
+descricaoNoticia varchar(1000) NOT NULL,
+data_cadastro datetime NOT NULL,
+primary key (idnoticia)
+)
 
 alter table sessao add constraint ci_sessions_id_ip unique (id, ip_address);
