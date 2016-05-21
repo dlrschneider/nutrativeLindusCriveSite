@@ -85,23 +85,25 @@ CREATE TABLE IF NOT EXISTS dieta_historico (
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_dieta FOREIGN KEY (iddieta) REFERENCES dieta (iddieta) ON DELETE CASCADE;
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
-create table sessao (
-id         varchar(40) NOT NULL,
-ip_address varchar(45) NOT NULL,
-timestamp  int(10) unsigned DEFAULT 0 NOT NULL,
-data       blob DEFAULT '' NOT NULL,
-primary key (id),
-key ci_sessions_timestamp (timestamp)
+CREATE TABLE noticia (
+	idnoticia int(9) NOT NULL,
+	idnutricionista int(9) NOT NULL,
+	titulo varchar(150) NOT NULL,
+	descricao TEXT NOT NULL,
+	imagem varchar(255) NOT NULL,
+	data_cadastro datetime NOT NULL,
+	primary key (idnoticia)
 ) engine=innodb default charset=latin1 collate=latin1_general_ci;
 
-create table noticia (
-idNoticia int(9) NOT NULL,
-idNutricionista int(9) NOT NULL,
-nomeNutricionista varchar(255) NOT NULL,
-tituloNoticia varchar(150) NOT NULL,
-descricaoNoticia varchar(1000) NOT NULL,
-data_cadastro datetime NOT NULL,
-primary key (idnoticia)
-)
+ALTER TABLE noticia ADD CONSTRAINT noticia_fk_nutricionista FOREIGN KEY (idnutricionista) REFERENCES nutricionista (idnutricionista) ON DELETE CASCADE;
+
+create table sessao (
+	id         varchar(40) NOT NULL,
+	ip_address varchar(45) NOT NULL,
+	timestamp  int(10) unsigned DEFAULT 0 NOT NULL,
+	data       blob DEFAULT '' NOT NULL,
+	primary key (id),
+	key ci_sessions_timestamp (timestamp)
+) engine=innodb default charset=latin1 collate=latin1_general_ci;
 
 alter table sessao add constraint ci_sessions_id_ip unique (id, ip_address);

@@ -95,6 +95,7 @@ class MY_Controller extends CI_Controller {
    	}
    
    	$this->topo($tipo);
+   	$this->load->view('nutri/layout/lateral', $this->view);
    	$this->load->view("{$tipo}/conteudo/{$pagina}\$view.php", $this->view);
    	$this->rodape($tipo);
    }

@@ -82,8 +82,11 @@
 				    </div>
 				</div>
 				
-				<a class="btPadrao laranja">Cadastrar</a>
+				<div class="form-group">
+					<div class="col-sm-2 col-sm-offset-2">
+						<button class="btPadrao2 laranja">Cadastrar</button>
+					</div>
+				</div>
 			</form>
 		</section>
 	</main>
-</div>

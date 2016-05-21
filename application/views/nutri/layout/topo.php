@@ -16,8 +16,6 @@
    <link type="text/css" rel="stylesheet" href="css/nutri/geral.css">
    <link type="text/css" rel="stylesheet" href="css/nutri/topo.css">
    <link type="text/css" rel="stylesheet" href="css/nutri/lateral.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/clientes.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/pesquisa.css">
    <?=$htmlCss;?>
 
    <!-- JS VENDOR -->

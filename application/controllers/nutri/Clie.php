@@ -29,6 +29,8 @@ class Clie extends MY_Controller {
     * @return void
     */
    public function index() {
+   	  $this->viewTopo->css = array('css/nutri/clientes.css', 'css/nutri/pesquisa.css');
+   	  
       $this->view->msgExclusao = $this->session->flashdata('msgExclusao');
       $this->view->listaClie = $this->clieModel->carregaTodos();
       $this->view->listaClie_qtdeReg = count($this->view->listaClie);
@@ -54,6 +56,7 @@ class Clie extends MY_Controller {
       $this->view->msgErroForm = $this->session->flashdata('msgErroForm');
       
       $this->topo('nutri');
+      $this->load->view('nutri/layout/lateral', $this->view);
       $this->load->view('nutri/conteudo/clie$form.php', $this->view);
       $this->rodape('nutri');
    }
