@@ -23,7 +23,7 @@ class Login extends MY_Controller {
       try {
       	$nutr = $this->nutrModel->carregaNutricionistaLogin($login, $senha);
       	
-      	$this->iniciaSessao();
+      	$this->iniciaSessaoNutri();
       	 
       	log_message('user', "Nutricionista logado ");
       	 
@@ -31,11 +31,11 @@ class Login extends MY_Controller {
       } catch (Exception $e) {
       	// não encontrou a nutricionista
       }
-      
+
       try {
-      	$clie = $this->clieModel->carregaCliente($login, $senha);
+      	$clie = $this->clieModel->carregaClienteLogin($login, $senha);
       	 
-      	$this->iniciaSessao();
+      	$this->iniciaSessaoClie();
       	
       	log_message('user', "Nutricionista logado ");
       	
@@ -52,10 +52,11 @@ class Login extends MY_Controller {
       redirect('site/inicio');
    }
    
-   protected function iniciaSessao() {
-      $this->session->set_userdata('ADMIN_login', TRUE);
-      
-      //$this->session->set_userdata('pesqProd', new PesquisaProduto());
-      //$this->session->set_userdata('pesqClie', new PesquisaCliente());
+   private function iniciaSessaoNutri() {
+      $this->session->set_userdata('NUTRI_login', TRUE);
+   }
+
+   private function iniciaSessaoClie() {
+      $this->session->set_userdata('CLIE_login', TRUE);
    }
 }

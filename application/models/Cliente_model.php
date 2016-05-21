@@ -48,4 +48,19 @@ class Cliente_model extends MY_Model {
       'ativo'           => $clie->ativo,
       'data_cadastro'   => $clie->dataCadastro);
    }
+
+   /**
+    * Carrega um cliente a partir do login e senha
+    * @param string $login
+    * @param string $senha
+    */
+   public function carregaClienteLogin($login, $senha) {
+   	$sel = "select id{$this->tableName} "
+   	. "from {$this->tableName} "
+   	. "where login = '{$login}' and senha = '{$senha}'";
+   	$rs = $this->db->query($sel);
+   	$reg = $rs->row_array();
+   
+   	return $this->carrega($reg["id{$this->tableName}"]);
+   }
 }

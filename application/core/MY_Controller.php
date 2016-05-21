@@ -25,16 +25,15 @@ class MY_Controller extends CI_Controller {
     * @param boolean $validaLogin Se precisa verificar o login
     * @return void
     */
-   public function __construct($validaLogin = TRUE) {
+   public function __construct() {
       parent::__construct();
 
-      if ($this->uri->segment(1) == 'admin') {
-      	if ($validaLogin && !$this->session->userdata('ADMIN_login')) {
-      	   log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
-      	   redirect('admin/login');
-      	}
-      } else {
-      	// Carrega coisas do site....
+      if ($this->uri->segment(1) == 'nutri' && !$this->session->userdata('NUTRI_login')) {
+         log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
+         redirect('site/inicio');
+      } else if ($this->uri->segment(1) == 'cliente' && !$this->session->userdata('CLIE_login')) {
+         log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
+         redirect('site/inicio');
       }
       
       $this->viewTopo = new stdClass();

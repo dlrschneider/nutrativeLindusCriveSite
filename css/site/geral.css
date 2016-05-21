@@ -132,6 +132,7 @@
 .btPadrao2{
 	padding: 10px 25px;
 	width:100%;
+	border: 0px solid transparent;
 	border-radius:10px;
 		-webkit-border-radius:10px;
 		-moz-border-radius:10px;
@@ -320,8 +321,8 @@ a{
                         -moz-border-radius: 5px;
                         display: inline-block;
                     }
-               #bgTopo .right .login #modLogin .modal-login form a:first-child{margin-top:0;}
-                #bgTopo .right .login #modLogin .modal-login form a{margin-top:10px;}
+               #bgTopo .right .login #modLogin .modal-login form a{margin-top:10px;}
+                #bgTopo .right .login #modLogin .modal-login form button{margin-top:10px;}
 
 #bgMain{}
 #bgMain .nutrition{

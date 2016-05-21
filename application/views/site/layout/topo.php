@@ -60,14 +60,14 @@
 							<p>Acessar sua conta</p>
 							<a href="javascript: modalLogin();" class="btFechar">X</a>
 						</div>
-						<form action="" method="POST" target="_blank">
+						<form action="<?=base_url();?>index.php/site/login/action" method="POST">
 							<div class="input-login">
 								<input type="text" name="login" id="login" placeholder="Login">
 							</div>
 							<div class="input-login">
-								<input type="text" name="senha" id="senha" placeholder="Senha">
+								<input type="password" name="senha" id="senha" placeholder="Senha">
 							</div>
-							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 laranja">Entrar</a>
+							<button class="btPadrao2 laranja">Entrar</button>
 							<a href="<?=base_url();?>index.php/site/cadastro" class="btPadrao2 cinza">Inscreva-se</a>
 						</form>
 					</div>

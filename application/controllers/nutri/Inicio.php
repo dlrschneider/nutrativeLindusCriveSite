@@ -13,7 +13,8 @@ class Inicio extends MY_Controller {
 	 */
 	public function index() {
 	   $this->topo('nutri');
-	   $this->load->view('admin/conteudo/', $this->view);
+	   $this->load->view('nutri/layout/lateral', $this->view);
+	   $this->load->view('nutri/conteudo/inicio$index', $this->view);
 	   $this->rodape('nutri');
 	}
 
