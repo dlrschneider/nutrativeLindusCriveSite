@@ -41,8 +41,8 @@
 		    width: 100%;
 		    max-width: 230px;
 		    height: auto;
-		    top: 15px;
-		    right: 20px;
+		    top: 24px;
+		    right: 88px;
 		    display: none;
 		    z-index: 120;
 		}
@@ -68,7 +68,7 @@
 						color:#FFF;
 					}
 						#bgTopo .setting a.btFechar{
-						    float: left;
+						    float: right;
 						    padding: 1px 6px;
 						    border: 1px solid transparent;
 						    border-radius: 5px;

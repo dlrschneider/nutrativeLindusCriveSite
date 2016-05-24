@@ -6,7 +6,10 @@ function excluiClie(id) {
 }
 </script>
 <div id="containerConteudo" class="container">
-	<div class="clientes">
+	<div id="filtro">
+		<input type="text" class="inputPadrao">
+	</div>
+	<div id="clientes">
 		<div class="title">
 			<h2><?=tituloCadastro('Clientes', $listaClie_qtdeReg);?></h2>
 			<p class="linkCadastro"><?=botaoLocation('btNovoRegistro', 'Novo cliente', 'nutri/clie/form');?></p>

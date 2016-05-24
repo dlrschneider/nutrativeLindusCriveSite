@@ -126,6 +126,22 @@ legend {
 	font-size: 12pt;
 }
 
+/* FORMS: */
+.inputPadrao{
+    padding: 8px 5px;
+    border: 3px solid #c4d1d5;
+    border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -o-border-radius: 5px;
+    font-size: 1em;
+   display: inline-block;
+    color: #00AAC7;
+}
+   .inputPeq{width:142px;}
+   .inputMed{width:222px;}
+   .inputGra{width:302px;}
+
 /*******************************************************************************
  * Mensagens de aviso sobre o retorno de operações realizadas no banco de dados,
  * sobre inclusão, alteração e exclusão de registro com sucesso ou com erro.
@@ -306,32 +322,32 @@ legend {
    -moz-border-radius: 150px;
 }
 
-.clientes{
+#cliente{
 	width:100%;
 	margin: 40px;
 	display:inline-block;
 }
-	.clientes .title{
+	#cliente .title{
 		float:left;
 		width:100%;
 	}
-	.clientes .box{
+	#cliente .box{
 		float:left;
 		margin:25px 0 15px;
 		width:100%;
 	}
-		.clientes .box .table{
+		#cliente .box .table{
 			width:100%;
 			display:inline-block;
 		}
-			.clientes .box .table .thead{
+			#cliente .box .table .thead{
 				width:100%;
 				display:inline-block;	
 			}
-				.clientes .box .table .thead .tr{
+				#cliente .box .table .thead .tr{
 					width:100%;
 				}
-			.clientes .box .table.tbody{
+			#cliente .box .table.tbody{
 				width:100%;
 				display:inline-block;
 			}
