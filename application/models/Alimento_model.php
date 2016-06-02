@@ -26,12 +26,10 @@ class Alimento_model extends MY_Model {
       $alim = new Alimento();
       
       $alim->idAlimento      = $reg['idalimento'];
-      $alim->idCategoria     = $reg['idcategoria'];
       $alim->nome            = $reg['nome'];
       $alim->carboidrato     = $reg['carboidrato'];
 	  $alim->proteina        = $reg['proteina'];
 	  $alim->lipidio         = $reg['lipidio'];
-      $alim->ativo           = $reg['ativo'];
       $alim->dataCadastro    = $reg['data_cadastro'];
       
       return $alim;
@@ -45,13 +43,32 @@ class Alimento_model extends MY_Model {
    public function mapObj2Array(Alimento $alim) {
       return array(
       'idalimento'      => $alim->idAlimento,
-      'idcategoria'     => $alim->idCategoria,
       'nome'     		=> $alim->nome,
 	  'carboidrato'     => $alim->carboidrato,
 	  'proteina'     	=> $alim->proteina,
 	  'lipidio'  		=> $alim->lipidio,
-      'data_nascimento' => $alim->dataNascimento,
-      'ativo'           => $alim->ativo,
       'data_cadastro'   => $alim->dataCadastro);
+   }
+   
+   /**
+    * Recupera os alimentos conforme a busca realizada
+    * @param int $idDieta
+    * @param string $busca
+    * @return array
+    */
+   public function carregaAlimentosBusca($idDieta, $busca) {
+	   	$sel = "select * "
+	   	. "from alimento "
+	   	. "where nome like '%{$busca}%' "
+	    . "and idalimento not in (select idalimento from dieta_alimento where iddieta = {$idDieta})"
+	    . "order by nome";
+	   	$rs = $this->db->query($sel);
+	   	$lista = array();
+	   	 
+	   	foreach ($rs->result_array() as $reg) {
+	   	   $lista[] = $this->carrega($reg["id{$this->tableName}"]);
+	   	}
+	   	 
+	   	return $lista;
    }
 }

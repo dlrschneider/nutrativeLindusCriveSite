@@ -13,7 +13,8 @@
 							<ul>
 								<li><a href="<?=base_url();?>index.php/nutri/Inicio">Dashboard</a></li>
 								<li><a href="<?=base_url();?>index.php/nutri/Clie">Clientes</a></li>
-								<li><a href="index.php/nutri/dietas.php">Dietas</a></li>
+								<li><a href="index.php/nutri/diet">Dietas</a></li>
+								<li><a href="index.php/nutri/noti">Notícias</a></li>
 							</ul>
 						</div>
 					</div>

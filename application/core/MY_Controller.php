@@ -28,7 +28,7 @@ class MY_Controller extends CI_Controller {
    public function __construct() {
       parent::__construct();
 
-      if ($this->uri->segment(1) == 'nutri' && !$this->session->userdata('NUTRI_login')) {
+      if ($this->uri->segment(1) == 'nutri' && !$this->session->userdata('NUTRI_login') instanceof Nutricionista) {
          log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
          redirect('site/inicio');
       } else if ($this->uri->segment(1) == 'cliente' && !$this->session->userdata('CLIE_login')) {

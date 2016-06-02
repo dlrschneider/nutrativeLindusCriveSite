@@ -69,6 +69,13 @@ require APPPATH . 'libraries/sistema/exception/NegocioException.php';
 // CLASSES DE NEGÓCIO
 require APPPATH . 'libraries/negocio/Nutricionista.php';
 require APPPATH . 'libraries/negocio/Cliente.php';
+require APPPATH . 'libraries/negocio/Anotacao.php';
+require APPPATH . 'libraries/negocio/Noticia.php';
+require APPPATH . 'libraries/negocio/Alimento.php';
+require APPPATH . 'libraries/negocio/Dieta.php';
+require APPPATH . 'libraries/negocio/DietaAlimento.php';
+require APPPATH . 'libraries/negocio/DietaHistorico.php';
+
 
 // CLASSES DE SISTEMA
 require APPPATH . 'libraries/sistema/MensagemSite.php';
@@ -143,4 +150,10 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
 'Nutricionista_model' => 'nutrModel',
-'Cliente_model' => 'clieModel');
+'Cliente_model' => 'clieModel',
+'Anotacao_model' => 'anotModel',
+'Noticia_model' => 'notiModel',
+'Alimento_model' => 'alimModel',
+'Dieta_model' => 'dietModel',
+'Dieta_alimento_model' => 'dialModel',
+'Dieta_historico_model' => 'dihiModel');

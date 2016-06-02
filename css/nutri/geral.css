@@ -5,6 +5,7 @@ body {
 }
 
 #containerConteudo {
+	float: left;
    min-height: 400px;
 }
 
@@ -306,38 +307,38 @@ legend {
    -moz-border-radius: 150px;
 }
 
-.clientes{
+.conteudoListagem{
 	width:100%;
 	margin: 40px;
 	display:inline-block;
 }
-	.clientes .title{
+	.conteudoListagem .title{
 		float:left;
 		width:100%;
 	}
-	.clientes .box{
+	.conteudoListagem .box{
 		float:left;
 		margin:25px 0 15px;
 		width:100%;
 	}
-		.clientes .box .table{
+		.conteudoListagem .box .table{
 			width:100%;
 			display:inline-block;
 		}
-			.clientes .box .table .thead{
+			.conteudoListagem .box .table .thead{
 				width:100%;
-				display:inline-block;	
 			}
-				.clientes .box .table .thead .tr{
+				.conteudoListagem .box .table .thead .tr{
 					width:100%;
 				}
-			.clientes .box .table.tbody{
+			.conteudoListagem .box .table.tbody{
 				width:100%;
-				display:inline-block;
 			}
 			
 			
-			
+.clear {
+	clear: both;
+} 
 			
 			
 			

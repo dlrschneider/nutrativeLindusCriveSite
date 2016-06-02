@@ -6,7 +6,7 @@ function excluiClie(id) {
 }
 </script>
 <div id="containerConteudo" class="container">
-	<div class="clientes">
+	<div class="conteudoListagem">
 		<div class="title">
 			<h2><?=tituloCadastro('Clientes', $listaClie_qtdeReg);?></h2>
 			<p class="linkCadastro"><?=botaoLocation('btNovoRegistro', 'Novo cliente', 'nutri/clie/form');?></p>
@@ -19,6 +19,7 @@ function excluiClie(id) {
 		                <th>Nome</th>
 		                <th>Ativo</th>
 						<th>Data Cadastro</th>
+						<th>Excluir</th>
 					</tr>
 				</thead>
 				<tbody class="tbody">
@@ -27,6 +28,7 @@ function excluiClie(id) {
 						<td><a href="index.php/nutri/clie/form/<?=$clie->idCliente?>"><?=$clie->nome;?></a></td>
 						<td><?=formataAtivo($clie->ativo);?></td>
 						<td><?=formataData($clie->dataCadastro);?></td>
+						<td class="tdExc"><a href="javascript: excluiClie(<?=$clie->idCliente?>);">[ X ]</a></td>
 					</tr>
 				<?php endforeach;?>
 				</tbody>
