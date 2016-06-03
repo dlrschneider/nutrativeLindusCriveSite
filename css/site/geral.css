@@ -125,7 +125,7 @@
 	display:inline-block;
 		
 	font-family:OpenSans;
-	color:#ca4a7e;
+	color:#f77e2d;
 	font-size:1em;
 	text-align: center;
 }
@@ -140,7 +140,7 @@
 	display:inline-block;
 		
 	font-family:OpenSans;
-	color:#ca4a7e;
+	color:#f77e2d;
 	font-size:1em;
 	text-align: center;
 }
@@ -204,7 +204,6 @@ a{
 /************
 	SITE
 *************/
-
 .icon{
 	height:30px;
 	width:30px;
@@ -334,12 +333,203 @@ a{
     margin-top: -5px;
     display: inline-block;
 }
-#bgMain .nutrition{
-    width: 100%;
-    background: url('../../img/site/layout/banner1.png');
-    height:186px;
-	display: inline-block;
+    #bgMain .nutrition{
+        width: 100%;
+        background: url('../../img/site/layout/banner1.png');
+        height:186px;
+    	display: inline-block;
+    }
+
+#motivos{
+    width:100%;
+    margin: 75px 0;
+    display:inline-block;
 }
+    #motivos .list{
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+        display: inline-block;
+    }
+        #motivos .list .list-child:first-child{margin-left: 0;}
+        #motivos .list .list-child:nth-child(1){margin-top: 0;}
+        #motivos .list .list-child:nth-child(2){margin-top: 0;}
+        #motivos .list .list-child:nth-child(3){margin-top: 0;}
+        #motivos .list .list-child:nth-child(4){margin-left: 0;}
+        #motivos .list .list-child{
+            float: left;
+            width: 32%;
+            margin-left: 2%;
+            margin-top:4%;
+            display: inline-block;
+        }
+            #motivos .list .list-child .inner{
+                width: 100%;
+                display: inline-block;
+            }
+                #motivos .list .list-child .inner img{
+                    width:90px;
+                    height:90px;
+                }
+                #motivos .list .list-child .inner h2{
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 25px;
+                    font-size: 15px;
+                    color: #000;
+                    text-align: center;
+                    font-family: OpenSansSemiBold;
+                    text-transform: uppercase;
+                }
+                #motivos .list .list-child .inner .resumo{
+                    width: 80%;
+                    margin-top:15px;
+                    display: inline-block;
+                }
+                    #motivos .list .list-child .inner .resumo p{
+                        font-size: 12px;
+                        font-family: OpenSans;
+                        line-height: 20px;
+                        color: #727272;
+                    }
+
+#bgTest{
+    background-color: #f4f4f4;
+    padding: 75px 0;
+}
+    #bgTest .teste{
+        width: 100%;
+        display: inline-block;
+    }
+        #bgTest .teste .navPc{
+            float: left;
+            width: 60%;
+            text-align: center;
+            display: inline-block;
+        }
+            #bgTest .teste .navPc img{
+                display:inline-block;
+            }
+        #bgTest .teste .navText{
+            width: 40%;
+            display: inline-block;
+        }
+            #bgTest .teste .navText .navTexto{
+                float: left;
+                width: 100%;
+                margin-top: 30px;
+            }
+                #bgTest .teste .navText .navTexto p.p1{
+                    float: left;
+                    width: 100%;
+                    text-align: left;
+                    color: #f77e2d;
+                    font-family: OpenSansLight;
+                    font-size: 30px;
+                }
+                #bgTest .teste .navText .navTexto p.p2{
+                    float: left;
+                    width: 100%;
+                    margin-top: 20px;
+                    text-align: left;
+                    color: #f77e2d;
+                    font-family: OpenSansSemiBold;
+                    font-size: 38px;
+                    line-height: 50px;
+                }
+            #bgTest .teste .nav{
+                display: inline-block;
+                margin-top: 30px;
+            }
+                #bgTest .teste .nav a{
+
+                }
+
+#internas{
+    width:100%;
+    margin:15px 0 225px;
+    display:inline-block;
+}
+    #internas .main{}
+        #internas .main #formContact{
+            width: 100%;
+            text-align: center !important;
+            display: inline-block;
+        }
+        #internas .main .texto{font-size:14px;}
+            #internas .main .texto .list{
+                width: 100%;
+                display: inline-block;
+            }
+                #internas .main .texto .list article:first-child{}
+                #internas .main .texto .list article{
+                    float: left;
+                    width:25%;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+                    #internas .main .texto .list article .icon{display:inline-block; width:100%;}
+                        #internas .main .texto .list article .icon .icone{
+                            float: left;
+                            width: 100%;
+                            margin-right: 25px;
+                            text-align: center;
+                        }
+                            #internas .main .texto .list article .icon .icone img{display:inline-block;}
+                        #internas .main .texto .list article .icon p{
+                            float: left;
+                            width: 100%;
+                            margin-top: 10px;
+                            color: #727272;
+                            text-align: center;
+                            font-size: 20px;
+                            font-family: OpenSans;
+                            line-height: 25px;
+                            display: inline-block;
+                        }
+                            #internas .main .texto .list article .icon p.tituloResumo{
+                                float: left;
+                                width: 100%;
+                                margin-top: 10px;
+                                font-family: OpenSansSemiBold;
+                                font-size: 18px;
+                                text-align: center;
+                            }
+                            #internas .main .texto .list article .icon p.resumoIcone{margin-bottom: 20px;}
+                                #internas .main .texto .list article .icon p.resumoIcone span{
+                                    font-size: 0.9em;
+                                    color: #727272;
+                                    font-weight: bold;
+                                }
+                                    #internas .main .texto .list article .icon p.resumoIcone span select{
+                                        padding: 5px 25px;
+                                        border-radius: 20px;
+                                        -webkit-border-radius: 20px;
+                                        -moz-border-radius: 20px;
+                                        -o-border-radius: 20px;
+                                        display: inline-block;
+                                        font-family: OpenSans;
+                                        color: #ff7112;
+                                        font-size: 14px;
+                                        text-align: center;
+                                        height: 35px;
+                                        margin-top: 10px;
+                                    }
+                                        #internas .main .texto .list article .icon p.resumoIcone span select option{}
+                                #internas .main .texto .list article .icon p.resumoIcone a{width:110px;}
+                            #internas .main .texto .list article .icon ul{
+                                text-align: center;
+                                padding-left: 10px;
+                                padding-right: 10px;
+                            }
+                            #internas .main .texto .list article .icon ul li{
+                                text-align: center;
+                                border-bottom: 1px solid #ffa969;
+                                line-height: 50px;
+                                color: #ff7f1f;
+                                font-size: 1.0em;
+                                font-weight: bold;
+                            }
 
 #bgRodape{
     width:100%;

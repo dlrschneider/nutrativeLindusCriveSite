@@ -7,10 +7,10 @@
             </div>
             <div class="nav">
                 <ul>
-                    <li><a href="../view/index.php">INICIO</a></li>
-                    <li><a href="../view/conheco.php">CONHEÇA</a></li>
-                    <li><a href="../view/planos.php">PLANOS</a></li>
-                    <li><a href="../view/contato.php">CONTATO</a></li>
+                    <li><a href="<?=base_url();?>index.php/site/inicio">INICIO</a></li>
+                    <li><a href="<?=base_url();?>index.php/site/conheca">CONHEÇA</a></li>
+                    <li><a href="<?=base_url();?>index.php/site/planos">PLANOS</a></li>
+                    <li><a href="<?=base_url();?>index.php/site/contato">CONTATO</a></li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,20 @@
+.clientes{
+    display: inline-block;
+    width: calc(100% - 65px);
+}
+    .clientes #clientes{
+        width:100%;
+        display:inline-block;
+        background-color:#dedede;
+    }
+        #clientes .title{
+
+        }
+        #clientes .box{}
+            #clientes .box .table{}
+                #clientes .box .table .thead{}
+                    #clientes .box .table .thead .tr{} 
+                #clientes .box .table .tbody{}
+                    #clientes .box .table .tbody tr{}
+                        #clientes .box .table .tbody tr td{}
+
