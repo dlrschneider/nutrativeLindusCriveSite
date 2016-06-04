@@ -22,12 +22,15 @@ class Dieta_historico_model extends MY_Model {
     * @return DietaHistorico
     */
    public function mapArray2Obj(array $reg) {
-   	/* @var DietaHistorico $dihi */
+   	  /* @var DietaHistorico $dihi */
       $dihi = new DietaHistorico();
+      $dihi->dieta = new Dieta();
+      $dihi->cliente = new Cliente();
       
-      $dihi->idDietaHistorico = $reg['iddieta_historico'];
-      $dihi->idDieta          = $reg['iddieta'];
-      $dihi->idCliente        = $reg['idcliente'];
+      $dihi->idDietaHistorico   = $reg['iddieta_historico'];
+      $dihi->dieta->idDieta     = $reg['iddieta'];
+      $dihi->cliente->idCliente = $reg['idcliente'];
+      $dihi->dataCadastro       = $reg['data_cadastro'];
       
       return $dihi;
    }
@@ -40,7 +43,8 @@ class Dieta_historico_model extends MY_Model {
    public function mapObj2Array(DietaHistorico $dihi) {
       return array(
       'iddieta_historico' => $dihi->idDietaHistorico,
-      'iddieta'     	  => $dihi->idDieta,
-      'idcliente'         => $dihi->idCliente);
+      'iddieta'     	  => $dihi->dieta->idDieta,
+      'idcliente'         => $dihi->cliente->idCliente,
+      'data_cadastro'     => $dihi->dataCadastro);
    }
 }

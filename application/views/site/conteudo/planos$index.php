@@ -3,7 +3,7 @@
         <div class="container">
             <h1>Planos</h1>
             <div id="formContact" class="texto">
-                O nutrative Ã© uma opÃ§Ã£o incrivel tanto para nutricionistas quanto para seus clientes.
+                O nutrative é uma opção incrivel tanto para nutricionistas quanto para seus clientes.
             </div>
             <div class="texto">
                 <br><br>
@@ -18,18 +18,18 @@
                             <ul>
                                 <li>200 Imagens</li>
                                 <li>20 Contatos</li>
-                                <li>5 OrÃ§amentos</li>
-                                <li>5 Ordens de serviÃ§o</li>
+                                <li>5 Orçamentos</li>
+                                <li>5 Ordens de serviço</li>
                                 <li>5 Galerias</li>
-                                <li style="text-decoration: line-through;">Ferramenta pÃ³s-venda</li>
+                                <li style="text-decoration: line-through;">Ferramenta pós-venda</li>
                             </ul>
                             <p></p>
                             <p class="resumoIcone">
-                                <span>R$0,00 (sim, de graÃ§a!)</span>
+                                <span>R$0,00 (sim, de graça!)</span>
                                 <br>
                                 <span>
                                     <select name="periodicidade1" class="periodicidade">
-                                        <option value="">Sem cobranÃ§as</option>
+                                        <option value="">Sem cobranças</option>
                                     </select>
                                 </span>
                                 <br><br>
@@ -42,25 +42,25 @@
                             <div class="icone">
                                 <img src="img/site/layout/2.png">
                             </div>
-                            <p class="tituloResumo">PLANO FOTÃ“GRAFO</p>
+                            <p class="tituloResumo">PLANO FOTÓGRAFO</p>
                             <p class="resumoIcone">
                                 </p><ul>
                                     <li>50.000 Imagens</li>
                                     <li>2.500 Contatos</li>
-                                    <li>OrÃ§amentos ilimitados</li>
-                                    <li>Ordens de serviÃ§o ilimitadas</li>
+                                    <li>Orçamentos ilimitados</li>
+                                    <li>Ordens de serviço ilimitadas</li>
                                     <li>Galerias ilimitadas</li>
-                                    <li style="text-decoration: line-through;">Ferramenta pÃ³s-venda</li>
+                                    <li style="text-decoration: line-through;">Ferramenta pós-venda</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">
-                                <span class="valor2">R$49,00/mÃªs</span>
+                                <span class="valor2">R$49,00/mês</span>
                                 <br>
                                 <span>
                                     <select name="periodicidade2" class="periodicidade" onchange="alterarPeriodicidade2(this.value)">
-                                        <option value="Semestral">CobranÃ§a semestral</option>
-                                        <option value="Trimestral">CobranÃ§a trimestral</option>
-                                        <option value="Mensal">CobranÃ§a mensal</option>
+                                        <option value="Semestral">Cobrança semestral</option>
+                                        <option value="Trimestral">Cobrança trimestral</option>
+                                        <option value="Mensal">Cobrança mensal</option>
                                     </select>
                                 </span>
                                 <br><br>
@@ -73,25 +73,25 @@
                             <div class="icone">
                                 <img src="img/site/layout/3.png">
                             </div>
-                            <p class="tituloResumo">PLANO ESTÃšDIO</p>
+                            <p class="tituloResumo">PLANO ESTÚDIO</p>
                             <p class="resumoIcone">
                                 </p><ul>
                                     <li>125.000 Imagens</li>
                                     <li>10.000 Contatos</li>
-                                    <li>OrÃ§amentos ilimitados</li>
-                                    <li>Ordens de serviÃ§o ilimitadas</li>
+                                    <li>Orçamentos ilimitados</li>
+                                    <li>Ordens de serviço ilimitadas</li>
                                     <li>Galerias ilimitadas</li>
-                                    <li>Ferramenta pÃ³s-venda</li>
+                                    <li>Ferramenta pós-venda</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">
-                                <span class="valor3">R$109,00/mÃªs</span>
+                                <span class="valor3">R$109,00/mês</span>
                                 <br>
                                 <span>
                                     <select name="periodicidade3" class="periodicidade" onchange="alterarPeriodicidade3(this.value)">
-                                        <option value="Semestral">CobranÃ§a semestral</option>
-                                        <option value="Trimestral">CobranÃ§a trimestral</option>
-                                        <option value="Mensal">CobranÃ§a mensal</option>
+                                        <option value="Semestral">Cobrança semestral</option>
+                                        <option value="Trimestral">Cobrança trimestral</option>
+                                        <option value="Mensal">Cobrança mensal</option>
                                     </select>
                                 </span>
                                 <br><br>
@@ -104,25 +104,25 @@
                             <div class="icone">
                                 <img src="img/site/layout/4.png">
                             </div>
-                            <p class="tituloResumo">PLANO ESTÃšDIO PREMIUM</p>
+                            <p class="tituloResumo">PLANO ESTÚDIO PREMIUM</p>
                             <p class="resumoIcone">
                                 </p><ul>
                                     <li>200.000 Imagens</li>
                                     <li>25.000 Contatos</li>
-                                    <li>OrÃ§amentos ilimitados</li>
-                                    <li>Ordens de serviÃ§o ilimitadas</li>
+                                    <li>Orçamentos ilimitados</li>
+                                    <li>Ordens de serviço ilimitadas</li>
                                     <li>Galerias ilimitadas</li>
-                                    <li>Ferramenta pÃ³s-venda</li>
+                                    <li>Ferramenta pós-venda</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">
-                                <span class="valor4">R$189,00/mÃªs</span>
+                                <span class="valor4">R$189,00/mês</span>
                                 <br>
                                 <span>
                                     <select name="periodicidade4" class="periodicidade" onchange="alterarPeriodicidade4(this.value)">
-                                        <option value="Semestral">CobranÃ§a semestral</option>
-                                        <option value="Trimestral">CobranÃ§a trimestral</option>
-                                        <option value="Mensal">CobranÃ§a mensal</option>
+                                        <option value="Semestral">Cobrança semestral</option>
+                                        <option value="Trimestral">Cobrança trimestral</option>
+                                        <option value="Mensal">Cobrança mensal</option>
                                     </select>
                                 </span>
                                 <br><br>

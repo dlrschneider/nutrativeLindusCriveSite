@@ -10,4 +10,8 @@ class Cliente extends BusinessObject {
 	public $ativo;
 	public $dataNascimento;
 	public $dataCadastro;
+	
+	
+	/* PSEUDO-ATRIBUTO */
+	public $htmlPainelDieta;
 }

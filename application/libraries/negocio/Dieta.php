@@ -5,9 +5,12 @@
 class Dieta extends BusinessObject {
 
 	public $idDieta;
-	public $idNutricionista; // TODO TRANSFORMAR EM OBJ NUTRICIONISTA
-	public $caloria;
-	public $dataNascimento;
+	public $nutricionista;
+	public $nome;
 	public $ativo;
 	public $dataCadastro;
+	
+	/*PSEUDO-ATRIBUTOS*/
+	public $dietasAlimentos;
+	public $htmlAlimentosVinculados;
 }

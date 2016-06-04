@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Dieta_model extends MY_Model {
 
    /**
-    * @var string Nome da classe de negÃ³cio.
+    * @var string Nome da classe de negócio.
     */
    public $className = 'Dieta';
     
@@ -26,9 +26,8 @@ class Dieta_model extends MY_Model {
       $diet = new Dieta();
       
       $diet->idDieta         = $reg['iddieta'];
-      $diet->idNutricionista = $reg['idnutricionista'];
-      $diet->caloria         = $reg['caloria'];
-      $diet->dataNascimento  = $reg['data_nascimento'];
+      $diet->nutricionista   = new Nutricionista($reg['idnutricionista']);
+      $diet->nome 			 = $reg['nome'];
       $diet->ativo           = $reg['ativo'];
       $diet->dataCadastro    = $reg['data_cadastro'];
       
@@ -43,10 +42,37 @@ class Dieta_model extends MY_Model {
    public function mapObj2Array(Dieta $die) {
       return array(
 	  'iddieta'         => $die->idDieta,
-      'idnutricionista' => $die->idNutricionista,
-      'caloria'   		=> $die->caloria,
-      'data_nascimento' => $die->dataNascimento,
+      'idnutricionista'   => $die->nutricionista->idNutricionista,
+      'nome'      		=> $die->nome,
       'ativo'           => $die->ativo,
       'data_cadastro'   => $die->dataCadastro);
+   }
+   
+   /**
+    * Recupera ultima dieta ativa para um determinado cliente
+    * @param int $idCliente ID/PK
+    */
+   public function carregaUltimaDieta($idCliente) {
+      $sel = "select dihi.iddieta, dihi.idcliente, max(dihi.data_cadastro) from "
+      . "(dieta_historico dihi, "
+      . " dieta           diet) "
+      . "where diet.iddieta = dihi.iddieta "
+      . "and dihi.idcliente = {$idCliente} ";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+      
+      if ($reg['iddieta']) {
+      	
+	      $diet = $this->carrega($reg["iddieta"]);
+	      $diet->dietasAlimentos = $this->CI->dialModel->carregaTodos("where iddieta = {$reg['iddieta']}");
+	      
+	      foreach ($diet->dietasAlimentos as $dial) {
+	         $dial->alimento = $this->CI->alimModel->carrega($dial->alimento->idAlimento);
+	      }
+	      
+	      return $diet;
+      } else {
+      	return FALSE;
+      }
    }
 }

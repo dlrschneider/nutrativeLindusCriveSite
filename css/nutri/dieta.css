@@ -1,0 +1,48 @@
+#boxEsquerda {
+	width: 500px;
+	height: 300px;
+	float: left;
+	border: 1px solid #999;
+	margin-top: 20px;
+	overflow-y: auto;
+}
+
+#boxDireita {
+	width: 500px;
+	height: 300px;
+	float: right;
+	border: 1px solid #999;
+	margin-top: 20px;
+	overflow-y: auto; 
+}
+
+.boxAlimento:hover {
+	cursor: pointer;
+	border: 1px solid #39AECF;
+}
+
+.boxAlimento {
+	clear: both;
+	width: 100%;
+	border-bottom: 1px dotted #999;
+	padding-bottom: 5px;
+}
+
+.boxAlimento p {
+	float: left;
+	display: block;
+	margin-left: 20px;
+	margin-bottom: 0px;
+	font-size: 16px;
+}
+
+.boxInformacaoAlimento {
+	clear: both;
+	display: flex;
+	justify-content: space-around;
+}
+
+.boxInformacaoAlimento {
+	text-align: center;
+	font-size: 12px;
+}

@@ -43,7 +43,7 @@ class Cliente_model extends MY_Model {
    public function mapObj2Array(Cliente $clie) {
       return array(
       'idnutricionista' => $clie->idNutricionista,
-      'nome'     		   => $clie->nome,
+      'nome'     	    => $clie->nome,
       'data_nascimento' => $clie->dataNascimento,
       'ativo'           => $clie->ativo,
       'data_cadastro'   => $clie->dataCadastro);

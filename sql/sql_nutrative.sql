@@ -33,17 +33,18 @@ CREATE TABLE IF NOT EXISTS cliente (
 
 ALTER TABLE cliente ADD CONSTRAINT cliente_fk_nutricionista FOREIGN KEY (idnutricionista) REFERENCES nutricionista (idnutricionista) ON DELETE CASCADE;
 
-CREATE TABLE IF NOT EXISTS categoria (
-  idcategoria int(9) NOT NULL AUTO_INCREMENT,
-  nome varchar(150) NOT NULL,
-  ativo enum('S', 'N'),
+CREATE TABLE IF NOT EXISTS anotacao (
+  idanotacao int(9) NOT NULL AUTO_INCREMENT,
+  idcliente int(9) NOT NULL,
+  descricao TEXT NOT NULL,
   data_cadastro datetime NOT NULL,
-  PRIMARY KEY (idcategoria)
+  PRIMARY KEY (idanotacao)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+ALTER TABLE anotacao ADD CONSTRAINT anotacao_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
 CREATE TABLE IF NOT EXISTS alimento (
   idalimento int(9) NOT NULL AUTO_INCREMENT,
-  idcategoria int(9) NULL,
   nome varchar(150) NOT NULL,
   carboidrato decimal(6,2) NOT NULL,
   proteina decimal(6,2) NOT NULL,
@@ -52,12 +53,10 @@ CREATE TABLE IF NOT EXISTS alimento (
   PRIMARY KEY (idalimento)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-ALTER TABLE alimento ADD CONSTRAINT alimento_fk_categoria FOREIGN KEY (idcategoria) REFERENCES categoria (idcategoria);
-
 CREATE TABLE IF NOT EXISTS dieta (
   iddieta int(9) NOT NULL AUTO_INCREMENT,
   idnutricionista int(9) NOT NULL,
-  caloria decimal(6,2),
+  nome varchar(100) NOT NULL,
   ativo enum('S', 'N'), 
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (iddieta)
@@ -79,6 +78,7 @@ CREATE TABLE IF NOT EXISTS dieta_historico (
   iddieta_historico int(9) NOT NULL AUTO_INCREMENT,
   iddieta int(9) NOT NULL,
   idcliente int(9) NOT NULL,
+  data_cadastro datetime NOT NULL,
   PRIMARY KEY (iddieta_historico)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
@@ -86,11 +86,11 @@ ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_dieta FOREIGN KEY (iddie
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
 CREATE TABLE noticia (
-	idnoticia int(9) NOT NULL,
+	idnoticia int(9) NOT NULL AUTO_INCREMENT,
 	idnutricionista int(9) NOT NULL,
 	titulo varchar(150) NOT NULL,
 	descricao TEXT NOT NULL,
-	imagem varchar(255) NOT NULL,
+	imagem varchar(255) NULL,
 	data_cadastro datetime NOT NULL,
 	primary key (idnoticia)
 ) engine=innodb default charset=latin1 collate=latin1_general_ci;

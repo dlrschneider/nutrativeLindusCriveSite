@@ -23,7 +23,7 @@ class Login extends MY_Controller {
       try {
       	$nutr = $this->nutrModel->carregaNutricionistaLogin($login, $senha);
       	
-      	$this->iniciaSessaoNutri();
+      	$this->iniciaSessaoNutri($nutr);
       	 
       	log_message('user', "Nutricionista logado ");
       	 
@@ -52,8 +52,8 @@ class Login extends MY_Controller {
       redirect('site/inicio');
    }
    
-   private function iniciaSessaoNutri() {
-      $this->session->set_userdata('NUTRI_login', TRUE);
+   private function iniciaSessaoNutri($nutr) {
+      $this->session->set_userdata('NUTRI_login', $nutr);
    }
 
    private function iniciaSessaoClie() {

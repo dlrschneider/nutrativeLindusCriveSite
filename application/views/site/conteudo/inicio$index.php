@@ -13,16 +13,16 @@
 							<img src="img/site/layout/iconNoticia.png" alt="">
 							<h2>Noticias</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
 							</div>
 						</div>
 					</article>
 					<article class="list-child">
 						<div class="inner">	
 							<img src="img/site/layout/iconCoracao.png" alt="">
-							<h2>Sa√∫de</h2>
+							<h2>Sa˙de</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
 							</div>
 						</div>
 					</article>
@@ -31,7 +31,7 @@
 							<img src="img/site/layout/iconUser.png" alt="">
 							<h2>Compartilhar</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
 							</div>
 						</div>
 					</article>
@@ -40,16 +40,16 @@
 							<img src="img/site/layout/iconNoticia.png" alt="">
 							<h2>Noticias</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
 							</div>
 						</div>
 					</article>
 					<article class="list-child">
 						<div class="inner">	
 							<img src="img/site/layout/iconCoracao.png" alt="">
-							<h2>Sa√∫de</h2>
+							<h2>Sa˙de</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>
 							</div>
 						</div>
 					</article>
@@ -58,7 +58,7 @@
 							<img src="img/site/layout/iconUser.png" alt="">
 							<h2>Compartilhar</h2>
 							<div class="resumo">	
-								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est√°; area ser√° voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>	
+								<p>Os clientes ter&atilde;o acesso a noticias postadas pelos nutricionistas. Est·; area ser· voltada para que nutricionistas falem sobre assuntos relacionados a saude de seus pacientes, publicando noticias ou curiosidades.</p>	
 							</div>
 						</div>
 					</article>
@@ -74,7 +74,7 @@
 					<div class="navText">
 						<div class="navTexto">
 							<p class="p1">Conheceu?</p>
-							<p class="p2">Agora, √© a hora<br> de ver na pr√°tica</p>
+							<p class="p2">Agora, È a hora<br> de ver na pr·tica</p>
 						</div>
 						<div class="nav">
 							<a href="" class="btPadrao2 laranja">testar gratuitamente</a>

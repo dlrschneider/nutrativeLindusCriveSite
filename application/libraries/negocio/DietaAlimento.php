@@ -5,6 +5,6 @@
 class DietaAlimento extends BusinessObject {
 
 	public $idDietaAlimento;
-	public $idDieta;
-	public $idAlimento;
+	public $dieta;
+	public $alimento;
 }
