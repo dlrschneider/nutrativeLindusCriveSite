@@ -69,6 +69,18 @@ class MY_Controller extends CI_Controller {
       
       $this->viewTopo->htmlJs = $sJs;
       
+      switch ($tipoAcesso) {
+      	case 'nutri':
+      		$this->viewTopo->nutr = $this->session->userdata('NUTRI_login');
+      		break;
+      	case 'cliente':
+      		$this->viewTopo->clie = $this->session->userdata('CLIE_login');
+      		break;
+      	default:
+      		break;
+      }
+      
+      
       $this->load->view("{$tipoAcesso}/layout/topo", $this->viewTopo);
    }
    

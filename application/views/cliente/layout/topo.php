@@ -35,7 +35,7 @@
 				<a href=""><img alt="" src="img/nutri/layout/logo-branco.png"></a>
 			</div>
 			<div class="hello">
-				<p>Olá <?=$nutr->nome;?>!</p>
+				<p>Olá <?=$clie->nome;?>!</p>
 			</div>
 			<div class="setting">
 				<a href="javascript:modalSetting();"><img alt="" src="img/nutri/layout/settings.png"></a>
