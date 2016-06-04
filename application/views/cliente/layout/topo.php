@@ -15,9 +15,7 @@
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
    <link type="text/css" rel="stylesheet" href="css/nutri/geral.css">
    <link type="text/css" rel="stylesheet" href="css/nutri/topo.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/cliente.css">
    <link type="text/css" rel="stylesheet" href="css/nutri/lateral.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/filtro.css">
    <?=$htmlCss;?>
 
    <!-- JS VENDOR -->
@@ -37,7 +35,7 @@
 				<a href=""><img alt="" src="img/nutri/layout/logo-branco.png"></a>
 			</div>
 			<div class="hello">
-				<p>Olá <?=$nutr->nome;?>!</p>
+				<p>Olá <?=$clie->nome;?>!</p>
 			</div>
 			<div class="setting">
 				<a href="javascript:modalSetting();"><img alt="" src="img/nutri/layout/settings.png"></a>

@@ -5,11 +5,17 @@ class Login extends MY_Controller {
       parent::__construct(FALSE);
    }
    
+   /**
+    * Página específica para o login do site
+    */
    public function index() {
    	  $this->view->loginErro = $this->session->flashdata('loginErro');
       $this->load->view('site/conteudo/login$index.php', $this->view);
    }
    
+   /**
+    * Recebe a requisição de login de todos os tipos de usuários
+    */
    public function action() {
       log_message('user', "Submissao do formulário de login, HTTP POST: "
       . print_r($this->input->post(), TRUE));
@@ -35,7 +41,7 @@ class Login extends MY_Controller {
       try {
       	$clie = $this->clieModel->carregaClienteLogin($login, $senha);
       	 
-      	$this->iniciaSessaoClie();
+      	$this->iniciaSessaoClie($clie);
       	
       	log_message('user', "Nutricionista logado ");
       	
@@ -52,11 +58,19 @@ class Login extends MY_Controller {
       redirect('site/inicio');
    }
    
+   /**
+    * Seta na sessão todas as informações, iniciais, necessárias para o nutricionista 
+    * @param Nutricionista $nutr
+    */
    private function iniciaSessaoNutri($nutr) {
       $this->session->set_userdata('NUTRI_login', $nutr);
    }
 
-   private function iniciaSessaoClie() {
-      $this->session->set_userdata('CLIE_login', TRUE);
+   /**
+    * Seta na sessão todas as informações, iniciais, necessárias para o nutricionista
+    * @param Cliente $clie
+    */
+   private function iniciaSessaoClie($clie) {
+      $this->session->set_userdata('CLIE_login', $clie);
    }
 }

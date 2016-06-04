@@ -17,7 +17,7 @@
 	</div>
 	<div class="bottom">
 		<div class="container">
-            <p class="copyright">© 2016 - Nutrative. Todos os direitos reservados.</p>
+            <p class="copyright">© <?=date('Y');?> - Nutrative. Todos os direitos reservados.</p>
 			<p class="desenvolvido">
 				Desenvolvido por <a href="http://www.f5digital.com.br" target="blanck" title="F5 Digital">Nutrative</a>
 			</p>
