@@ -43,6 +43,48 @@ fieldset {
 legend {
    font-weight: bold;
 }
+.btPadrao{
+   padding: 12px 25px;
+   border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      -o-border-radius:10px;
+   display:inline-block;
+      
+   font-family:OpenSans;
+   color:#f77e2d;
+   font-size:1em;
+   text-align: center;
+}
+.btPadrao2{
+   padding: 10px 25px;
+   width:100%;
+   border: 0px solid transparent;
+   border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      -o-border-radius:10px;
+   display:inline-block;
+      
+   font-family:OpenSans;
+   color:#f77e2d;
+   font-size:1em;
+   text-align: center;
+}
+   .btPadrao.branco{background-color:#FFF;}
+      .btPadrao.branco:hover{background-color:#ecc1d6; color: #FFF;}
+   .btPadrao.transparente{
+      background-color:transparent;
+      border:1px solid #ecc1d6;
+      color:#FFF;
+   }
+      .btPadrao.transparente:hover{background-color:#ecc1d6;}
+   .btPadrao2.laranja{background-color:#FF7112;color: #FFF;}
+      .btPadrao2.laranja:hover{background-color:#FF9A47;color: #FFF;}
+   .btPadrao2.cinza{background-color:#454545;color: #C8C9C9;}
+      .btPadrao2.cinza:hover{background-color:#A2A2A2;color: #454545;}
+   
+
 
 /*******************************************************************************
  * Tabela de listagem de registros.

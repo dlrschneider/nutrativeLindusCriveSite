@@ -16,12 +16,12 @@
                             <p class="tituloResumo">PLANO FREE</p>
                             <p class="resumoIcone"></p>
                             <ul>
-                                <li>200 Imagens</li>
-                                <li>20 Contatos</li>
-                                <li>5 Orçamentos</li>
-                                <li>5 Ordens de serviço</li>
-                                <li>5 Galerias</li>
-                                <li style="text-decoration: line-through;">Ferramenta pós-venda</li>
+                                <li>Gerenciador</li>
+                                <li>Gerenciador</li>
+                                <li>Gerenciador</li>
+                                <li>Gerenciador</li>
+                                <li>Gerenciador</li>
+                                <li>Gerenciador</li>
                             </ul>
                             <p></p>
                             <p class="resumoIcone">
@@ -42,15 +42,16 @@
                             <div class="icone">
                                 <img src="img/site/layout/2.png">
                             </div>
-                            <p class="tituloResumo">PLANO FOTÓGRAFO</p>
+                            <p class="tituloResumo">PLANO II</p>
                             <p class="resumoIcone">
-                                </p><ul>
-                                    <li>50.000 Imagens</li>
-                                    <li>2.500 Contatos</li>
-                                    <li>Orçamentos ilimitados</li>
-                                    <li>Ordens de serviço ilimitadas</li>
-                                    <li>Galerias ilimitadas</li>
-                                    <li style="text-decoration: line-through;">Ferramenta pós-venda</li>
+                                </p>
+                                <ul>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">
@@ -73,15 +74,15 @@
                             <div class="icone">
                                 <img src="img/site/layout/3.png">
                             </div>
-                            <p class="tituloResumo">PLANO ESTÚDIO</p>
+                            <p class="tituloResumo">PLANO III</p>
                             <p class="resumoIcone">
                                 </p><ul>
-                                    <li>125.000 Imagens</li>
-                                    <li>10.000 Contatos</li>
-                                    <li>Orçamentos ilimitados</li>
-                                    <li>Ordens de serviço ilimitadas</li>
-                                    <li>Galerias ilimitadas</li>
-                                    <li>Ferramenta pós-venda</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">
@@ -104,15 +105,15 @@
                             <div class="icone">
                                 <img src="img/site/layout/4.png">
                             </div>
-                            <p class="tituloResumo">PLANO ESTÚDIO PREMIUM</p>
+                            <p class="tituloResumo">PLANO IIII</p>
                             <p class="resumoIcone">
                                 </p><ul>
-                                    <li>200.000 Imagens</li>
-                                    <li>25.000 Contatos</li>
-                                    <li>Orçamentos ilimitados</li>
-                                    <li>Ordens de serviço ilimitadas</li>
-                                    <li>Galerias ilimitadas</li>
-                                    <li>Ferramenta pós-venda</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
+                                    <li>Gerenciador</li>
                                 </ul>
                             <p></p>
                             <p class="resumoIcone">

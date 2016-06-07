@@ -29,7 +29,7 @@ class Clie extends MY_Controller {
     * @return void
     */
    public function index() {
-   	  $this->viewTopo->css = array('css/nutri/clientes.css', 'css/nutri/pesquisa.css');
+   	  $this->viewTopo->css = array('css/nutri/cliente.css', 'css/nutri/pesquisa.css');
    	  
       $this->view->msgExclusao = $this->session->flashdata('msgExclusao');
       $this->view->listaClie = $this->clieModel->carregaTodos();
@@ -46,7 +46,8 @@ class Clie extends MY_Controller {
     * @param int $id ID/PK do registro a ser alterado, NULL se for inclusão.
     */
    public function form($id = NULL) {
-   	$this->viewTopo->css = array('css/nutri/cliente.css');
+    $this->viewTopo->css = array('css/nutri/cliente.css');
+    $this->viewTopo->css = array('css/nutri/geral.css');
    	
       if ($id) {
          $this->clie = $this->clieModel->carrega($id);

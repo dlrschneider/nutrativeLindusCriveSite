@@ -4,19 +4,31 @@
 }
     .clientes #clientes{
         width:100%;
-        display:inline-block;
-        background-color:#dedede;
+        display:inline-block; 
     }
-        #clientes .title{
-
+        .clientes .title{
+          padding:15px;
         }
-        #clientes .box{}
-            #clientes .box .table{}
-                #clientes .box .table .thead{}
-                    #clientes .box .table .thead .tr{} 
-                #clientes .box .table .tbody{}
-                    #clientes .box .table .tbody tr{}
-                        #clientes .box .table .tbody tr td{}
+        .clientes .box{
+          padding:15px;
+        }
+            .clientes .box .table{}
+                .clientes .box .table .thead{
+                  background-color:#dedede;
+                }
+                    .clientes .box .table .thead .tr{
+                      background-color:#ababab;
+                    } 
+                .clientes .box .table .tbody{}
+                    .clientes .box .table .tbody tr{}
+                        .clientes .box .table .tbody tr td{}
+                          .clientes .box .table .tbody tr td a{
+                            display:inline-block;
+                          }
+                            .clientes .box .table .tbody tr td a img{
+                              height:15px;
+                              padding-left:12px;
+                            }
 
 =======
 .boxLabelDietaAtiva {

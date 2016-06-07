@@ -530,6 +530,68 @@ a{
                                 font-size: 1.0em;
                                 font-weight: bold;
                             }
+                            
+    #internas legend{margin:0 46%;}
+    #internas .planos{
+        float:left;
+        width: 80%;
+        margin: 0 10%;
+    }
+        #internas .planos .text{
+            float: left;
+            width:100%;
+            margin-top:40px;
+        }
+            #internas .planos .text p{
+                font-size:16px;
+                font-family:RobotoCondensedRegular;
+                text-align: left;
+                color: #727272;
+                line-height: 30px;
+            }
+
+    #internas .contatos{
+        float:left;
+        width: 80%;
+        margin: 55px 10% 0 10%;
+    }
+        #internas .contatos .contato:first-child{margin-top:0;}
+        #internas .contatos .contato{
+            float:left;
+            width:100%;
+            margin-top: 25%;
+        }
+            #internas .contatos .contato .photo{
+                display:inline-block;
+                width:100%;
+                text-align: center;
+            }
+                #internas .contatos .contato .photo img{
+                    display: inline-block;
+                    max-width: 225px;
+                }
+            #internas .contatos .contato .description{
+                width: 100%;
+                display: inline-block;
+            }
+                #internas .contatos .contato .description p{
+                    text-align:center;
+                    font-size:16px;
+                    line-height:26px;
+                }
+                #internas .contatos .contato .description p.p1{
+                    font-family:RobotoCondensedBold;
+                    color:#f77e2d;
+                }
+                #internas .contatos .contato .description p.p2:hover{
+                    border-bottom: 1px dashed #f77e2d;
+                }
+                #internas .contatos .contato .description p.p2{
+                    cursor:pointer;
+
+                    font-family:RobotoCondensedRegular;
+                    color:#000;
+                }
 
 #bgRodape{
     width:100%;
@@ -587,72 +649,7 @@ a{
 		    width: auto;
 		    margin-top: 8px;
 		}
-		    
-#internas{
-	display:inline-block;
-	width:100%;
-}
-	#internas legend{margin:0 46%;}
-	#internas .planos{
-		float:left;
-		width: 80%;
-		margin: 0 10%;
-	}
-		#internas .planos .text{
-			float: left;
-			width:100%;
-			margin-top:40px;
-		}
-			#internas .planos .text p{
-				font-size:16px;
-				font-family:RobotoCondensedRegular;
-				text-align: left;
-				color: #727272;
-				line-height: 30px;
-			}
-
-	#internas .contatos{
-		float:left;
-		width: 80%;
-		margin: 55px 10% 0 10%;
-	}
-		#internas .contatos .contato:first-child{margin-top:0;}
-		#internas .contatos .contato{
-			float:left;
-			width:100%;
-			margin-top: 25%;
-		}
-			#internas .contatos .contato .photo{
-				display:inline-block;
-				width:100%;
-                text-align: center;
-			}
-				#internas .contatos .contato .photo img{
-                    display: inline-block;
-                    max-width: 225px;
-				}
-			#internas .contatos .contato .description{
-			    width: 100%;
-			    display: inline-block;
-			}
-				#internas .contatos .contato .description p{
-					text-align:center;
-					font-size:16px;
-					line-height:26px;
-				}
-				#internas .contatos .contato .description p.p1{
-					font-family:RobotoCondensedBold;
-					color:#f77e2d;
-				}
-				#internas .contatos .contato .description p.p2:hover{
-					border-bottom: 1px dashed #f77e2d;
-				}
-				#internas .contatos .contato .description p.p2{
-					cursor:pointer;
-
-					font-family:RobotoCondensedRegular;
-					color:#000;
-				}
+	
 
 
 
