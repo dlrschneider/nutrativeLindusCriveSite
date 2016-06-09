@@ -77,7 +77,7 @@
 							<p class="p2">Agora, é a hora<br> de ver na prática</p>
 						</div>
 						<div class="nav">
-							<a href="" class="btPadrao2 laranja">testar gratuitamente</a>
+							<a href="" class="btPadrao2 cinza">Testar gratuitamente</a>
 						</div>
 					</div>
 				</div>

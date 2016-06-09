@@ -154,8 +154,9 @@
 		.btPadrao.transparente:hover{background-color:#ecc1d6;}
 	.btPadrao2.laranja{background-color:#FF7112;color: #FFF;}
 		.btPadrao2.laranja:hover{background-color:#FF9A47;color: #FFF;}
-	.btPadrao2.cinza{background-color:#454545;color: #C8C9C9;}
-		.btPadrao2.cinza:hover{background-color:#A2A2A2;color: #454545;}
+    .btPadrao2.cinza{background-color:#ababab;color: #fff;}
+        .btPadrao2.cinza:hover{background-color:#dedede;color: #ABABAB;}
+   
    
 /* FORMs */ 
 .inputPadrao{
@@ -442,7 +443,9 @@ a{
                 margin-top: 30px;
             }
                 #bgTest .teste .nav a{
-
+                    font-size:16px;
+                    text-decoration:none;
+                    cursor:pointer;
                 }
 
 #internas{
