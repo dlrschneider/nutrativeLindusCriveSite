@@ -28,6 +28,10 @@ class Cliente_model extends MY_Model {
       $clie->idCliente       = $reg['idcliente'];
       $clie->idNutricionista = $reg['idnutricionista'];
       $clie->nome            = $reg['nome'];
+      $clie->altura          = $reg['altura'];
+      $clie->peso            = $reg['peso'];
+      $clie->login           = $reg['login'];
+      $clie->senha           = $reg['senha'];
       $clie->dataNascimento  = $reg['data_nascimento'];
       $clie->ativo           = $reg['ativo'];
       $clie->dataCadastro    = $reg['data_cadastro'];
@@ -41,9 +45,14 @@ class Cliente_model extends MY_Model {
     * @return array
     */
    public function mapObj2Array(Cliente $clie) {
-      return array(
+
+   	return array(
       'idnutricionista' => $clie->idNutricionista,
       'nome'     	    => $clie->nome,
+      'altura'     	    => $clie->altura,
+      'peso'     	    => $clie->peso,
+      'login'     	    => $clie->login,
+      'senha'     	    => $clie->senha,
       'data_nascimento' => $clie->dataNascimento,
       'ativo'           => $clie->ativo,
       'data_cadastro'   => $clie->dataCadastro);

@@ -31,6 +31,34 @@
 				   </div>
 				</div>
 				
+	            <div class="form-group">
+	               <label for="texAltura" class="col-sm-2 control-label">Altura</label>
+	               <div class="col-sm-2">
+	               <input type="text" name="texAltura" id="texAltura" class="form-control" value="<?=formataValor($clie->altura);?>"/>
+	               </div>
+	            </div>
+	            
+	            <div class="form-group">
+	               <label for="texPeso" class="col-sm-2 control-label">Peso</label>
+	               <div class="col-sm-2">
+	               <input type="text" name="texPeso" id="texPeso" class="form-control" value="<?=formataValor($clie->peso);?>"/>
+	               </div>
+	            </div>
+            
+               <div class="form-group">
+                  <label for="texLogin" class="col-sm-2 control-label">Login</label>
+                  <div class="col-sm-2">
+                  <input type="text" name="texLogin" id="texLogin" class="form-control" value="<?=$clie->login;?>" requered/>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label for="pwdSenha" class="col-sm-2 control-label">Senha</label>
+                  <div class="col-sm-2">
+                  <input type="password" name="pwdSenha" id="pwdSenha" class="form-control" value="<?=$clie->senha;?>"/>
+                  </div>
+               </div>
+               
 				<div class="form-group">
 				   <label for="cmbAtivo" class="col-sm-2 control-label">Ativo</label>
 				   <div class="col-sm-2">
