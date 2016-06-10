@@ -46,7 +46,8 @@ class Clie extends MY_Controller {
     * @param int $id ID/PK do registro a ser alterado, NULL se for inclusão.
     */
    public function form($id = NULL) {
-   	$this->viewTopo->css = array('css/nutri/cliente.css');
+    $this->viewTopo->css = array('css/nutri/cliente.css');
+    $this->viewTopo->css = array('css/nutri/geral.css');
    	
       if ($id) {
          $this->clie = $this->clieModel->carrega($id);
