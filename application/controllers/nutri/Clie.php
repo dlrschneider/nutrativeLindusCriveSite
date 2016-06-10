@@ -29,7 +29,7 @@ class Clie extends MY_Controller {
     * @return void
     */
    public function index() {
-   	  $this->viewTopo->css = array('css/nutri/clientes.css', 'css/nutri/pesquisa.css');
+   	  $this->viewTopo->css = array('css/nutri/cliente.css', 'css/nutri/pesquisa.css');
    	  
       $this->view->msgExclusao = $this->session->flashdata('msgExclusao');
       $this->view->listaClie = $this->clieModel->carregaTodos();
@@ -126,6 +126,10 @@ class Clie extends MY_Controller {
       $this->clie->idCliente = $id;
       $this->clie->idNutricionista = 1;
       $this->clie->nome = $this->input->post('texNome');
+      $this->clie->altura = formataValorMysql($this->input->post('texAltura'));
+      $this->clie->peso = formataValorMysql($this->input->post('texPeso'));
+      $this->clie->login = trim($this->input->post('texLogin'));
+      $this->clie->senha = trim($this->input->post('pwdSenha'));
       $this->clie->dataNascimento = formataDataMySql($this->input->post('texDataNascimento'));
       $this->clie->ativo = $this->input->post('cmbAtivo');
       
