@@ -22,11 +22,12 @@ function excluiNoti(id) {
 					</tr>
 				</thead>
 				<tbody class="tbody">
-				<?php foreach ($listaNoti as $noti): ?>
-					<tr>
+				<?php $lin = 0; 
+					  foreach ($listaNoti as $noti): ?>
+					<tr <?=($lin++ % 2 == 0 ? 'style="background-color: #EEE;"' : '');?>>
 						<td><a href="index.php/nutri/noti/form/<?=$noti->idNoticia?>"><?=$noti->titulo;?></a></td>
 						<td><?=formataData($noti->dataCadastro);?></td>
-						<td class="tdExc"><a href="javascript: excluiNoti(<?=$noti->idNoticia?>);">[ X ]</a></td>
+						<td><a href="javascript: excluiNoti(<?=$noti->idNoticia?>);"><img src="img/nutri/layout/garbage.png" ></a></td>
 					</tr>
 				<?php endforeach;?>
 				</tbody>

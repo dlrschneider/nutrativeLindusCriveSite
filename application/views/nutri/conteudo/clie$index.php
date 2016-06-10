@@ -25,21 +25,15 @@ function excluiClie(id) {
 						</tr>
 					</thead>
 					<tbody class="tbody">
-					<?php foreach ($listaClie as $clie): 
-						for($i=0; $i < $listaClie_qtdeReg; $i++){
-							if($i % 2 == 0){
-								$k = '#DEDEDE';	
-							}else{
-								$k = '#ABABAB';
-							}?>
-							<tr style="background-color:<?php echo $k; ?>">
+					<?php $lin = 0; 
+					      foreach ($listaClie as $clie): ?>
+							<tr <?=($lin++ % 2 == 0 ? 'style="background-color: #EEE;"' : '');?>>
 								<td><a href="index.php/nutri/clie/form/<?=$clie->idCliente?>"><?=$clie->nome;?></a></td>
 								<td><?=formataAtivo($clie->ativo);?></td>
 								<td><?=formataData($clie->dataCadastro);?></td>
 								<td><a href="javascript: excluiClie(<?=$clie->idCliente?>);"><img src="img/nutri/layout/garbage.png" ></a></td>
 							</tr>
-						<?php }
-					endforeach;?>
+					<?php endforeach;?>
 					</tbody>
 				</table>
 				<?=avisoNenhumRegistroEncontrado($listaClie_qtdeReg);?>

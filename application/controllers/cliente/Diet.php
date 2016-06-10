@@ -29,13 +29,31 @@ class Diet extends MY_Controller {
     * @return void
     */
    public function index() {
+   	  $this->viewTopo->css = array('css/cliente/dieta.css');
+   	
    	  $clie = $this->session->userdata('CLIE_login');
-   	  
-      $this->view->msgExclusao = $this->session->flashdata('msgExclusao');
       
-      $this->view->diet = $this->dietModel->carregaUltimaDieta($clie->idCliente);
+      $diet = $this->dietModel->carregaUltimaDieta($clie->idCliente);
+      $diet->dietasAlimentos = $this->dialModel->carregaTodos("where iddieta = {$diet->idDieta}");
+
+      $html = $this->load->view('nutri/fragmento/clie$form_dieta_abre_painel', array('diet' => $diet), TRUE);
+      
+      foreach ($diet->dietasAlimentos as $dial) {
+       	 $dial->alimento = $this->alimModel->carrega($dial->alimento->idAlimento);
+         $html .= $this->load->view('nutri/fragmento/diet$form_dieta_alimento', array('dial' => $dial), TRUE);
+      }
+      
+      $html .= $this->load->view('nutri/fragmento/clie$form_dieta_fecha_painel', NULL, TRUE);
+      $diet->htmlAlimentosVinculados = $html;
+   	  
+      $this->view->diet = $diet;
+      
       $this->view->listaDihi = $this->dihiModel->carregaTodos("where idcliente = {$clie->idCliente}");
-      $this->view->listaDiet_qtdeReg = count($this->view->listaDiet);
+      foreach ($this->view->listaDihi as $dihi) {
+      	$dihi->dieta = $this->dietModel->carrega($dihi->dieta->idDieta);
+      }
+      
+      $this->view->listaDiet_qtdeReg = count($this->view->listaDihi);
       
       $this->topo('cliente');
 	  $this->load->view('cliente/layout/lateral', $this->view);

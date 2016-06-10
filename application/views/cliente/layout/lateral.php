@@ -11,10 +11,10 @@
 					<div class="bottom">
 						<div class="box">
 							<ul>
-								<li><a href="<?=base_url();?>index.php/clie/inicio">Dashboard</a></li>
-								<li><a href="<?=base_url();?>index.php/clie/cale">Alimentacao</a></li>
-								<li><a href="index.php/clie/diet">Dietas</a></li>
-								<li><a href="index.php/clie/anot">Anotações</a></li>
+								<li><a href="<?=base_url();?>index.php/cliente/inicio">Dashboard</a></li>
+								<li><a href="<?=base_url();?>index.php/cliente/cale">Alimentacao</a></li>
+								<li><a href="index.php/cliente/diet">Dietas</a></li>
+								<li><a href="index.php/cliente/anot">Anotações</a></li>
 							</ul>
 						</div>
 					</div>

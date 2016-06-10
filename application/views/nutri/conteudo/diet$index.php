@@ -23,13 +23,14 @@ function excluiDiet(id) {
 					</tr>
 				</thead>
 				<tbody class="tbody">
-				<?php foreach ($listaDiet as $diet): ?>
-					<tr>
-						<td><a href="index.php/nutri/diet/form/<?=$diet->idDieta?>"><?=$diet->nome;?></a></td>
-						<td><?=formataAtivo($diet->ativo);?></td>
-						<td><?=formataData($diet->dataCadastro);?></td>
-						<td class="tdExc"><a href="javascript: excluiDiet(<?=$diet->idDieta?>);">[ X ]</a></td>
-					</tr>
+				<?php $lin = 0; 
+					  foreach ($listaDiet as $diet): ?>
+					  <tr <?=($lin++ % 2 == 0 ? 'style="background-color: #EEE;"' : '');?>>
+					     <td><a href="index.php/nutri/diet/form/<?=$diet->idDieta?>"><?=$diet->nome;?></a></td>
+					     <td><?=formataAtivo($diet->ativo);?></td>
+					     <td><?=formataData($diet->dataCadastro);?></td>
+					     <td><a href="javascript: excluiDiet(<?=$diet->idDieta?>);"><img src="img/nutri/layout/garbage.png" ></a></td>
+					  </tr>
 				<?php endforeach;?>
 				</tbody>
 			</table>

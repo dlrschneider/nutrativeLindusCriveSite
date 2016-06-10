@@ -50,9 +50,7 @@
 						<div class="bottom">
 							<div class="box">
 								<ul>
-									<li><a href="index.php/nutri/dashboard">Config. Gerais</a></li>
-									<li><a href="index.php/nutri/clientes">Ajustar</a></li>
-									<li><a href="index.php/nutri/dietas">Logout</div>
+									<li><a href="index.php/nutri/inicio/logout">Logout</div>
 								</ul>
 							</div>
 						</div>

@@ -27,6 +27,6 @@ class Inicio extends MY_Controller {
 		log_message('user', '*** LOGOUT NO GERENCIADOR DE CADASTROS ***');
 		
 	   $this->session->unset_userdata('ADMIN_login');
-	   redirect('site/login');
+	   redirect('site/inicio');
 	}
 }
