@@ -34,6 +34,9 @@ class MY_Controller extends CI_Controller {
       } else if ($this->uri->segment(1) == 'cliente' && !$this->session->userdata('CLIE_login')) {
          log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
          redirect('site/inicio');
+      } else if ($this->uri->segment(1) == 'admin' && !$this->session->userdata('ADMIN_login')) {
+         log_message('error', '*** GERENCIADOR DE CADASTROS SEM LOGIN NA SESSAO ***');
+         redirect('site/inicio');
       }
       
       $this->viewTopo = new stdClass();
