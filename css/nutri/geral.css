@@ -185,6 +185,33 @@ legend {
    .inputMed{width:222px;}
    .inputGra{width:302px;}
 
+.espacamento{
+   margin:25px 0;
+}
+
+/********************************************************************************
+ * Sobrescrita de css do bootstrap
+ */
+
+a{
+   color: #ff6347;
+}
+table a{color:#454545;}
+table span{color:#454545;}
+
+.panel-primary{
+   border-color:#454545;
+}
+.panel-primary>.panel-heading{
+   border-color:#454545;
+   background-image: -webkit-linear-gradient(top,#454545 0,#454545 100%) !important;
+   background-image: -o-linear-gradient(top,#454545 0,#454545 100%);
+   background-image: -webkit-gradient(linear,left top,left bottom,from(#454545),to(#454545));
+   background-image: linear-gradient(to bottom,#454545 0,#454545 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#454545', GradientType=0);
+}
+
+
 /*******************************************************************************
  * Mensagens de aviso sobre o retorno de operações realizadas no banco de dados,
  * sobre inclusão, alteração e exclusão de registro com sucesso ou com erro.

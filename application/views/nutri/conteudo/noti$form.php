@@ -5,7 +5,7 @@
 <?=$msgErroForm;?>
 
 <div class="well well-sm">
-<?=form_open_multipart(base_url() . $actionForm, array('id' => 'frmNoti', 'class' => 'form-horizontal'));?>
+<?=form_open_multipart(base_url() . $actionForm, array('id' => 'frmNoti', 'class' => 'form-horizontal espacamento'));?>
 
 <div class="form-group">
    <label for="texTitulo" class="col-sm-2 control-label">Título</label>
@@ -40,17 +40,17 @@
 <?php if ($noti->dataCadastro): ?>
 <div class="form-group">
    <label class="col-sm-2 control-label">Data cadastro</label>
-   <div class="col-sm-8">
-   <?=formataDataHora($noti->dataCadastro);?>
+   <div class="col-sm-2">
+   <input type="text" name="dataCad" id="dataCad" class="form-control" readonly="true" value="<?=formataDataHora($noti->dataCadastro);?>"></input>
    <?=form_hidden('hidDataCadastro', $noti->dataCadastro);?>
    </div>
 </div>
 <?php endif;?>
 
 
-<div class="form-group">
-   <div class="col-sm-offset-2 col-sm-10">
-   <?=botaoConfirmar();?> <?=botaoCancelar('nutri/noti');?>
+<div class="form-group espacamento">
+   <div class="col-md-offset-10">
+   <?=botaoCancelar('nutri/noti');?> <?=botaoConfirmar();?> 
    </div>
 </div>
 

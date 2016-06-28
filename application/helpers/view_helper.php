@@ -8,7 +8,7 @@
  * @version 1.0.1
  * @return string Elemento HTML "input" do botão criado.
  */
-function botaoConfirmar($class = 'btn btn-success btn-sm', $disabled = FALSE) {
+function botaoConfirmar($class = 'btn btn-warning btn-sm', $disabled = FALSE) {
    return '<input class="' . $class . '" style="font-weight: bold;" type="submit" ' . ($disabled ? 'disabled="disabled" style="cursor: not-allowed;" ' : '') . 'name="btConfirma" id="btConfirma" value="Confirmar" />';
 }
 

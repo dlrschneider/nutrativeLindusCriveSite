@@ -33,14 +33,12 @@ function modalNav(){
         $('#modNav').stop(true).slideUp();
         $('#modNav').removeClass('ativo');
         $('#bgLateral').css('position', 'relative');
-        $('#bgLateral').css('top', '-10px');
         $('#bgLateral .menu').removeClass('active');
     }else{
         $('#modNav').addClass('ativo');
         $('#bgLateral .menu').addClass('active');
         $('#modNav').stop(true).slideDown();
-        $('#bgLateral').css('position', '');
-        $('#bgLateral').css('top', '');
+        $('#bgLateral').css('position', 'static');
         $('input[name=login1]').focus();
     }
 }

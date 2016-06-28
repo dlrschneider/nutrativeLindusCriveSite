@@ -1,4 +1,4 @@
-<?php
+  <?php
 /**
  * Controlador abstrato, pai de todos os controladores, para agrupar funções que são comuns.
  * 

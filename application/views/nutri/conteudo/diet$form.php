@@ -13,7 +13,7 @@
 	
 	<?=form_open(base_url() . $actionForm, array('id' => 'frmDiet', 'class' => 'form-horizontal'));?>
 		<div class="well well-sm">
-			<div<?=($abaAlimento ? ' style="display: none;"' : '');?> class="boxAba" id="boxDieta">
+			<div<?=($abaAlimento ? ' style="display: none;"' : '');?> class="boxAba espacamento" id="boxDieta">
 				<div class="form-group">
 				   <label for="texTitulo" class="col-sm-2 control-label">Nome</label>
 				   <div class="col-sm-5">
@@ -34,8 +34,8 @@
 				<?php if ($diet->dataCadastro): ?>
 				<div class="form-group">
 				   <label class="col-sm-2 control-label">Data cadastro</label>
-				   <div class="col-sm-8">
-				   <?=formataDataHora($diet->dataCadastro);?>
+				   <div class="col-sm-2">
+				   <input type="text" name="dataCad" id="dataCad" class="form-control" readonly="true" value="<?=formataDataHora($diet->dataCadastro);?>"></input>
 				   <?=form_hidden('hidDataCadastro', $diet->dataCadastro);?>
 				   </div>
 				</div>
@@ -43,13 +43,13 @@
 			</div>
 			
 			<?php if ($diet->idDieta): ?>
-			<div<?=(!$abaAlimento ? ' style="display: none;"' : '');?> class="boxAba" id="boxAlimentos">
+			<div<?=(!$abaAlimento ? ' style="display: none;"' : '');?> class="boxAba espacamento" id="boxAlimentos">
 				<div class="col-sm-4">
 					<input class="form-control" type="text" name="texBuscaAlimento" id="texBuscaAlimento" placeholder="Busca"/>
 				</div>
 				
 				<div class="col-sm-1">
-					<button class="btn btn-primary" type="button" id="btnBusca">Buscar</button>
+					<button class="btn btn-warning" type="button" id="btnBusca">Buscar</button>
 				</div>
 				
 				<br class="clear"/>
@@ -65,12 +65,12 @@
 				<br class="clear"/>
 			</div>
 			<?php endif;?>
-		</div>
-		
-		<div class="form-group">
-		   <div class="col-sm-10">
-		      <?=botaoConfirmar();?> <?=botaoCancelar('nutri/diet');?>
-		   </div>
+			
+			<div class="form-group espacamento">
+			   <div class="col-md-offset-10">
+			      <?=botaoCancelar('nutri/diet');?> <?=botaoConfirmar();?>
+			   </div>
+			</div>
 		</div>
 	<?=form_close()?>
 </div>

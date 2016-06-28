@@ -35,9 +35,8 @@
 }
 
 #containerDietaAtiva {
-   width: 700px;
+   width: 100%;
    margin-top: 30px;
-   margin-left: 30px;
-   
+   padding: 0 30px;
 }
 >>>>>>> 87cbc8b3ee8cc6cf41b1634ec5b04e1011de8ba6

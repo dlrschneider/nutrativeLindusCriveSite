@@ -16,7 +16,7 @@
 	</ul>
 	<?=form_open(base_url() . $actionForm, array('id' => 'frmClie', 'class' => 'form-horizontal'));?>
 		<div class="well well-sm">
-			<div class="boxAba" id="boxCliente">
+			<div class="boxAba espacamento" id="boxCliente">
 				<div class="form-group">
 				   <label for="texNome" class="col-sm-2 control-label">Nome Completo</label>
 				   <div class="col-sm-5">
@@ -72,8 +72,8 @@
 				<?php if ($clie->dataCadastro): ?>
 				<div class="form-group">
 				   <label class="col-sm-2 control-label">Data cadastro</label>
-				   <div class="col-sm-8">
-				   <?=formataDataHora($clie->dataCadastro);?>
+				   <div class="col-sm-2">
+				   <input type="text" name="dataCad" id="dataCad" class="form-control" readonly="true" value="<?=formataDataHora($clie->dataCadastro);?>"></input>
 				   <?=form_hidden('hidDataCadastro', $clie->dataCadastro);?>
 				   </div>
 				</div>
@@ -81,7 +81,7 @@
 		    </div>
 		    
 		    <?php if ($clie->idCliente): ?>
-		    <div style="display: none;" class="boxAba" id="boxDietas">
+		    <div style="display: none;" class="boxAba espacamento" id="boxDietas">
              <div class="col-sm-9">
                 <div class="boxLabelDietaAtiva col-sm-1">
                    <label class="lblDieta" for="cmbDieta">Dieta Ativa</label>
@@ -97,7 +97,7 @@
                 </div>
                 
                 <div class="col-sm-5">
-	                <button id="btnVinculaDieta" class="btn btn-primary" type="button">Vincular Dieta</button>
+	                <button id="btnVinculaDieta" class="btn btn-warning" type="button">Vincular Dieta</button>
                 </div>
              </div>
              
@@ -110,7 +110,7 @@
              <br class="clear">
 		    </div>
           
-          <div style="display: none;" class="boxAba" id="boxHistorico">
+          <div style="display: none;" class="boxAba espacamento" id="boxHistorico">
              <?=subtituloCadastro("Histórico de dietas")?>
              
              <div class="box">
@@ -136,8 +136,8 @@
 		      </div>
           </div>
           
-		    <div style="display: none;" class="boxAba" id="boxAlimentacao"></div>
-		    <div style="display: none;" class="boxAba" id="boxNotas">
+		    <div style="display: none;" class="boxAba espacamento" id="boxAlimentacao"></div>
+		    <div style="display: none;" class="boxAba espacamento" id="boxNotas">
              <?=subtituloCadastro("Dúvidas do Paciente")?>
              
              <div class="box">
@@ -161,13 +161,12 @@
             </div>
           </div>
 		    <?php endif;?>
+           <div class="form-group espacamento">
+              <div class="col-md-offset-10">
+                 <?=botaoCancelar('nutri/clie');?> <?=botaoConfirmar();?>
+              </div>
+           </div>
         </div>
-		
-	   <div class="form-group">
-	      <div class="col-sm-10">
-             <?=botaoConfirmar();?> <?=botaoCancelar('nutri/clie');?>
-		  </div>
-	   </div>
 	<?=form_close()?>
 </div>
 <script>

@@ -30,7 +30,7 @@ class Cliente_model extends MY_Model {
       $clie->nome            = $reg['nome'];
       $clie->altura          = $reg['altura'];
       $clie->peso            = $reg['peso'];
-      $clie->login           = $reg['login'];
+      $clie->login           = $reg['login']; 
       $clie->senha           = $reg['senha'];
       $clie->dataNascimento  = $reg['data_nascimento'];
       $clie->ativo           = $reg['ativo'];
