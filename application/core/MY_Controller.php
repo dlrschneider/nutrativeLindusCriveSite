@@ -93,6 +93,10 @@ class MY_Controller extends CI_Controller {
     * @return void
     */
    protected function rodape($tipoAcesso = 'site') {
+      if ($tipoAcesso == 'cliente') {
+         $this->viewRodape->listaAnot = $this->anotModel->carregaTodos("where idcliente = {$this->session->userdata('CLIE_login')->idCliente}");
+      }
+      
       $this->load->view("{$tipoAcesso}/layout/rodape", $this->viewRodape);
    }
 

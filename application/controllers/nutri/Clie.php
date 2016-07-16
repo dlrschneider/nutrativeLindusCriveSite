@@ -53,7 +53,7 @@ class Clie extends MY_Controller {
          $this->clie = $this->clieModel->carrega($id);
 	      $dietAtiva = $this->dietModel->carregaUltimaDieta($id);
 	      $this->view->listaDiet = $this->dietModel->carregaTodos("where ativo = 'S'");
-	      $this->view->listaAnot = $this->anotModel->carregaTodos("where idcliente = {$id}"); 
+	      $this->view->listaAnot = $this->anotModel->carregaTodos("where idcliente = {$id} order by data_cadastro desc"); 
 	      
 	      $where = "where idcliente = {$id} "
 	      . "and data_cadastro <> "

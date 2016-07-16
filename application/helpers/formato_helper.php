@@ -8,7 +8,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Formata uma data de "AAAA-MM-DD" para "DD/MM/AAAA".
  * @param string $pData
  * @param string $pSeculo
- * @since 24/02/2011
  * @return string
  */
 function formataData($pData, $pSeculo = TRUE) {
@@ -21,7 +20,6 @@ function formataData($pData, $pSeculo = TRUE) {
 
 /**
  * Formata uma data/hora do formato padrão do MySQL para o formato da localização.
- * @since 24/02/2011
  * @param string $pData
  * @param boolean $pComSegundos
  * @param boolean $pComSeculo
@@ -37,7 +35,6 @@ function formataDataHora($pData, $pComSegundos = TRUE, $pComSeculo = TRUE) {
 
 /**
  * Formata uma data do formato "DD/MM/AAAA" para o formato "AAAA-MM-DD", utilizado pelo MySQL.
- * @since 24/02/2011
  * @param string $pData A data/hora a ser formatada.
  * @return string A data/hora formatada.
  */
@@ -51,7 +48,6 @@ function formataDataMySql($pData) {
 
 /**
  * Formata um campo DATETIME do formato nativo do MySQL para o formato "HH:MM".
- * @since 24/02/2011
  * @param string $pData Data/hora a ser formatada.
  * @return string Hora formatada.
  */
@@ -69,7 +65,6 @@ function formataHora($pData) {
  * @param int   $pPrecisao   Precisão de casas decimais.
  * @param string $sepMilhar  Caractere separador de milhar.
  * @param string $sepDecimal Caractere separador de precisão decimal.
- * @since 24/02/2011
  * @version 1.0.1
  * @return string O valor formatado.
  */
@@ -80,7 +75,6 @@ function formataValor($valor, $pPrecisao = 2, $sepMilhar = '.', $sepDecimal = ',
 /**
  * Remoção de caractere acentuados.
  * @param string $string
- * @since 25/09/2011
  * @return string
  */
 function removeAcentos($string) {
@@ -94,7 +88,6 @@ function removeAcentos($string) {
 /**
  * Verifica se uma string tem comprimento zero e neste caso retorna NULL, caso contrário retorna a própria string.
  * @param string $string
- * @since 28/09/2011
  * @return mixed NULL se a string for NULL ou vazia (string de comprimento zero), ou string se for uma string não vazia.
  */
 function s0($string) {
@@ -108,7 +101,6 @@ function s0($string) {
 /**
  * Formata um CPF de "99.999.999-99" para "9999999999".
  * @param string $cpf
- * @since 20/06/2014
  * @version 1.0.0
  * @return string
  */
@@ -123,7 +115,6 @@ function formataCpfMySql($cpf) {
 /**
  * Formata um CPF de "99999999999" para "999.999.999-99".
  * @param $cpf
- * @since 20/06/2014
  * @version 1.0.0
  * @return mixed
  */
@@ -142,7 +133,6 @@ function formataCpf($cpf) {
 /**
  * Formata um CNPJ do formato apenas números para o formato "99.999.999/9999-99".
  * @param string $cnpj
- * @since 20/10/2011
  * @return string
  */
 function formataCnpj($cnpj) {
@@ -153,7 +143,6 @@ function formataCnpj($cnpj) {
 /**
  * Formata um CNPJ para valor apenas numérico "99999999999999".
  * @param string $cnpj
- * @since 25/03/2015
  * @return string
  */
 function formataCnpjMysql($cnpj) {
@@ -163,7 +152,6 @@ function formataCnpjMysql($cnpj) {
 /**
  * Enter description here ...
  * @param string $cep
- * @since 20/10/2011
  */
 function formataCep($cep) {
    return substr($cep, 0, 5) . '-' . substr($cep, 5);
@@ -172,7 +160,6 @@ function formataCep($cep) {
 /**
  * Remove a formatação para inserir apenas números no banco de "99999-999" para "99999999"
  * @param string $cep
- * @since 20/10/2011
  */
 function formataCepMysql($cep) {
    return substr($cep, 0, 5) . substr($cep, -3);
@@ -181,7 +168,6 @@ function formataCepMysql($cep) {
 /**
  * Enter description here ...
  * @param string $ativo
- * @since 06/09/2013
  * @version 1.0.0
  * @return string
  */
@@ -192,7 +178,6 @@ function formataAtivo($ativo) {
 /**
  * Formata uma string "S/N" para "Sim/Não" em verde/vermelho.
  * @param string $simNao
- * @since 31/01/2012
  * @return string
  */
 function formataSimNao($simNao) {
@@ -202,7 +187,6 @@ function formataSimNao($simNao) {
 /**
  * Formata uma string já formatada em moeda brasileira para o formato nativo do MySQL.
  * @param string $valor
- * @since 06/09/2013
  * @version 1.0.0
  * @return string
  */
@@ -216,7 +200,6 @@ function formataValorMysql($valor) {
  * Enter description here ...
  * @param string $valor String a ser formatada
  * @param string $clausula Será comparado com o valor para definir se é verde, caso seja diferente, valor deve ficar vermelho
- * @since 30/09/2014
  * @return string
  */
 function formataVerdeVermelho($valor, $clausula) {

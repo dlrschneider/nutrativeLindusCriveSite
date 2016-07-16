@@ -6,20 +6,17 @@ class ModelException extends Exception {
    
    /**
     * @var string Número do erro da última query executada.
-    * @since 16/03/2015
     */
    public $erroDatabaseNumero = NULL;
    
    /**
     * @var string Mensagem de erro da última query executada.
-    * @since 16/03/2015
     */
    public $erroDatabaseMensagem = NULL;
    
    /**
     * Construtor.
     * @param string $descricao
-    * @since 16/03/2015
     * @version 1.0.0
     * @return void
     */
@@ -35,7 +32,6 @@ class ModelException extends Exception {
 
    /**
     * Retorna mensagem de erro a ser apresentada para o usuário
-    * @since 16/03/2015
     */
    public function erroDatabase() {
       return $this->erroDatabaseNumero . ' - ' . $this->erroDatabaseMensagem;

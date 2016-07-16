@@ -24,14 +24,14 @@ class Historico_alimentacao_model extends MY_Model {
    public function mapArray2Obj(array $reg) {
    	/* @var HistoricoAlimentacao $hial */
       $hial = new HistoricoAlimentacao();
-      $hial->dieta = new Dieta();
+      $hial->dietaHistorico = new DietaHistorico();
       $hial->cliente = new Cliente();
       
-      $hial->idDietaHistorico   = $reg['iddieta_historico'];
-      $hial->dieta->idDieta     = $reg['iddieta'];
-      $hial->cliente->idCliente = $reg['idcliente'];
-      $hial->alimento           = $reg['alimento'];
-      $hial->dataCadastro       = $reg['data_cadastro'];
+      $hial->idHistoricoAlimentacao           = $reg['idhistorico_alimentacao'];
+      $hial->dietaHistorico->idDietaHistorico = $reg['iddieta_historico'];
+      $hial->cliente->idCliente               = $reg['idcliente'];
+      $hial->alimento                         = $reg['alimento'];
+      $hial->dataCadastro                     = $reg['data_cadastro'];
       
       return $hial;
    }
@@ -43,10 +43,18 @@ class Historico_alimentacao_model extends MY_Model {
     */
    public function mapObj2Array(HistoricoAlimentacao $hial) {
       return array(
-      'iddieta_historico' => $hial->idHistoricoAlimentacao,
-      'iddieta'     	     => $hial->dieta->idDieta,
+      'iddieta_historico' => $hial->dietaHistorico->idDietaHistorico,
       'idcliente'         => $hial->cliente->idCliente,
       'alimento'          => $hial->alimento,
       'data_cadastro'     => $hial->dataCadastro);
+   }
+   
+   /**
+    * Limpa as informações de um determinado cliente para inclusão das informações vindas do mobile
+    * @param int $idClie
+    */
+   public function limpaTabelaWS($idClie) {
+      $del = "delete from historico_alimentacao where idcliente = {$idClie}";
+      $this->db->query($del);
    }
 }

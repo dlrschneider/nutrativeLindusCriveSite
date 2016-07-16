@@ -1,0 +1,61 @@
+#containerGeralAnot {
+   width: 250px;
+   position: fixed;
+   top: 100%;
+   left: 100%;
+   margin-left: -250px;
+   margin-top: -40px;
+}
+
+#boxTituloAnot {
+   width: 100%;
+   height: 40px;
+   background-color: #333;
+   color: white;
+   cursor: pointer;
+   
+   -webkit-border-top-left-radius: 5px;
+   -moz-border-radius-topleft: 5px;
+   border-top-left-radius: 5px
+}
+
+#spnTitulo {
+   float: left;
+   font-size: 18px;
+   margin-left: 10px;
+   margin-top: 8px;
+}
+
+#spnIcone {
+   font-size: 18px;
+   float: right;
+   margin-top: 8px;
+   margin-right: 10px;
+}
+
+#boxConteudoAnot {
+   width: 100%;
+   height: 300px;
+   border: 1px solid #CCC;
+   overflow-y: auto;
+   background-color: white;
+}
+
+#boxConteudoAnot p {
+   color: #333;
+   font-size: 12px;
+   padding: 0px 2px 5px 2px;
+   margin: 0px;
+}
+
+#texAddMensagem {
+   width: 100%;
+   height: 30px;
+   border: none;
+   border-left: 1px solid #CCC;
+   border-right: 1px solid #CCC;
+}
+
+#containerConteudoAnot {
+   display: none;
+}

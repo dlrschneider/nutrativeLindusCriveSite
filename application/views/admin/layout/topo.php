@@ -13,9 +13,9 @@
    <!-- CSS -->
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/geral.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/topo.css">
-   <link type="text/css" rel="stylesheet" href="css/nutri/lateral.css">
+   <link type="text/css" rel="stylesheet" href="css/geral.css">
+   <link type="text/css" rel="stylesheet" href="css/topo.css">
+   <link type="text/css" rel="stylesheet" href="css/lateral.css">
    <?=$htmlCss;?>
 
    <!-- JS VENDOR -->

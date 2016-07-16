@@ -42,7 +42,7 @@ class Anotacao_model extends MY_Model {
    public function mapObj2Array(Anotacao $anot) {
       return array(
       'idcliente'     => $anot->cliente->idCliente,
-      'nome'     	  => $anot->descricao,
+      'descricao'     => $anot->descricao,
       'data_cadastro' => $anot->dataCadastro);
    }
 }

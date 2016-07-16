@@ -6,7 +6,6 @@ class MY_Log extends CI_Log {
    
    /**
     * Construtor.
-    * @since 29/01/2015
     * @version 1.0.0
     * @return void
     */

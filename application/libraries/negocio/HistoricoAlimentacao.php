@@ -5,7 +5,7 @@
 class HistoricoAlimentacao extends BusinessObject {
 
 	public $idHistoricoAlimentacao;
-	public $dieta;
+	public $dietaHistorico;
 	public $cliente;
 	public $alimento;
 	public $dataCadastro;

@@ -4,7 +4,6 @@
  * Gera botão HTML "submit" de confirmação de formulário.
  * @param string $class Nome da classe CSS do botão.
  * @param boolean $disabled TRUE-Botão desabilitado, FALSE-Botão habilitado.
- * @since 24/02/2011
  * @version 1.0.1
  * @return string Elemento HTML "input" do botão criado.
  */
@@ -15,16 +14,14 @@ function botaoConfirmar($class = 'btn btn-warning btn-sm', $disabled = FALSE) {
 /**
  * Gera botão HTML "input" de cancelar operação/formulário.
  * @param $locationOnclick
- * @since 24/02/2011
  * @return string
  */
-function botaoCancelar($locationOnclick) {
-   return '<input class="btn btn-default btn-sm" type="button" name="btCancela" id="btCancela" value="Cancelar" onclick="window.location.href=\'' . site_url() . '/' . $locationOnclick . '\';" />';
+function botaoCancelar($locationOnclick, $value = "Cancelar") {
+   return "<input class=\"btn btn-default btn-sm\" type=\"button\" name=\"btCancela\" id=\"btCancela\" value=\"{$value}\" onclick=\"window.location.href='" . site_url() . '/' . $locationOnclick . '\';" />';
 }
 
 /**
  * Cria um botão padrão com opção de onclick.
- * @since 24/02/2011
  * @param string $nomeId
  * @param string $value
  * @param string $locationOnclick
@@ -43,7 +40,6 @@ function botaoLocation($nomeId, $value, $locationOnclick, $class = 'btn btn-defa
 /**
  * Cria o botão de submissão padrão de pesquisa de registros.
  * @param string $jsOnClick
- * @since 07/04/2015
  * @version 1.0.0
  * @return string
  */
@@ -56,7 +52,6 @@ function botaoPesquisar($jsOnClick = NULL, $type = "submit") {
 /**
  * Cria o botão padrão de limpar filtros de pesquisa.
  * @param string $jsOnClick
- * @since 07/04/2015
  * @version 1.0.0
  * @return string
  */
@@ -69,7 +64,6 @@ function botaoLimparFiltros($jsOnClick = NULL) {
 
 /**
  * Criação de elemento visual indicativo de campo obrigatório (co).
- * @since 24/02/2011
  * @return string
  */
 function co() {
@@ -82,7 +76,6 @@ function co() {
  * @param string  $selecao
  * @param boolean $disabled
  * @param string  $textoPadrao
- * @since 27/03/2015
  * @version 1.0.2
  * @return void
  */
@@ -122,7 +115,6 @@ function comboEstado($nomeId, $selecao, $disabled = FALSE, $textoPadrao = 'Selec
 /**
  * Imprime o html gerado a partir dos métodos ajax
  * @param string $html
- * @since 30/10/2014
  * @return void
  */
 function imprimeHtmlAjax($html) {

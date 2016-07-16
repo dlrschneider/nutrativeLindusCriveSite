@@ -18,7 +18,15 @@ class App2site extends MY_Controller {
    public function historicoAlimentacao() {
       $listaObj = json_decode($this->input->post('JSON_alimentacao'));
       
-      // limpar informações do historico de alimentacao
+      // PEGAR CLIENTE
+      // $idCliente
+      
+      try {
+         $this->hialModel->limpaTabela();
+      } catch (Exception $e) {
+         log_message('info', "[WS] Limpesa da tabela historico_alimentacao para o cliente \"{$idCliente}\"");
+      }
+      
       foreach ($listaObj as $obj) {
          // Criar objeto historicoAlimentacao a partir do JSON
          // Gravar as informações

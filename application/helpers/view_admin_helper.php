@@ -9,7 +9,6 @@ if (!defined('BASEPATH')) exit("<h1>Acesso Negado</h1>\n<h3>Vá embora hacker mal
  * Monta o cabeçalho de título de página de cadastro.
  * @param string $titulo
  * @param int $qtdeReg
- * @since 24/02/2011
  */
 function tituloCadastro ($titulo, $qtdeReg = NULL) {
    echo "<h1 class=\"tituloCadastro\">{$titulo}";
@@ -25,7 +24,6 @@ function tituloCadastro ($titulo, $qtdeReg = NULL) {
  * Monta o cabeçalho de subtítulos
  * @param string $subtitulo
  * @param int $qtdeReg
- * @since 14/04/2015
  */
 function subtituloCadastro ($subtitulo, $qtdeReg = NULL) {
    echo "<h3 class=\"subtituloCadastro\">{$subtitulo} "
@@ -41,7 +39,6 @@ function subtituloCadastro ($subtitulo, $qtdeReg = NULL) {
 /**
  * Retorna linha padrão de tabela de registros, contendo mensagem de nenhum
  * registro encontrado.
- * @since 24/02/2011
  * @return string
  */
 function avisoNenhumRegistroEncontrado($qtdeReg) {
@@ -54,7 +51,6 @@ function avisoNenhumRegistroEncontrado($qtdeReg) {
 
 /**
  * Apresenta texto explicativo sobre os filtros de pesquisa de registros.
- * @since 16/05/2014
  * @return string
  */
 function avisoFiltrosPesquisa() {
@@ -64,7 +60,6 @@ function avisoFiltrosPesquisa() {
 /**
  * Formata uma palavra ou frase em cinza claro.
  * @param string $texto
- * @since 08/05/2014
  * @return string
  */
 function spnIndefinido($texto = 'Indefinido') {
@@ -74,7 +69,6 @@ function spnIndefinido($texto = 'Indefinido') {
 /**
  * Criação de elemento visual indicativo referente à dica de campo de formulário.
  * @param $texto
- * @since 24/02/2011
  * @return string
  */
 function campoDica($texto) {

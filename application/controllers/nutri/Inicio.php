@@ -8,7 +8,6 @@ class Inicio extends MY_Controller {
 	
 	/**
 	 * DASHBOARD
-	 * @since 29/01/2015
 	 * @return void
 	 */
 	public function index() {
@@ -20,7 +19,6 @@ class Inicio extends MY_Controller {
 
 	/**
 	 * Encerra a sessão do Gerenciador de Cadastros.
-	 * @since 18/03/2015
 	 * @return void
 	 */
 	public function logout() {
