@@ -75,6 +75,7 @@ require APPPATH . 'libraries/negocio/Alimento.php';
 require APPPATH . 'libraries/negocio/Dieta.php';
 require APPPATH . 'libraries/negocio/DietaAlimento.php';
 require APPPATH . 'libraries/negocio/DietaHistorico.php';
+require APPPATH . 'libraries/negocio/HistoricoAlimentacao.php';
 
 
 // CLASSES DE SISTEMA
@@ -156,4 +157,5 @@ $autoload['model'] = array(
 'Alimento_model' => 'alimModel',
 'Dieta_model' => 'dietModel',
 'Dieta_alimento_model' => 'dialModel',
-'Dieta_historico_model' => 'dihiModel');
+'Dieta_historico_model' => 'dihiModel',
+'Historico_alimentacao_model' => 'hialModel',);

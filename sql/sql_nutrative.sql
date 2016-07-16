@@ -87,6 +87,19 @@ CREATE TABLE IF NOT EXISTS dieta_historico (
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_dieta FOREIGN KEY (iddieta) REFERENCES dieta (iddieta) ON DELETE CASCADE;
 ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
+CREATE TABLE IF NOT EXISTS historico_alimentacao (
+  idhistorico_alimentacao int(9) NOT NULL AUTO_INCREMENT,
+  iddieta int(9) NOT NULL,
+  idcliente int(9) NOT NULL,
+  alimento varchar(255) NOT NULL,
+  quantidade decimal(5,2) NULL,
+  data_cadastro datetime NOT NULL,
+  PRIMARY KEY (idhistorico_alimentacao)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+ALTER TABLE historico_alimentacao ADD CONSTRAINT calendario_fk_dieta FOREIGN KEY (iddieta) REFERENCES dieta (iddieta) ON DELETE CASCADE;
+ALTER TABLE historico_alimentacao ADD CONSTRAINT calendario_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
+
 CREATE TABLE noticia (
 	idnoticia int(9) NOT NULL AUTO_INCREMENT,
 	idnutricionista int(9) NOT NULL,

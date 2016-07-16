@@ -50,7 +50,7 @@ class Clie extends MY_Controller {
     $this->viewTopo->css = array('css/nutri/geral.css');
    	
       if ($id) {
-          $this->clie = $this->clieModel->carrega($id);
+         $this->clie = $this->clieModel->carrega($id);
 	      $dietAtiva = $this->dietModel->carregaUltimaDieta($id);
 	      $this->view->listaDiet = $this->dietModel->carregaTodos("where ativo = 'S'");
 	      $this->view->listaAnot = $this->anotModel->carregaTodos("where idcliente = {$id}"); 
