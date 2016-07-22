@@ -24,12 +24,13 @@ class Dieta_model extends MY_Model {
    public function mapArray2Obj(array $reg) {
    	/* @var Dieta $diet */
       $diet = new Dieta();
+      $diet->nutricionista   = new Nutricionista();
       
-      $diet->idDieta         = $reg['iddieta'];
-      $diet->nutricionista   = new Nutricionista($reg['idnutricionista']);
-      $diet->nome 			 = $reg['nome'];
-      $diet->ativo           = $reg['ativo'];
-      $diet->dataCadastro    = $reg['data_cadastro'];
+      $diet->idDieta                        = $reg['iddieta'];
+      $diet->nutricionista->idNutricionista = $reg['idnutricionista'];
+      $diet->nome 			                 = $reg['nome'];
+      $diet->ativo                          = $reg['ativo'];
+      $diet->dataCadastro                   = $reg['data_cadastro'];
       
       return $diet;
    }

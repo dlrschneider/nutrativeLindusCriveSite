@@ -5,7 +5,7 @@
 class Noticia extends BusinessObject {
 
 	public $idNoticia;
-	public $nutricionista; // TODO TRANSFORMAR EM OBJ NUTRICIONISTA
+	public $nutricionista; 
 	public $titulo;
 	public $descricao;
 	public $imagem;

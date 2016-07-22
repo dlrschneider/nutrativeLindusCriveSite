@@ -24,9 +24,10 @@ class Noticia_model extends MY_Model {
    public function mapArray2Obj(array $reg) {
    	/* @var Noticia $noti */
       $noti = new Noticia();
+      $noti->nutricionista = new Nutricionista();
       
       $noti->idNoticia = $reg['idnoticia'];
-      $noti->nutricionista = new Nutricionista($reg['idnutricionista']);
+      $noti->nutricionista->idNutricionista = $reg['idnutricionista'];
       $noti->titulo = $reg['titulo'];
       $noti->descricao = $reg['descricao'];
       $noti->imagem = $reg['imagem'];

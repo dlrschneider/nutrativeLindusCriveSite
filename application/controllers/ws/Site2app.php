@@ -53,6 +53,11 @@ class Site2app extends MY_Controller {
     */
    public function noticias($idNutri) {
       $listaNoti = $this->notiModel->carregaTodos("where idnutricionista = {$idNutri}");
+      
+      foreach ($listaNoti as $noti) {
+         $noti->nutricionista = $this->nutrModel->carrega($noti->nutricionista->idNutricionista);
+      }
+      
       echo json_encode($listaNoti);
    }
 }

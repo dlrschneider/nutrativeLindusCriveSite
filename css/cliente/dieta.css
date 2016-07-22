@@ -40,3 +40,43 @@
    max-width: 900px;
    margin: 0 auto;
 }
+
+#containerModal .modal-dialog {
+   width: 800px;
+}
+
+.boxFormAlimentacao {
+   height: 50px;
+   margin-bottom: 5px;
+   border-bottom: 1px dotted #CCC;
+}
+
+.boxFormAlimentacao input, select, .iconRemover {
+   float: left;
+}
+
+.boxFormAlimentacao .texAlimento {
+   width: 400px;
+}
+
+.boxFormAlimentacao .texQuantidade {
+   width: 100px;
+   margin-left: 10px;
+}
+
+.boxFormAlimentacao .cmbTurno {
+   width: 150px;
+   margin-left: 10px;
+}
+
+.boxFormAlimentacao .iconRemover {
+   font-size: 20px;
+   margin-left: 10px;
+   margin-top: 5px;
+   cursor: pointer;
+   color: #AAA;
+}
+
+.boxFormAlimentacao .iconRemover:hover {
+   color: #883333;
+}

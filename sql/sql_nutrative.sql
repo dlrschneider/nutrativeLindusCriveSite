@@ -93,6 +93,7 @@ CREATE TABLE IF NOT EXISTS historico_alimentacao (
   idcliente int(9) NOT NULL,
   alimento varchar(255) NOT NULL,
   quantidade decimal(5,2) NULL,
+  turno enum('Manhã', 'Almoço', 'Lanche', 'Janta') NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idhistorico_alimentacao)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;

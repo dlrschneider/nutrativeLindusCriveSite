@@ -31,6 +31,7 @@ class Historico_alimentacao_model extends MY_Model {
       $hial->dietaHistorico->idDietaHistorico = $reg['iddieta_historico'];
       $hial->cliente->idCliente               = $reg['idcliente'];
       $hial->alimento                         = $reg['alimento'];
+      $hial->turno                            = $reg['turno'];
       $hial->dataCadastro                     = $reg['data_cadastro'];
       
       return $hial;
@@ -46,6 +47,7 @@ class Historico_alimentacao_model extends MY_Model {
       'iddieta_historico' => $hial->dietaHistorico->idDietaHistorico,
       'idcliente'         => $hial->cliente->idCliente,
       'alimento'          => $hial->alimento,
+      'turno'             => $hial->turno,
       'data_cadastro'     => $hial->dataCadastro);
    }
    
