@@ -50,7 +50,7 @@ class Login extends MY_Controller {
       	
       	log_message('user', "Nutricionista logado ");
       	
-      	redirect('cliente/diet');
+      	redirect('cliente/inicio');
       } catch (Exception $e) {
         // não encontrou cliente
       }
