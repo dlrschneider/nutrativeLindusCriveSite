@@ -11,6 +11,8 @@
    <title>Nutrative</title>
 
    <!-- CSS -->
+   <link type="text/css" rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+   <link type="text/css" rel="stylesheet" href="vendor/fullcalendar/fullcalendar.css">
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
    <link type="text/css" rel="stylesheet" href="css/geral.css">
@@ -23,10 +25,14 @@
    <!-- JS VENDOR -->
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery-2.1.3.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery.maskedinput.min.js"></script>
+   <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery.maskMoney.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/vendor/jquery.ui.widget.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/jquery.iframe-transport.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/jquery.fileupload.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="<?=base_url();?>vendor/fullcalendar/lib/moment.min.js"></script>
+   <script type="text/javascript" src="<?=base_url();?>vendor/fullcalendar/fullcalendar.min.js"></script>
+   <script type="text/javascript" src="<?=base_url();?>vendor/highcharts/js/highcharts.js"></script>
    <script type="text/javascript" src="js/geral.js"></script>
    <?=$htmlJs;?>
 </head>

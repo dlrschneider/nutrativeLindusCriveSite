@@ -1,0 +1,51 @@
+#containerModal .modal-dialog {
+   width: 800px;
+}
+
+.boxFormAlimentacao {
+   height: 50px;
+   margin-bottom: 5px;
+   border-bottom: 1px dotted #CCC;
+}
+
+.boxFormAlimentacao input, select, .iconRemover {
+   float: left;
+}
+
+.boxFormAlimentacao .texAlimento {
+   width: 400px;
+}
+
+.boxFormAlimentacao .texQuantidade {
+   width: 100px;
+   margin-left: 10px;
+}
+
+.boxFormAlimentacao .cmbTurno {
+   width: 150px;
+   margin-left: 10px;
+}
+
+.boxFormAlimentacao .iconRemover {
+   font-size: 20px;
+   margin-left: 10px;
+   margin-top: 5px;
+   cursor: pointer;
+   color: #AAA;
+}
+
+.boxFormAlimentacao .iconRemover:hover {
+   color: #883333;
+}
+
+.boxFormAdicionar input, .boxFormAdicionar select{
+   background-color: #EFEFEF;
+   cursor: pointer;
+}
+
+#spnAguarde {
+   color: #AA3333;
+   font-weight: bold;
+   padding-bottom: 10px;
+   display: none;
+}

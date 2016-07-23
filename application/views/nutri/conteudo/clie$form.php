@@ -10,7 +10,7 @@
 	  <?php if ($clie->idCliente): ?>
 	  <li aba="boxDietas"><a class="lnkAba">Dieta</a></li>
      <li aba="boxHistorico"><a class="lnkAba">Histórico</a></li>
-	  <li aba="boxAlimentacao"><a class="lnkAba">Alimentação</a></li>
+	  <li aba="boxAlimentacao" id="liAlimentacao"><a class="lnkAba">Alimentação</a></li>
 	  <li aba="boxNotas"><a class="lnkAba">Anotações</a></li>
 	  <?php endif;?>
 	</ul>
@@ -125,7 +125,7 @@
 		            <tbody class="tbody">
 		            <?php foreach ($listaDihi as $dihi): ?>
 		               <tr>
-		                  <td><a href="index.php/nutri/diet/form/<?=$dihi->dieta->idDieta?>"><?=$dihi->dieta->nome;?></a></td>
+		                  <td><a href="index.php/nutri/clie/detalheHistorico/<?=$clie->idCliente?>/<?=$dihi->idDietaHistorico;?>"><?=$dihi->dieta->nome;?></a></td>
 		                  <td><?=formataAtivo($dihi->dieta->ativo);?></td>
 		                  <td><?=formataData($dihi->dataCadastro);?></td>
 		               </tr>
@@ -136,7 +136,10 @@
 		      </div>
           </div>
           
-		    <div style="display: none;" class="boxAba espacamento" id="boxAlimentacao"></div>
+		    <div style="display: none;" class="boxAba espacamento" id="boxAlimentacao">
+            <div id="boxCalendario"></div>
+          </div>
+          
 		    <div style="display: none;" class="boxAba espacamento" id="boxNotas">
              <?=subtituloCadastro("Dúvidas do Paciente")?>
              
@@ -169,6 +172,24 @@
         </div>
 	<?=form_close()?>
 </div>
+
+
+<div id="containerModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Alimentação <span id="spnDataAlimentacao"></span></h4>
+      </div>
+      <div class="modal-body">
+         <div class="boxFormNovo"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnFechar" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 $(document).ready(function(){
 	$("#texDataNascimento").mask('99/99/9999');
@@ -185,6 +206,37 @@ $(document).ready(function(){
 			    }
 	      }
 	   });
+   });
+
+   $("#liAlimentacao").click(function(){
+      <?php if ($dihiAtiva->idDietaHistorico): ?>
+      $('#boxCalendario').fullCalendar({
+         theme: true,
+         monthNames: ['Janero','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+         monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+         dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+         dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+         header: {
+              left: 'prev,next',
+              center: 'title',
+              right: ''
+         },
+         defaultDate: '<?=date('Y-m-d');?>',
+         dayClick: function(date) {
+            $("#spnDataAlimentacao").html(date.format());
+
+            $.ajax({
+              url: "<?=base_url();?>index.php/nutri/clie/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$clie->idCliente;?> + "/" + <?=$dihiAtiva->idDietaHistorico;?>,
+              success: function(html) {
+                $('.boxFormNovo').html(html);
+                $('.texQuantidade').maskMoney({thousands:'.', decimal:','});
+              }
+            });
+         
+            $('#containerModal').modal('show');
+          }
+      });
+      <?php endif;?>
    });
 });
 </script>

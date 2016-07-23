@@ -34,7 +34,7 @@ class Diet extends MY_Controller {
       $this->view->listaDiet_qtdeReg = count($this->view->listaDiet);
       
       $this->topo('nutri');
-	  $this->load->view('nutri/layout/lateral', $this->view);
+	   $this->load->view('nutri/layout/lateral', $this->view);
       $this->load->view('nutri/conteudo/diet$index', $this->view);
       $this->rodape('nutri');
    }
@@ -160,6 +160,7 @@ class Diet extends MY_Controller {
 	      $dial = new DietaAlimento();
 	      $dial->alimento = $this->alimModel->carrega($idAlimento);
 	      $dial->dieta = $this->dietModel->carrega($idDieta);
+	      $dial->turno = "Manhã";
 	      
 	      if ($this->dialModel->grava($dial)) {
 	         $html = $this->load->view('nutri/fragmento/diet$form_dieta_alimento', array('dial' => $dial), TRUE);
@@ -184,5 +185,14 @@ class Diet extends MY_Controller {
       } catch (Exception $e) {
    	     log_message('error', "Erro ao excluir dieta_alimento ID {$idDietaAlimento}");
       }
+   }
+   
+   /**
+    * Atualiza o turno do alimento na dieta
+    */
+   public function ajaxAtualizaTurno() {
+      $dial = $this->dialModel->carrega($this->input->post('iddieta_alimento'));
+      $dial->turno = $this->input->post('turno');
+      $this->dialModel->grava($dial);
    }
 }

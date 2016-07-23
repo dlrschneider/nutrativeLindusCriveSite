@@ -29,14 +29,14 @@ class Clie extends MY_Controller {
     * @return void
     */
    public function index() {
-   	  $this->viewTopo->css = array('css/nutri/cliente.css', 'css/nutri/pesquisa.css');
+   	$this->viewTopo->css = array('css/nutri/cliente.css', 'css/nutri/pesquisa.css');
    	  
       $this->view->msgExclusao = $this->session->flashdata('msgExclusao');
       $this->view->listaClie = $this->clieModel->carregaTodos();
       $this->view->listaClie_qtdeReg = count($this->view->listaClie);
       
       $this->topo('nutri');
-	  $this->load->view('nutri/layout/lateral', $this->view);
+	   $this->load->view('nutri/layout/lateral', $this->view);
       $this->load->view('nutri/conteudo/clie$index', $this->view);
       $this->rodape('nutri');
    }
@@ -46,11 +46,18 @@ class Clie extends MY_Controller {
     * @param int $id ID/PK do registro a ser alterado, NULL se for inclusão.
     */
    public function form($id = NULL) {
-    $this->viewTopo->css = array('css/nutri/cliente.css');
-    $this->viewTopo->css = array('css/nutri/geral.css');
+      $this->viewTopo->css = array('css/nutri/cliente.css', 'css/calendario.css');
    	
       if ($id) {
          $this->clie = $this->clieModel->carrega($id);
+         
+         
+         try {
+            $this->view->dihiAtiva = $this->dihiModel->carregaUltimaDietaHistorico($this->clie->idCliente);
+         } catch (Exception $e) {
+            $this->view->dihiAtiva = new DietaHistorico();
+         }
+         
 	      $dietAtiva = $this->dietModel->carregaUltimaDieta($id);
 	      $this->view->listaDiet = $this->dietModel->carregaTodos("where ativo = 'S'");
 	      $this->view->listaAnot = $this->anotModel->carregaTodos("where idcliente = {$id} order by data_cadastro desc"); 
@@ -79,6 +86,8 @@ class Clie extends MY_Controller {
 	      }
 	      
 	      $this->view->dietAtiva = $dietAtiva;
+      } else {
+         $this->view->dihiAtiva = new DietaHistorico();
       }
       
       $this->view->id = $id;
@@ -89,6 +98,36 @@ class Clie extends MY_Controller {
       $this->topo('nutri');
       $this->load->view('nutri/layout/lateral', $this->view);
       $this->load->view('nutri/conteudo/clie$form.php', $this->view);
+      $this->rodape('nutri');
+   }
+
+   /**
+    * Detalhamento de uma dieta
+    * @param int $idDihi ID/PK da Dieta_historico
+    */
+   public function detalheHistorico($idCliente, $idDihi) {
+      $clie = $this->clieModel->carrega($idCliente);
+      $this->view->clie = $clie;
+   
+      $dihi = $this->dihiModel->carrega($idDihi);
+      $this->view->dihi = $dihi;
+      $diet = $this->dietModel->carrega($dihi->dieta->idDieta);
+      $diet->dietasAlimentos = $this->dialModel->carregaTodos("where iddieta = {$diet->idDieta}");
+   
+      $html = $this->load->view('nutri/fragmento/clie$form_dieta_abre_painel', array('diet' => $diet), TRUE);
+   
+      foreach ($diet->dietasAlimentos as $dial) {
+         $dial->alimento = $this->alimModel->carrega($dial->alimento->idAlimento);
+         $html .= $this->load->view('nutri/fragmento/diet$form_dieta_alimento', array('dial' => $dial), TRUE);
+      }
+   
+      $html .= $this->load->view('nutri/fragmento/clie$form_dieta_fecha_painel', NULL, TRUE);
+      $diet->htmlAlimentosVinculados = $html;
+   
+      $this->view->diet = $diet;
+      $this->topo('nutri');
+      $this->load->view('nutri/layout/lateral', $this->view);
+      $this->load->view('nutri/conteudo/clie$detalhe_historico', $this->view);
       $this->rodape('nutri');
    }
    

@@ -1,0 +1,12 @@
+.containerComponente {
+   min-height: 300px;
+   border-bottom: 1px dotted #BBB;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.containerComponente h2 {
+   float: left;
+   font-size: 18px;
+   color: #FF6347;
+}

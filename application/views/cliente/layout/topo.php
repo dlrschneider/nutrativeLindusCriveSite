@@ -11,6 +11,7 @@
    <title>Nutrative</title>
 
    <!-- CSS -->
+   <link type="text/css" rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
    <link type="text/css" rel="stylesheet" href="vendor/fullcalendar/fullcalendar.css">
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
@@ -30,7 +31,6 @@
    <script type="text/javascript" src="<?=base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/fullcalendar/lib/moment.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/fullcalendar/fullcalendar.min.js"></script>
-   <script type="text/javascript" src="<?=base_url();?>vendor/fullcalendar/gcal.js"></script>
    <script type="text/javascript" src="js/geral.js"></script>
    <?=$htmlJs;?>
 </head>

@@ -46,3 +46,13 @@
 	text-align: center;
 	font-size: 12px;
 }
+
+#boxVinculado {
+   position: relative;
+   z-index: 1;
+}
+
+.boxInformacaoAlimento label input {
+   position: relative;
+   z-index: 100;
+}

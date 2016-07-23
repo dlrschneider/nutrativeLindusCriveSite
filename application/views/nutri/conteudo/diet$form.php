@@ -48,10 +48,6 @@
 					<input class="form-control" type="text" name="texBuscaAlimento" id="texBuscaAlimento" placeholder="Busca"/>
 				</div>
 				
-				<div class="col-sm-1">
-					<button class="btn btn-warning" type="button" id="btnBusca">Buscar</button>
-				</div>
-				
 				<br class="clear"/>
 				
 				<div id="boxEsquerda">
@@ -76,15 +72,33 @@
 </div>
 <script>
 $(document).ready(function(){
+   $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+   
 	busca = false;
-	$("#texBuscaAlimento").change(function() {
-	   busca = true;
-	   buscaAlimento();
-	});
-	
-	$("#btnBusca").click(function() {
+	$("#texBuscaAlimento").keyup(function(event) {
+	   if(event.keyCode == 13) {
+	      event.preventDefault();
+	      return false;
+	    }
+       
 	   if (!busca) {
-		   buscaAlimento();
+   	   busca = true;
+         
+   	   $.ajax({
+   	        url: "<?=base_url();?>index.php/nutri/diet/ajaxBuscaAlimento/<?=$diet->idDieta?>",
+   			data: {busca: $("#texBuscaAlimento").val()},
+   	        type: "POST",
+   	        success: function(html) {
+   				$('#boxEsquerda').html(html);
+   	        }
+   	   }).done(function(){
+   		   busca = false;
+   	   });
 	   }
 	});
 	
@@ -108,7 +122,37 @@ $(document).ready(function(){
 	   });
 	});
 
-	$(document).on('click', '.boxVinculado', function(){
+   $(document).on('click', '.radTurno', function(){
+      id = $(this).closest('.boxVinculado').data('iddieta_alimento');
+      valor = $(this).val();
+
+      $.ajax({
+        url: "<?=base_url();?>index.php/nutri/diet/ajaxAtualizaTurno/",
+        data: {iddieta_alimento: id, turno: valor},
+        type: "POST"
+      });
+   });
+
+   $(document).on('click', '.boxVinculado .boxInformacaoAlimento span', function(e){
+      if (e.target !== this)
+         return;
+
+      div = $(this).closest('.boxVinculado');
+      var id = div.data('iddieta_alimento');
+      $.ajax({
+           url: "<?=base_url();?>index.php/nutri/diet/ajaxRemoveAlimento/" + id,
+           type: "POST"
+      }).done(function( data ) {
+         div.fadeOut(400, function() {
+            div.remove();
+         });
+      });
+    });
+   
+	$(document).on('click', '.boxVinculado', function(e){
+	   if (e.target !== this)
+	      return;
+      
 		var id = $(this).data('iddieta_alimento');
 		var box = $(this);
 		$.ajax({
@@ -121,17 +165,4 @@ $(document).ready(function(){
 	   });
     });
 });
-
-function buscaAlimento() {
-	$.ajax({
-        url: "<?=base_url();?>index.php/nutri/diet/ajaxBuscaAlimento/<?=$diet->idDieta?>",
-		data: {busca: $("#texBuscaAlimento").val()},
-        type: "POST",
-        success: function(html) {
-			$('#boxEsquerda').html(html);
-        }
-   }).done(function(){
-	   busca = false;
-   });
-}
 </script>

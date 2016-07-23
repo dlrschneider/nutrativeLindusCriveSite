@@ -11,6 +11,32 @@ class Inicio extends MY_Controller {
 	 * @return void
 	 */
 	public function index() {
+	   $this->viewTopo->css = array('css/nutri/inicio.css');
+	   
+	   $listaDias = '';
+	   $listaQtdeCadastraram = '';
+	   $listaQtdeClientes = '';
+	   for ($i = 30; $i >= 0; $i--) {
+	      $timestamp = time();
+	      $tm = 86400 * $i;
+	      $tm = $timestamp - $tm;
+	   
+	      $listaDias .= "'" . date("d/m", $tm) . "',";
+	      
+	      $dataMysql = date("Y-m-d", $tm);
+	      
+	      $listaQtdeCadastraram .= $this->hialModel->qtdeAlimentosCadastradosPelosClientes($dataMysql) . ',';
+	      $listaQtdeClientes .= $this->clieModel->qtdeClientesNaoCadastrouAlimentos($dataMysql) . ',';
+	      
+	   }
+	   
+	   $this->view->listaDias = substr($listaDias, 0, -1);
+	   $this->view->listaQtdeCadastraram = substr($listaQtdeCadastraram, 0, -1);
+	   $this->view->listaQtdeClientes = substr($listaQtdeClientes, 0, -1);
+	   
+	   $this->view->qtdeAtivos   = $this->clieModel->qtdeClientesAtivos();
+	   $this->view->qtdeInativos = $this->clieModel->qtdeClientesInativos();
+	   
 	   $this->topo('nutri');
 	   $this->load->view('nutri/layout/lateral', $this->view);
 	   $this->load->view('nutri/conteudo/inicio$index', $this->view);

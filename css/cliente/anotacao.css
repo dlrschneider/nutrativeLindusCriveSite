@@ -5,6 +5,7 @@
    left: 100%;
    margin-left: -250px;
    margin-top: -40px;
+   z-index: 1000;
 }
 
 #boxTituloAnot {

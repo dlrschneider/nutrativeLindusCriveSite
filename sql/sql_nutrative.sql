@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS dieta_alimento (
   iddieta_alimento int(9) NOT NULL AUTO_INCREMENT,
   iddieta int(9) NOT NULL,
   idalimento int(9) NOT NULL,
+  turno enum('Manhã', 'Almoço', 'Lanche', 'Janta') NOT NULL,
   PRIMARY KEY (iddieta_alimento)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 

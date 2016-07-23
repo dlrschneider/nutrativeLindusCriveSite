@@ -12,7 +12,7 @@ class Diet extends MY_Controller {
       parent::__construct();
 
       $this->diet = new Dieta();
-      $this->viewTopo->css = array('css/cliente/dieta.css');
+      $this->viewTopo->css = array('css/cliente/dieta.css', 'css/calendario.css');
    }
    
    /**

@@ -61,4 +61,19 @@ class Historico_alimentacao_model extends MY_Model {
       $del = "delete from historico_alimentacao where idcliente = {$idClie}";
       $this->db->query($del);
    }
+
+   /**
+    * Descobre a quantidade de alimentos que foram cadastrados pelos clientes em um determinado dia
+    * @return int qtde
+    */
+   public function qtdeAlimentosCadastradosPelosClientes($data) {
+      $sel = "select count(*) qtde "
+      . "from (cliente         clie, "
+      . "historico_alimentacao hial) "
+      . "where clie.idcliente = hial.idcliente "
+      . "and hial.data_cadastro like '%{$data}%'";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+      return $reg['qtde'];
+   }
 }

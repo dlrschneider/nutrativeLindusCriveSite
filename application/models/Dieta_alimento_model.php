@@ -23,13 +23,14 @@ class Dieta_alimento_model extends MY_Model {
     */
    public function mapArray2Obj(array $reg) {
    	/* @var DietaAlimento $dial */
-      $dial = new DietaAlimento();
-      $dial->dieta  		  = new Dieta($reg['iddieta']);
-      $dial->alimento         = new Alimento($reg['idalimento']);
+      $dial           = new DietaAlimento();
+      $dial->dieta  	 = new Dieta($reg['iddieta']);
+      $dial->alimento = new Alimento($reg['idalimento']);
       
       $dial->idDietaAlimento      = $reg['iddieta_alimento'];
-      $dial->dieta->idDieta  	  = $reg['iddieta'];
+      $dial->dieta->idDieta  	    = $reg['iddieta'];
       $dial->alimento->idAlimento = $reg['idalimento'];
+      $dial->turno                = $reg['turno'];
 
       return $dial;
    }
@@ -42,7 +43,8 @@ class Dieta_alimento_model extends MY_Model {
    public function mapObj2Array(DietaAlimento $dial) {
       return array(
       'iddieta_alimento' => $dial->idDietaAlimento,
-      'iddieta'     	 => $dial->dieta->idDieta,
-      'idalimento'       => $dial->alimento->idAlimento);
+      'iddieta'     	    => $dial->dieta->idDieta,
+      'idalimento'       => $dial->alimento->idAlimento,
+      'turno'            => $dial->turno);
    }
 }

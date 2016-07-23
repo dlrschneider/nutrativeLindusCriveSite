@@ -72,4 +72,49 @@ class Cliente_model extends MY_Model {
    
    	return $this->carrega($reg["id{$this->tableName}"]);
    }
+
+   /**
+    * Descobre a quantidade de alimentos que foram cadastrados pelos clientes em um determinado dia
+    * @return int qtde
+    */
+   public function qtdeClientesNaoCadastrouAlimentos($data) {
+      $sel = "select count(*) qtde "
+      . "from cliente clie "
+      . "where not exists "
+      . " (select idcliente from historico_alimentacao "
+      . "  where idcliente = clie.idcliente "
+      . "  and data_cadastro like '%{$data}%')";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+      
+      return $reg['qtde'];
+   }
+
+   /**
+    * Quantidade de clientes inativos
+    * @return int qtde
+    */
+   public function qtdeClientesInativos() {
+      $sel = "select count(*) qtde "
+      . "from cliente "
+      . "where ativo = 'N'";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+   
+      return $reg['qtde'];
+   }
+
+   /**
+    * Quantidade de clientes ativos
+    * @return int qtde
+    */
+   public function qtdeClientesAtivos() {
+      $sel = "select count(*) qtde "
+      . "from cliente "
+      . "where ativo = 'S'";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+                   
+      return $reg['qtde'];
+   }
 }
