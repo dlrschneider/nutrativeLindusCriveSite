@@ -134,4 +134,45 @@ class MY_Controller extends CI_Controller {
    
    	$this->session->set_flashdata($flash);
    }
+
+   /**
+    * Recupera a alimentação do usuário em um determinado dia
+    * @param String $data Data no formato YYYY-MM-DD
+    * @return String html
+    */
+   public function ajaxRecuperaAlimentos($data, $idCliente, $idDietaHistorico) {
+      $where = "where idcliente = {$idCliente} "
+      . "and data_cadastro like '%{$data}%' "
+      . "and iddieta_historico = {$idDietaHistorico}";
+      $listaHial = $this->hialModel->carregaTodos($where);
+   
+      $html = '';
+      foreach ($listaHial as $hial) {
+         $html .= $this->addFormularioAlimentacao($hial);
+      }
+   
+      imprimeHtmlAjax($html);
+   }
+
+   /**
+    * Cria os campos do formulário
+    * @param HistoricoAlimentacao $hial
+    */
+   public function addFormularioAlimentacao($hial = NULL) {
+      if (!$hial) {
+         $hial = new HistoricoAlimentacao();
+      }
+   
+      return "<div class=\"boxFormAlimentacao\" data-id=\"{$hial->idHistoricoAlimentacao}\">"
+      . "<input type=\"text\" class=\"texAlimento form-control\" value=\"{$hial->alimento}\"/>"
+      . "<input type=\"text\" class=\"texQuantidade form-control\" value=\"" . formataValor($hial->quantidade) . "\"/>"
+      . "<select class=\"cmbTurno form-control\">"
+      . "   <option" . ($hial->turno == "Manhã"  ? " selected=\"select\" " : "")  . " value=\"Manhã\">Manhã</option>"
+      . "   <option" . ($hial->turno == "Almoço" ? " selected=\"select\" " : "")  . " value=\"Almoço\">Almoço</option>"
+      . "   <option" . ($hial->turno == "Lanche" ? " selected=\"select\" " : "")  . " value=\"Lanche\">Lanche</option>"
+      . "   <option" . ($hial->turno == "Janta"  ? " selected=\"select\" " : "")  . " value=\"Janta\">Janta</option>"
+      . "</select>"
+      . "<span class=\"iconRemover glyphicon glyphicon-remove\"></span>"
+      . "</div>";
+   }
 }

@@ -23,6 +23,7 @@
    <!-- JS VENDOR -->
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery-2.1.3.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery.maskedinput.min.js"></script>
+   <script type="text/javascript" src="<?=base_url();?>vendor/jquery/jquery.maskMoney.min.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/vendor/jquery.ui.widget.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/jquery.iframe-transport.js"></script>
    <script type="text/javascript" src="<?=base_url();?>vendor/jquery/fileupload/js/jquery.fileupload.js"></script>

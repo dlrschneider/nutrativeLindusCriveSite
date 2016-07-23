@@ -80,3 +80,15 @@
 .boxFormAlimentacao .iconRemover:hover {
    color: #883333;
 }
+
+.boxFormAdicionar input, .boxFormAdicionar select{
+   background-color: #EFEFEF;
+   cursor: pointer;
+}
+
+#spnAguarde {
+   color: #AA3333;
+   font-weight: bold;
+   padding-bottom: 10px;
+   display: none;
+}

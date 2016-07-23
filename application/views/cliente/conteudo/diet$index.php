@@ -49,17 +49,17 @@
         <h4 class="modal-title">Alimentação <span id="spnDataAlimentacao"></span></h4>
       </div>
       <div class="modal-body">
-         
-         <div class="boxFormAlimentacao">
-            <input type="text" class="texAlimento form-control"/>
-            <input type="text" class="texQuantidade form-control"/>
-            <select class="cmbTurno form-control">
+         <span id="spnAguarde">Salvando informações, aguarde...</span>
+         <div class="boxFormNovo"></div>
+         <div class="boxFormAlimentacao boxFormAdicionar">
+            <input type="text" class="texAlimento form-control" readyonly/>
+            <input type="text" class="texQuantidade form-control" readyonly/>
+            <select class="cmbTurno form-control" readyonly>
                <option value="Manhã">Manhã</option>
                <option value="Almoço">Almoço</option>
                <option value="Lanche">Lanche</option>
                <option value="Noite">Noite</option>
             </select>
-            <span class="iconRemover glyphicon glyphicon-remove"></span>
          </div>
       </div>
       <div class="modal-footer">
@@ -85,8 +85,63 @@ $(document).ready(function() {
 	   defaultDate: '<?=date('Y-m-d');?>',
 	   dayClick: function(date) {
          $("#spnDataAlimentacao").html(date.format());
+
+         $.ajax({
+ 	        url: "<?=base_url();?>index.php/cliente/diet/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$clie->idCliente;?> + "/" + <?=$dihiAtiva->idDietaHistorico;?>,
+ 	        success: function(html) {
+     		    $('.boxFormNovo').html(html);
+     		  $('.texQuantidade').maskMoney({thousands:'.', decimal:','});
+ 	        }
+    	   });
+      
          $('#containerModal').modal('show');
 	    }
 	});
+
+   $('.boxFormAdicionar').click(function(){
+      $.ajax({
+	        url: "<?=base_url();?>index.php/cliente/diet/ajaxAddNovosCampos/",
+	        success: function(html) {
+   		    $('.boxFormNovo').append(html);
+   		    $('.texQuantidade').maskMoney({thousands:'.', decimal:','});
+   		    $('.boxFormNovo .texAlimento:last').focus();
+	        }
+  	   });
+   });
+
+   $(document).on('click', '.iconRemover', function(){
+      divPai = $(this).parent('.boxFormAlimentacao');
+      if (divPai.data('id')) {
+         $.ajax({
+           url: "<?=base_url();?>index.php/cliente/diet/ajaxRemoveAlimentacao/" + divPai.data('id')
+         }).done(function(){
+            divPai.remove();
+         });
+      } else {
+         divPai.remove();
+      }
+   });
+
+   $('#btnSalvar').click(function(){
+      $("#spnAguarde").show();
+      lista = [];
+      $(".boxFormNovo .boxFormAlimentacao").each(function(){
+         id = $(this).data('id');
+         valAlimento = $(this).find('.texAlimento').val();
+         valQuantidade = $(this).find('.texQuantidade').val();
+         valTurno = $(this).find('.cmbTurno').val();
+
+         arrHial = {idHial:id, alimento: valAlimento, quantidade: valQuantidade, turno: valTurno, data: $("#spnDataAlimentacao").html()};
+         lista.push(arrHial);
+      });
+         
+      $.ajax({
+ 	     url: "<?=base_url();?>index.php/cliente/diet/ajaxPersistencia/" + <?=$dihiAtiva->idDietaHistorico;?>,
+ 		  data: {listaHial: lista},
+ 	     type: "POST"
+ 	   }).done(function(){
+         $("#spnAguarde").hide();
+      });
+   });
 });
 </script>

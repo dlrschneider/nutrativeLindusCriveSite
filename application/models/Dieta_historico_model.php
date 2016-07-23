@@ -47,4 +47,16 @@ class Dieta_historico_model extends MY_Model {
       'idcliente'         => $dihi->cliente->idCliente,
       'data_cadastro'     => $dihi->dataCadastro);
    }
+
+   /**
+    * Recupera ultima dieta_historico do cliente
+    * @param int $idCliente ID/PK
+    */
+   public function carregaUltimaDietaHistorico($idCliente) {
+      $sel = "select iddieta_historico, max(data_cadastro) from dieta_historico where idcliente = {$idCliente} ";
+      $rs = $this->db->query($sel);
+      $reg = $rs->row_array();
+   
+      return $this->carrega($reg["iddieta_historico"]);
+   }
 }

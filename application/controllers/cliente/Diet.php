@@ -21,7 +21,9 @@ class Diet extends MY_Controller {
     */
    public function index() {
    	$clie = $this->session->userdata('CLIE_login');
+      $this->view->clie = $clie;
       
+   	$this->view->dihiAtiva = $this->dihiModel->carregaUltimaDietaHistorico($clie->idCliente);
       $diet = $this->dietModel->carregaUltimaDieta($clie->idCliente);
       $diet->dietasAlimentos = $this->dialModel->carregaTodos("where iddieta = {$diet->idDieta}");
 
@@ -55,7 +57,11 @@ class Diet extends MY_Controller {
     * @param int $idDihi ID/PK da Dieta_historico
     */
    public function detalhe($idDihi) {
+      $clie = $this->session->userdata('CLIE_login');
+      $this->view->clie = $clie;
+      
       $dihi = $this->dihiModel->carrega($idDihi);
+      $this->view->dihi = $dihi;
       $diet = $this->dietModel->carrega($dihi->dieta->idDieta);
       $diet->dietasAlimentos = $this->dialModel->carregaTodos("where iddieta = {$diet->idDieta}");
       
@@ -75,7 +81,53 @@ class Diet extends MY_Controller {
       $this->load->view('cliente/conteudo/diet$detalhe', $this->view);
       $this->rodape('cliente');
    }
+   
+   /**
+    * Chamada ajax para novos campos de alimentação
+    */
+   public function ajaxAddNovosCampos() {
+      imprimeHtmlAjax($this->addFormularioAlimentacao());
+   }
 
+   /**
+    * Chamada ajax para novos campos de alimentação
+    * @param int $idHial ID/PK
+    */
+   public function ajaxRemoveAlimentacao($idHial) {
+      try {
+         parent::excluiRegistro($idHial, 'hialModel');
+      } catch (Exception $e) {
+         log_message('error', "Problema ao excluir historico_alimentacao ID {$idHial}");
+      }
+   }
+
+   /**
+    * Chamada ajax para novos campos de alimentação
+    */
+   public function ajaxPersistencia($idDietaHistorico) {
+      foreach ($this->input->post('listaHial') as $arr) {
+         if ($arr['idHial']) {
+            $hial = $this->hialModel->carrega($arr['idHial']);
+         } else {
+            $hial = new HistoricoAlimentacao();
+            $hial->dataCadastro = date($arr['data'] . ' H:i:s');
+         }
+         
+         $hial->dietaHistorico = new DietaHistorico();
+         $hial->dietaHistorico->idDietaHistorico = $idDietaHistorico;
+         $hial->cliente = $this->session->userdata('CLIE_login');
+         $hial->alimento = utf8_decode($arr['alimento']);
+         $hial->quantidade = $arr['quantidade'];
+         $hial->turno= utf8_decode($arr['turno']);
+         
+         try {
+            $this->hialModel->grava($hial);
+         } catch (Exception $e) {
+            log_message('error', 'erro ao gravar historico alimento, mensagem:' . $e->getMessage());
+         }
+      }
+   }
+   
    /**
     * Encerra a sessão do Gerenciador de Cadastros.
     * @return void
