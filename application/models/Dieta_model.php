@@ -76,4 +76,24 @@ class Dieta_model extends MY_Model {
       	return FALSE;
       }
    }
+
+   /**
+    * Carrega as dietas necessárias para a integração
+    * @param int $idNutri
+    * @return array Alimento
+    */
+   public function carregaDietasSite2App($idNutri) {
+      $sel = "select * "
+      . "from {$this->tableName} "
+      . "where idnutricionista = {$idNutri}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+             
+      foreach ($rs->result_array() as $reg) {
+         $reg['nome'] = htmlentities(utf8_encode($reg['nome']), ENT_QUOTES, "UTF-8");
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+             
+      return $lista;
+   }
 }

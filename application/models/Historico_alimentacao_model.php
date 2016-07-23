@@ -76,4 +76,25 @@ class Historico_alimentacao_model extends MY_Model {
       $reg = $rs->row_array();
       return $reg['qtde'];
    }
+
+   /**
+    * Carrega o histórico de alimentação necessário para a integração
+    * @param int $idCliente
+    * @return array Alimento
+    */
+   public function carregaHistoricoAlimentacaoSite2App($idCliente) {
+      $sel = "select * "
+      . "from {$this->tableName} "
+      . "where idcliente = {$idCliente}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+             
+      foreach ($rs->result_array() as $reg) {
+         $reg['alimento'] = htmlentities(utf8_encode($reg['alimento']), ENT_QUOTES, "UTF-8");
+         $reg['turno'] = htmlentities(utf8_encode($reg['turno']), ENT_QUOTES, "UTF-8");
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+             
+      return $lista;
+   }
 }

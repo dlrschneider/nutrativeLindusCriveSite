@@ -59,4 +59,23 @@ class Dieta_historico_model extends MY_Model {
    
       return $this->carrega($reg["iddieta_historico"]);
    }
+
+   /**
+    * Carrega as dietas históricos necessários para a integração
+    * @param int $idClie
+    * @return array Alimento
+    */
+   public function carregaDietasHistoricosSite2App($idClie) {
+      $sel = "select * "
+      . "from {$this->tableName} "
+      . "where idcliente = {$idClie}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+             
+      foreach ($rs->result_array() as $reg) {
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+             
+      return $lista;
+   }
 }

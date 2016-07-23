@@ -49,4 +49,25 @@ class Noticia_model extends MY_Model {
       'imagem'          => $noti->imagem,
       'data_cadastro'   => $noti->dataCadastro);
    }
+
+   /**
+    * Carrega as notícias necessário para a integração
+    * @param int $idNutri
+    * @return array Alimento
+    */
+   public function carregaNoticiasSite2App($idNutri) {
+      $sel = "select * "
+      . "from {$this->tableName} "
+      . "where idnutricionista = {$idNutri}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+             
+      foreach ($rs->result_array() as $reg) {
+         $reg['titulo'] = htmlentities(utf8_encode($reg['titulo']), ENT_QUOTES, "UTF-8");
+         $reg['descricao'] = htmlentities(utf8_encode($reg['descricao']), ENT_QUOTES, "UTF-8");
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+             
+      return $lista;
+   }
 }

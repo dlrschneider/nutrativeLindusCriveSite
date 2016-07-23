@@ -57,18 +57,36 @@ class Alimento_model extends MY_Model {
     * @return array
     */
    public function carregaAlimentosBusca($idDieta, $busca) {
-	   	$sel = "select * "
-	   	. "from alimento "
-	   	. "where nome like '%{$busca}%' "
-	    . "and idalimento not in (select idalimento from dieta_alimento where iddieta = {$idDieta})"
-	    . "order by nome";
-	   	$rs = $this->db->query($sel);
-	   	$lista = array();
+	   $sel = "select * "
+	   . "from alimento "
+	   . "where nome like '%{$busca}%' "
+	   . "and idalimento not in (select idalimento from dieta_alimento where iddieta = {$idDieta})"
+	   . "order by nome";
+	   $rs = $this->db->query($sel);
+	   $lista = array();
 	   	 
-	   	foreach ($rs->result_array() as $reg) {
-	   	   $lista[] = $this->carrega($reg["id{$this->tableName}"]);
-	   	}
+	   foreach ($rs->result_array() as $reg) {
+	      $lista[] = $this->carrega($reg["id{$this->tableName}"]);
+	   }
 	   	 
-	   	return $lista;
+	   return $lista;
+   }
+   
+   /**
+    * Carrega os alimentos necessários para a integração
+    * @return array Alimento
+    */
+   public function carregaAlimentosSite2App() {
+      $sel = "select * "
+      . "from {$this->tableName}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+       
+      foreach ($rs->result_array() as $reg) {
+         $reg['nome'] = htmlentities(utf8_encode($reg['nome']), ENT_QUOTES, "UTF-8");
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+       
+      return $lista;
    }
 }
