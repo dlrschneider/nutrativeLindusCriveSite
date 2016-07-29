@@ -39,6 +39,15 @@ class Site2app extends MY_Controller {
    }
 
    /**
+    * Cria JSON com todos alimentos da dieta de um determinado cliente
+    * @param int $idCliente ID/PK do Cliente
+    */
+   public function dietasAlimentos($idNutri) {
+      $listaDial = $this->dialModel->carregaDietasAlimentosSite2App($idNutri);
+      echo json_encode($listaDial);
+   }
+   
+   /**
     * Cria JSON com todos as informações de alimentos cadastrados no calendário
     * @param int $idCliente ID/PK do Cliente
     */

@@ -24,8 +24,8 @@ class Dieta_alimento_model extends MY_Model {
    public function mapArray2Obj(array $reg) {
    	/* @var DietaAlimento $dial */
       $dial           = new DietaAlimento();
-      $dial->dieta  	 = new Dieta($reg['iddieta']);
-      $dial->alimento = new Alimento($reg['idalimento']);
+      $dial->dieta  	 = new Dieta();
+      $dial->alimento = new Alimento();
       
       $dial->idDietaAlimento      = $reg['iddieta_alimento'];
       $dial->dieta->idDieta  	    = $reg['iddieta'];
@@ -46,5 +46,22 @@ class Dieta_alimento_model extends MY_Model {
       'iddieta'     	    => $dial->dieta->idDieta,
       'idalimento'       => $dial->alimento->idAlimento,
       'turno'            => $dial->turno);
+   }
+   
+   public function carregaDietasAlimentosSite2App($idNutr) {
+      $sel = "select dial.* "
+      . "from dieta_alimento dial, "
+      . "     dieta          diet "
+      . "where dial.iddieta = diet.iddieta "
+      . "and idnutricionista = {$idNutr}";
+      $rs = $this->db->query($sel);
+      $lista = array();
+             
+      foreach ($rs->result_array() as $reg) {
+         $reg['turno'] = rawurlencode(utf8_encode($reg['turno']));
+         $lista[] = $this->mapArray2Obj($reg);
+      }
+             
+      return $lista;
    }
 }

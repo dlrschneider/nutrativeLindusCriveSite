@@ -53,7 +53,6 @@
          <div class="boxFormNovo"></div>
          <div class="boxFormAlimentacao boxFormAdicionar">
             <input type="text" class="texAlimento form-control" readyonly/>
-            <input type="text" class="texQuantidade form-control" readyonly/>
             <select class="cmbTurno form-control" readyonly>
                <option value="Manhã">Manhã</option>
                <option value="Almoço">Almoço</option>
@@ -88,7 +87,7 @@ $(document).ready(function() {
          $("#spnDataAlimentacao").html(date.format());
 
          $.ajax({
- 	        url: "<?=base_url();?>index.php/cliente/diet/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$clie->idCliente;?> + "/" + <?=$dihiAtiva->idDietaHistorico;?>,
+ 	        url: "<?=base_url();?>index.php/cliente/diet/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$dihiAtiva->idDietaHistorico;?>,
  	        success: function(html) {
      		    $('.boxFormNovo').html(html);
      		  $('.texQuantidade').maskMoney({thousands:'.', decimal:','});

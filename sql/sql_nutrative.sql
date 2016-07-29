@@ -91,16 +91,13 @@ ALTER TABLE dieta_historico ADD CONSTRAINT historico_fk_cliente FOREIGN KEY (idc
 CREATE TABLE IF NOT EXISTS historico_alimentacao (
   idhistorico_alimentacao int(9) NOT NULL AUTO_INCREMENT,
   iddieta_historico int(9) NOT NULL,
-  idcliente int(9) NOT NULL,
   alimento varchar(255) NOT NULL,
-  quantidade decimal(5,2) NULL,
   turno enum('Manhã', 'Almoço', 'Lanche', 'Janta') NOT NULL,
   data_cadastro datetime NOT NULL,
   PRIMARY KEY (idhistorico_alimentacao)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 ALTER TABLE historico_alimentacao ADD CONSTRAINT calendario_fk_dieta_historico FOREIGN KEY (iddieta_historico) REFERENCES dieta_historico (iddieta_historico) ON DELETE CASCADE;
-ALTER TABLE historico_alimentacao ADD CONSTRAINT calendario_fk_cliente FOREIGN KEY (idcliente) REFERENCES cliente (idcliente) ON DELETE CASCADE;
 
 CREATE TABLE noticia (
 	idnoticia int(9) NOT NULL AUTO_INCREMENT,

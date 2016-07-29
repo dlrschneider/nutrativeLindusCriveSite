@@ -81,9 +81,10 @@ class Cliente_model extends MY_Model {
       $sel = "select count(*) qtde "
       . "from cliente clie "
       . "where not exists "
-      . " (select idcliente from historico_alimentacao "
-      . "  where idcliente = clie.idcliente "
-      . "  and data_cadastro like '%{$data}%')";
+      . " (select idcliente from (historico_alimentacao hial, dieta_historico dihi) "
+      . "  where hial.iddieta_historico = dihi.iddieta_historico "
+      . "  and dihi.idcliente = clie.idcliente "
+      . "  and hial.data_cadastro like '%{$data}%')";
       $rs = $this->db->query($sel);
       $reg = $rs->row_array();
       

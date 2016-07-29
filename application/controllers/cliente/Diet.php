@@ -115,10 +115,8 @@ class Diet extends MY_Controller {
          
          $hial->dietaHistorico = new DietaHistorico();
          $hial->dietaHistorico->idDietaHistorico = $idDietaHistorico;
-         $hial->cliente = $this->session->userdata('CLIE_login');
          $hial->alimento = utf8_decode($arr['alimento']);
-         $hial->quantidade = $arr['quantidade'];
-         $hial->turno= utf8_decode($arr['turno']);
+         $hial->turno = utf8_decode($arr['turno']);
          
          try {
             $this->hialModel->grava($hial);

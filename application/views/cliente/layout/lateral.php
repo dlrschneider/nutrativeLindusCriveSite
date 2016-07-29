@@ -1,7 +1,7 @@
 <aside id="bgLateral">
     <div class="content">
         <div class="menu">
-            <a href="javascript: modalNav();"></a>
+            <a href="javascript: modalNav();"><img alt="" src="img/nutri/layout/menu.png"></a>
             <div id="modNav">
 				<div class="modal-nav">
                <div class="top">

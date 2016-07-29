@@ -140,9 +140,8 @@ class MY_Controller extends CI_Controller {
     * @param String $data Data no formato YYYY-MM-DD
     * @return String html
     */
-   public function ajaxRecuperaAlimentos($data, $idCliente, $idDietaHistorico) {
-      $where = "where idcliente = {$idCliente} "
-      . "and data_cadastro like '%{$data}%' "
+   public function ajaxRecuperaAlimentos($data, $idDietaHistorico) {
+      $where = "where data_cadastro like '%{$data}%' "
       . "and iddieta_historico = {$idDietaHistorico}";
       $listaHial = $this->hialModel->carregaTodos($where);
    
@@ -165,7 +164,6 @@ class MY_Controller extends CI_Controller {
    
       return "<div class=\"boxFormAlimentacao\" data-id=\"{$hial->idHistoricoAlimentacao}\">"
       . "<input type=\"text\" class=\"texAlimento form-control\" value=\"{$hial->alimento}\"/>"
-      . "<input type=\"text\" class=\"texQuantidade form-control\" value=\"" . formataValor($hial->quantidade) . "\"/>"
       . "<select class=\"cmbTurno form-control\">"
       . "   <option" . ($hial->turno == "Manhã"  ? " selected=\"select\" " : "")  . " value=\"Manhã\">Manhã</option>"
       . "   <option" . ($hial->turno == "Almoço" ? " selected=\"select\" " : "")  . " value=\"Almoço\">Almoço</option>"

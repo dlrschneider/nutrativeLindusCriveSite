@@ -59,7 +59,7 @@ $(document).ready(function() {
          $("#spnDataAlimentacao").html(date.format());
 
          $.ajax({
-           url: "<?=base_url();?>index.php/nutri/clie/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$clie->idCliente;?> + "/" + <?=$dihi->idDietaHistorico;?>,
+           url: "<?=base_url();?>index.php/nutri/clie/ajaxRecuperaAlimentos/" + date.format() + "/" + <?=$dihi->idDietaHistorico;?>,
            success: function(html) {
              $('.boxFormNovo').html(html);
              $('.texQuantidade').maskMoney({thousands:'.', decimal:','});

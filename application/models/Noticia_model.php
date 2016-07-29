@@ -63,8 +63,8 @@ class Noticia_model extends MY_Model {
       $lista = array();
              
       foreach ($rs->result_array() as $reg) {
-         $reg['titulo'] = htmlentities(utf8_encode($reg['titulo']), ENT_QUOTES, "UTF-8");
-         $reg['descricao'] = htmlentities(utf8_encode($reg['descricao']), ENT_QUOTES, "UTF-8");
+         $reg['titulo'] = rawurlencode(utf8_encode($reg['titulo']));
+         $reg['descricao'] = rawurlencode(utf8_encode($reg['descricao']));
          $lista[] = $this->mapArray2Obj($reg);
       }
              

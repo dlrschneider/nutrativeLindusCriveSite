@@ -9,7 +9,7 @@ abstract class BusinessObject {
     * @param $p
     */
    public function __get($p) {
-      throw new Exception("ERRO: a propriedade [$p] nao existe na classe [" . get_class($this). "]");
+      //throw new Exception("ERRO: a propriedade [$p] nao existe na classe [" . get_class($this). "]");
    }
    
    /**
@@ -18,6 +18,6 @@ abstract class BusinessObject {
     * @param $valor
     */
    public function __set($p, $valor) {
-      throw new Exception("ERRO: a propriedade [$p] nao existe na classe [" . get_class($this). "]");
+      //throw new Exception("ERRO: a propriedade [$p] nao existe na classe [" . get_class($this). "]");
    }
 }

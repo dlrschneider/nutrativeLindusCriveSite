@@ -16,44 +16,39 @@ class App2site extends MY_Controller {
     * Insere no banco as informações do histórico de alimentação enviadas a partir do app 
     */
    public function historicoAlimentacao() {
-      $listaObj = json_decode($this->input->post('JSON_alimentacao'));
+      $obj = $this->input->post('obj');
+                              
+      $hial = new HistoricoAlimentacao();
+      $hial->dietaHistorico = new DietaHistorico();
       
-      // PEGAR CLIENTE
-      // $idCliente
+      $hial->dietaHistorico->idDietaHistorico = $obj[0];
+      $hial->alimento = utf8_decode($obj[1]);
+      $hial->turno = utf8_decode($obj[3]);
+      $hial->dataCadastro = date('Y-m-d H:i:s', $obj[2] / 1000);
       
-      try {
-         $this->hialModel->limpaTabela();
-      } catch (Exception $e) {
-         log_message('info', "[WS] Limpesa da tabela historico_alimentacao para o cliente \"{$idCliente}\"");
-      }
-      
-      foreach ($listaObj as $obj) {
-         // Criar objeto historicoAlimentacao a partir do JSON
-         // Gravar as informações
-      }
+      $this->hialModel->grava($hial);
    }
 
    /**
     * Insere no banco as anotações feitas no app pelo cliente
     */
    public function notas() {
-      $listaObj = json_decode($this->input->post('JSON_notas'));
+      $obj = $this->input->post('obj');
       
-      // limpar anotações do cliente
-      foreach ($listaObj as $obj) {
-         // Criar objeto Anotacao a partir do JSON
-         // Gravar as informações
-      }
+      $anot = new Anotacao();
+      $anot->cliente = new Cliente();
+      $anot->cliente->idCliente = $obj[0];
+      $anot->descricao = uft8_decode($obj[1]);
+      $anot->dataCadastro = date('Y-m-d H:i:s', $obj[1] / 1000);
+      
+      $this->anotModel->grava($anot);
    }
    
    /**
     * WS para login a partir do app mobile, em caso de sucesso retorna uma string JSON para o app
     */
-   public function login($idCliente) {
+   public function login($origLogin, $origSenha) {
       try {
-         $origLogin = $this->input->post('login');
-         $origSenha = $this->input->post('senha');
-         
          $login = mb_strtolower(addslashes(substr(trim($origLogin), 0, 20)));
          $senha = mb_strtolower(addslashes(substr(trim($origSenha), 0, 50)));
          

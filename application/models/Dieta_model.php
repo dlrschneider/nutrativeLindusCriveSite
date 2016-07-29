@@ -90,7 +90,7 @@ class Dieta_model extends MY_Model {
       $lista = array();
              
       foreach ($rs->result_array() as $reg) {
-         $reg['nome'] = htmlentities(utf8_encode($reg['nome']), ENT_QUOTES, "UTF-8");
+         $reg['nome'] = rawurlencode(utf8_encode($reg['nome']));
          $lista[] = $this->mapArray2Obj($reg);
       }
              

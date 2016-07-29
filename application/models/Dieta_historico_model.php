@@ -53,7 +53,7 @@ class Dieta_historico_model extends MY_Model {
     * @param int $idCliente ID/PK
     */
    public function carregaUltimaDietaHistorico($idCliente) {
-      $sel = "select iddieta_historico, max(data_cadastro) from dieta_historico where idcliente = {$idCliente} ";
+      $sel = "select max(iddieta_historico) iddieta_historico from dieta_historico where idcliente = {$idCliente} ";
       $rs = $this->db->query($sel);
       $reg = $rs->row_array();
    
