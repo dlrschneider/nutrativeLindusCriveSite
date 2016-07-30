@@ -6,7 +6,7 @@
 }
 	#bgTopo .logo{
 		float:left;
-		width:70%;
+		width:30%;
 	}
 		#bgTopo .logo a img{
 			width:100px;
@@ -17,7 +17,7 @@
 			#bgTopo .logo a img{}
 	#bgTopo .hello{
 		float:left;
-		width:20%;
+		width:60%;
 		margin-top:8px;
 		padding:16px 36px 10px;
 	}
@@ -28,7 +28,7 @@
 			text-align:right;
 		}
 	#bgTopo .setting{
-		float:left;
+		float:right;
 		padding-left: 70px;
 		width:10%;
 		padding:20px 10px 10px;

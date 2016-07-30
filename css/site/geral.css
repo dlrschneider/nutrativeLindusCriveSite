@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'RobotoCondensed';
     src: url('../fonts/RobotoCondensed.eot');
     src: url('../fonts/RobotoCondensed.eot') format('embedded-opentype'),
@@ -6,52 +6,7 @@
          url('../fonts/RobotoCondensed.woff') format('woff'),
          url('../fonts/RobotoCondensed.ttf') format('truetype'),
          url('../fonts/RobotoCondensed.svg#RobotoCondensed') format('svg');
-}
-@font-face {
-    font-family: 'RobotoCondensedBold';
-    src: url('../fonts/RobotoCondensedBoldBold.eot');
-    src: url('../fonts/RobotoCondensedBold.eot') format('embedded-opentype'),
-         url('../fonts/RobotoCondensedBold.woff2') format('woff2'),
-         url('../fonts/RobotoCondensedBold.woff') format('woff'),
-         url('../fonts/RobotoCondensedBold.ttf') format('truetype'),
-         url('../fonts/RobotoCondensedBold.svg#RobotoCondensedBold') format('svg');
-}
-@font-face {
-    font-family: 'RobotoCondensedBoldItalic';
-    src: url('../fonts/RobotoCondensedBoldItalic.eot');
-    src: url('../fonts/RobotoCondensedBoldItalic.eot') format('embedded-opentype'),
-         url('../fonts/RobotoCondensedBoldItalic.woff2') format('woff2'),
-         url('../fonts/RobotoCondensedBoldItalic.woff') format('woff'),
-         url('../fonts/RobotoCondensedBoldItalic.ttf') format('truetype'),
-         url('../fonts/RobotoCondensedBoldItalic.svg#RobotoCondensedBoldItalic') format('svg');
-}
-@font-face {
-    font-family: 'RobotoCondensedItalic';
-    src: url('../fonts/RobotoCondensedItalic.eot');
-    src: url('../fonts/RobotoCondensedItalic.eot') format('embedded-opentype'),
-         url('../fonts/RobotoCondensedItalic.woff2') format('woff2'),
-         url('../fonts/RobotoCondensedItalic.woff') format('woff'),
-         url('../fonts/RobotoCondensedItalic.ttf') format('truetype'),
-         url('../fonts/RobotoCondensedItalic.svg#RobotoCondensedItalic') format('svg');
-}
-@font-face {
-    font-family: 'RobotoCondensedItalic';
-    src: url('../fonts/RobotoCondensedItalic.eot');
-    src: url('../fonts/RobotoCondensedItalic.eot') format('embedded-opentype'),
-         url('../fonts/RobotoCondensedItalic.woff2') format('woff2'),
-         url('../fonts/RobotoCondensedItalic.woff') format('woff'),
-         url('../fonts/RobotoCondensedItalic.ttf') format('truetype'),
-         url('../fonts/RobotoCondensedItalic.svg#RobotoCondensedItalic') format('svg');
-}
-@font-face {
-    font-family: 'RobotoCondensedRegular';
-    src: url('../fonts/RobotoCondensedRegular.eot');
-    src: url('../fonts/RobotoCondensedRegular.eot') format('embedded-opentype'),	
-         url('../fonts/RobotoCondensedRegular.woff2') format('woff2'),
-         url('../fonts/RobotoCondensedRegular.woff') format('woff'),
-         url('../fonts/RobotoCondensedRegular.ttf') format('truetype'),
-         url('../fonts/RobotoCondensedRegular.svg#RobotoCondensedRegular') format('svg');
-}
+} */
 
 #conteudoSite {
 	margin-top: 20px;
@@ -65,12 +20,12 @@
 	padding-left:0;
 }
 	.content{
-		position:relative;
-		width:92%;
-		max-width:1180px;
-		height:auto;
-		display:inline-block;
-		margin: 0 4%;
+		position: relative;
+        width: 92%;
+        max-width: 1180px;
+        margin-left: 4%;
+        height: auto;
+        display: inline-block;
 	}
 		.content.paddingPadrao{
 			padding:60px 0;
@@ -100,11 +55,14 @@
 	display:block;
 }
 
+body{font-family:Calibri;}
+
 .texto p,
-.texto{
-	text-align:left;
-	font-size:0.8em;
-	line-height:1.75em;
+.text{
+    width:100%;
+	text-align:center;
+	font-size:16px;
+	line-height:20px;
 	color:#727272;
 }
 	.texto a{
@@ -124,7 +82,7 @@
 		-o-border-radius:10px;
 	display:inline-block;
 		
-	font-family:OpenSans;
+	font-family:Calibri;
 	color:#f77e2d;
 	font-size:1em;
 	text-align: center;
@@ -139,7 +97,7 @@
 		-o-border-radius:10px;
 	display:inline-block;
 		
-	font-family:OpenSans;
+	font-family:Calibri;
 	color:#f77e2d;
 	font-size:1em;
 	text-align: center;
@@ -242,15 +200,17 @@ a{
 				#bgTopo .center .nav ul li{
 					display:inline-block;
 					padding-left:25px;
+                    font-weight:bold;
 				}
 					#bgTopo .center .nav ul li a:hover{
 						border-bottom:2px solid #727272;
-						padding-bottom: 10px;
+						padding-bottom: 5px;
 						color:#f77e2d;
 					}
 					#bgTopo .center .nav ul li a{
 						font-size:16px;
-						font-family: RobotoCondensedRegular;
+						font-family: Calibri;
+                        text-decoration: none;
 						color: #454545;
 					}
 	#bgTopo .right{
@@ -297,7 +257,7 @@ a{
                         -moz-border-radius:5px;
                         -webkit-border-radius:5px;
                     
-                    font-family:'OpenSansLight';
+                    font-family:'Calibri';
                     font-size: 16px;
                     color:#222;
                     display:block;
@@ -352,34 +312,39 @@ a{
         text-align: center;
         display: inline-block;
     }
-        #motivos .list .list-child:first-child{margin-left: 0;}
-        #motivos .list .list-child:nth-child(1){margin-top: 0;}
-        #motivos .list .list-child:nth-child(2){margin-top: 0;}
-        #motivos .list .list-child:nth-child(3){margin-top: 0;}
-        #motivos .list .list-child:nth-child(4){margin-left: 0;}
         #motivos .list .list-child{
-            float: left;
+           /*  float: left;
             width: 32%;
-            margin-left: 2%;
-            margin-top:4%;
+            margin-left: 2%; */
+            display:inline-block;
+            width:100%;
+            max-width: 400px;
+            margin-top:2%;
             display: inline-block;
+            cursor:pointer;
         }
+            #motivos .list .list-child:hover .inner{
+                box-shadow: 1px 1px 10px #aba3a3;
+            }
             #motivos .list .list-child .inner{
                 width: 100%;
+                padding: 15px 0;
                 display: inline-block;
             }
                 #motivos .list .list-child .inner img{
                     width:90px;
                     height:90px;
                 }
+                #motivos .list .list-child:hover .inner h2{color:#ff7210;}
                 #motivos .list .list-child .inner h2{
                     display: inline-block;
                     width: 100%;
                     margin-top: 25px;
-                    font-size: 15px;
+                    font-size: 18px;
                     color: #000;
                     text-align: center;
-                    font-family: OpenSansSemiBold;
+                    font-family: Calibri;
+                    font-weight:bold;
                     text-transform: uppercase;
                 }
                 #motivos .list .list-child .inner .resumo{
@@ -387,9 +352,10 @@ a{
                     margin-top:15px;
                     display: inline-block;
                 }
+                    #motivos .list .list-child:hover .inner .resumo p{text-decoration:underline;}
                     #motivos .list .list-child .inner .resumo p{
-                        font-size: 12px;
-                        font-family: OpenSans;
+                        font-size: 16px;
+                        font-family: Calibri;
                         line-height: 20px;
                         color: #727272;
                     }
@@ -404,16 +370,23 @@ a{
     }
         #bgTest .teste .navPc{
             float: left;
-            width: 60%;
+            /* width: 60%; */
+            width:  100%;
             text-align: center;
             display: inline-block;
         }
             #bgTest .teste .navPc img{
-                display:inline-block;
+                display: inline-block;
+                width: 100%;
+                max-width: 655px;
             }
         #bgTest .teste .navText{
-            width: 40%;
-            display: inline-block;
+            /* width: 40%; */
+            width:100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
         }
             #bgTest .teste .navText .navTexto{
                 float: left;
@@ -423,18 +396,20 @@ a{
                 #bgTest .teste .navText .navTexto p.p1{
                     float: left;
                     width: 100%;
-                    text-align: left;
+                    /* text-align: left; */
+                    text-align:center;
                     color: #f77e2d;
-                    font-family: OpenSansLight;
+                    font-family: Calibri;
                     font-size: 30px;
                 }
                 #bgTest .teste .navText .navTexto p.p2{
                     float: left;
                     width: 100%;
                     margin-top: 20px;
-                    text-align: left;
+                    /* text-align: left; */
+                    text-align:center;
                     color: #f77e2d;
-                    font-family: OpenSansSemiBold;
+                    font-family: Calibri;
                     font-size: 38px;
                     line-height: 50px;
                 }
@@ -486,7 +461,7 @@ a{
                             color: #727272;
                             text-align: center;
                             font-size: 20px;
-                            font-family: OpenSans;
+                            font-family: Calibri;
                             line-height: 25px;
                             display: inline-block;
                         }
@@ -494,7 +469,7 @@ a{
                                 float: left;
                                 width: 100%;
                                 margin-top: 10px;
-                                font-family: OpenSansSemiBold;
+                                font-family: Calibri;
                                 font-size: 18px;
                                 text-align: center;
                             }
@@ -511,7 +486,7 @@ a{
                                         -moz-border-radius: 20px;
                                         -o-border-radius: 20px;
                                         display: inline-block;
-                                        font-family: OpenSans;
+                                        font-family: Calibri;
                                         color: #ff7112;
                                         font-size: 14px;
                                         text-align: center;
@@ -532,6 +507,7 @@ a{
                                 color: #ff7f1f;
                                 font-size: 1.0em;
                                 font-weight: bold;
+                                list-style:none;
                             }
                             
     #internas legend{margin:0 46%;}
@@ -555,8 +531,8 @@ a{
 
     #internas .contatos{
         float:left;
-        width: 80%;
-        margin: 55px 10% 0 10%;
+        width: 100%;
+        margin: 55px 1% 0 1%;
     }
         #internas .contatos .contato:first-child{margin-top:0;}
         #internas .contatos .contato{
@@ -636,6 +612,9 @@ a{
                         #bgRodape .top .nav ul > li > a:hover{
                             padding-bottom: 10px;
                             color:#FFD0B0;
+                            font-family: Calibri;
+                            font-weight:bold;
+                            text-decoration: none;
                         }
 	#bgRodape .bottom{
 		width: 100%;
@@ -663,7 +642,14 @@ a{
 @media (min-width: 480px){}
 @media (min-width: 592px){}
 @media (min-width: 650px){}
-@media (min-width: 768px){}
+@media (min-width: 768px){
+    #motivos .list .list-child:nth-child(2n+1){margin-left:0%;clear:both;}
+    #motivos .list .list-child{
+        float:left;
+        width:49%;
+        margin-left:2%;
+    }
+}
 @media (min-width: 840px){
     #internas .contatos .contato:nth-child(1){margin-left:0;}
     #internas .contatos .contato:nth-child(2){margin-top:0;}
@@ -671,8 +657,22 @@ a{
         width:48%;
         margin-left: 2%;
     }
+
+    #bgTest .teste .navPc{width:60%;}
+    #bgTest .teste .navText{
+        width:40%;
+        align-items:flex-start;
+        padding-left:35px;
+    }
+        #bgTest .teste .navText .navTexto p.p1,
+        #bgTest .teste .navText .navTexto p.p2{text-align:left;}
 }
-@media (min-width: 960px){}
+@media (min-width: 960px){
+    .content{width:96%;}
+    #motivos .list .list-child:nth-child(2n+1){margin-left:2%;clear:none;}
+    #motivos .list .list-child:nth-child(3n+1){margin-left:0;clear:both;}
+    #motivos .list .list-child{width:32%;}
+}
 @media (min-width: 1040px){
     #internas .contatos .contato:nth-child(1){margin-left:0;}
     #internas .contatos .contato:nth-child(2){margin-top:0;}
@@ -683,6 +683,11 @@ a{
     }
 }
 @media (min-width: 1280px){
+    .text{
+        width: 80%;
+        display: inline-block;
+        margin-left: 10%;
+    }
     #internas .contatos .contato:nth-child(1){margin-left:0;}
     #internas .contatos .contato{
         width:23.5%;
